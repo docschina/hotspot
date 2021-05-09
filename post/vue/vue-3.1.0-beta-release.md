@@ -72,7 +72,7 @@ console.log(ast.children[0].content)
 
 #### 源码
 
-原本只在 `compiler-core` 的 `parser` 文件中的 `defaultParserOptions` 提供了默认的 `condense` 情况
+原本只在 `compiler-core` 的 `parse` 文件中的 `defaultParserOptions` 提供了默认的 `condense` 情况
 
 ```ts
 whitespace: 'condense'
@@ -91,3 +91,73 @@ whitespace?: 'preserve' | 'condense'
 * [vue 2.0/compiler](https://github.com/vuejs/vue/blob/dev/flow/compiler.js#L10)
 * [vue 2.0 的 `whitespace`](https://github.com/vuejs/vue/issues/9208#issuecomment-450012518)
 * [vue 2.0 的 PR](https://github.com/vuejs/vue/commit/e1abedb9e66b21da8a7e93e175b9dabe334dfebd)
+
+### 通过 `is="vue:xxx"` 支持普通元素的转换
+
+这条特性的更新，从源码上看，兼容了两种类型。
+
+1. 弃用的 `v-is` 指令
+2. `is="vue:xxx"` 的属性
+
+#### 源码
+
+```js
+  let { tag } = node
+
+  // 1. 动态组件
+  const isExplicitDynamic = isComponentTag(tag)
+  const isProp =
+    findProp(node, 'is') || (!isExplicitDynamic && findDir(node, 'is'))
+  if (isProp) {
+    if (!isExplicitDynamic && isProp.type === NodeTypes.ATTRIBUTE) {
+      // <button is="vue:xxx">
+      // 如果不是 <component>，仅仅是 "vue:" 开头
+      // 在解析阶段会被视为组件，并在此处进行
+      // tag 被重新赋值为 "vue:" 以后的内容
+      tag = isProp.value!.content.slice(4)
+    } else {
+      const exp =
+        isProp.type === NodeTypes.ATTRIBUTE
+          ? isProp.value && createSimpleExpression(isProp.value.content, true)
+          : isProp.exp
+      if (exp) {
+        return createCallExpression(context.helper(RESOLVE_DYNAMIC_COMPONENT), [
+          exp
+        ])
+      }
+    }
+  }
+```
+
+```js
+// 当 tag 为 <component>，或者 is="vue:xxx"，跳过后续处理
+if (
+  name === 'is' &&
+  (isComponentTag(tag) || (value && value.content.startsWith('vue:')))
+) {
+  continue
+}
+// ...
+```
+
+上述代码中有几个点：
+
+1. 首先 `isComponentTag`，用以判断是否为动态组件：
+
+```js
+// 此方法用于判断是否为动态组件
+function isComponentTag(tag: string) {
+  return tag[0].toLowerCase() + tag.slice(1) === 'component'
+}
+```
+
+2. 查找是否含有 `is` 属性
+
+```js
+// 先查属性
+findProp(node, 'is')
+// 否则判断是不是动态组件，如果不是，判断是不是指令
+!isExplicitDynamic && findDir(node, 'is')
+```
+
+其主要原因是，两者的 AST 结构不同。
