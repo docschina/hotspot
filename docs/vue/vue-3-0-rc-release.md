@@ -1,11 +1,5 @@
 # Vue 3 is now in RC!
 
-> 原文链接：https://github.com/vuejs/rfcs/issues/189
->
-> 作者：[Evan You](https://github.com/yyx990803)
->
-> 译者：[QC-L](https://github.com/QC-L)
-
 非常高兴的宣布 Vue 3.0 已经进入候选（Release Candidate）阶段！
 
 进入 RC 阶段，意味着 Vue 3 的核心 API 及实现均已稳定。原则上，我们不希望在正式版发布之前再引入新的特性或重大更新（breaking changes）。许多官方维护的 framework 已基本支持 v3。请参阅[此链接](https://github.com/vuejs/vue-next#status-of-the-rest-of-the-framework)了解最新更改。
