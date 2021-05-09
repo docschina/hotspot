@@ -1,57 +1,65 @@
 # Vue 3 is now in RC!
 
-We are very excited to announce that Vue 3.0 has entered RC (Release Candidate) stage!
+> 原文链接：https://github.com/vuejs/rfcs/issues/189
+>
+> 作者：[Evan You](https://github.com/yyx990803)
+>
+> 译者：[QC-L](https://github.com/QC-L)
 
-Entering the RC stage means that both the API and implementation of Vue 3 core have stabilized. In principle, we do not expect to introduce new major features or breaking changes before the final release. Most official framework parts also now have v3 support. Please check [here](https://github.com/vuejs/vue-next#status-of-the-rest-of-the-framework) for the latest status.
+非常高兴的宣布 Vue 3.0 已经进入候选（Release Candidate）阶段！
 
-## New Documentation
+进入 RC 阶段，意味着 Vue 3 的核心 API 及实现均已稳定。原则上，我们不希望在正式版发布之前再引入新的特性或重大更新（breaking changes）。许多官方维护的 framework 已基本支持 v3。请参阅[此链接](https://github.com/vuejs/vue-next#status-of-the-rest-of-the-framework)了解最新更改。
 
-The Vue docs team have been updating our docs for v3 and it is now available at [v3.vuejs.org](https://v3.vuejs.org/)! It has been a massive undertaking and many thanks to the hard work by the docs team: @NataliaTepluhina, @bencodezen, @phanan and @sdras. The new docs has been meticulously migrated to cover differences between v2 and v3, runs on VuePress, and has improved code samples that can be edited inline.
+## 全新的文档
 
-For a quick overview on what's new and what's changed, please refer to the [Migration Guide](https://v3.vuejs.org/guide/migration/introduction.html).
+Vue 文档团队已经将文档更新至 v3，可直接访问 [v3.vuejs.org](https://v3.vuejs.org)！这是一项艰巨的工作，要感谢文档团队的辛勤付出： [@NataliaTepluhina](https://github.com/NataliaTepluhina)，[@bencodezen](https://github.com/bencodezen)，[@phanan](https://github.com/phanan) 以及 [@sdras](https://github.com/sdras)。新文档经过了精心设计，以涵盖 v2 和 v3 之间的差异，可以直接运行在 VuePress 上，并且改进了代码示例，可以内联编辑。
 
-Please note that the new documentation, especially the Migration Guide, is still a work in progress, and we will continue to polish it throughout the RC stage.
+有关新特性和更改的快速概览，请参阅[迁移指南](https://v3.vuejs.org/guide/migration/introduction.html)。
 
-## Initial DevTools Support for v3
+请注意，新文档（尤其是『迁移指南』）仍在开发中，我们将会在整个 RC 阶段继续完善它，
 
-We have also published [a beta version of the new Vue Devtools with initial v3 support](https://github.com/vuejs/vue-devtools/releases/tag/v6.0.0-beta.1), thanks to the amazing work by @Akryum.
+## DevTools 初步支持 v3
 
-The devtool has received a major refactor to better decouple its core logic from different supported Vue versions. The interface also has a new look implemented with Tailwind CSS. Currently, only component inspection is supported - but more features will be coming soon.
+由于 [@Akryum](https://github.com/Akryum) 出色工作，我们还发布了[初步支持 v3 的 Vue DevTools](https://github.com/vuejs/vue-devtools/releases/tag/v6.0.0-beta.1) 的 Beta 版本。
 
-~At the moment, the beta channel of Vue Devtools is still under review in the Chrome Web Store, but you can download and install the extension locally by following the instructions in the link above.~
+通过对 devtool 的深度重构，现在已经可能很好地将其核心逻辑与对不同 Vue 版本的支持进行分离。此界面还拥有使用了 Tailwind CSS 实现的新外观。目前，仅支持了组件检查的功能 —— 但很快就会支持其他功能。
 
-Update: Devtools beta has been approved and now [available on the Chrome Web Store](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg) (Note: the devtools requires vue@^3.0.0-rc.1)
+~Vue DevTools 的 beta 版本仍在 Chrome 的网上应用商店进行审核，你可以通过访问上方链接中的说明在本地下载并进行安装。~
 
-## Trying It Out
+更新：DevTools 的审核已经通过，已发布至 [Chrome 的网上应用商店](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)。
 
-If you are interested in trying out Vue 3 today, there are a few ways to do it:
+> 注意：此插件依赖的 Vue 版本是 vue@^3.0.0-rc.1
 
-* Play with it on [Codepen](https://codepen.io/team/Vue/pen/KKpRVpx)
+## 试用
 
-* Start a project using [Vite](https://github.com/vitejs/vite) with:
+如果你想试用 Vue 3，可以通过以下几种方式进行：
 
-  ```bash
-  npm init vite-app hello-vue3
-  ```
+在 [Codepen](https://codepen.io/team/Vue/pen/KKpRVpx) 上试用。
 
-  Vite comes with [`<script setup>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md) and [`<style vars>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md) support in Single File Components.
+使用 [Vite](https://github.com/vitejs/vite) 启动一个项目:
 
-We are have a pending PR on [first-class v3 support in vue-cli](https://github.com/vuejs/vue-cli/pull/5637) - which will be available soon.
+```bash
+npm init vite-app hello-vue3
+```
 
-## Future Work
+Vite 在单文件组件（SFC）中默认支持了 [`<script setup>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md?rgh-link-date=2020-07-17T20%3A58%3A23Z) 和 [`<style vars>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md?rgh-link-date=2020-07-17T20%3A58%3A23Z)。
 
-We haven't been able to complete full IE11 support for the RC, so we will continue to work on that.
+我们有一个进行中的 PR，会在 [vue-cli 中针对 v3 的 first-class 进行支持](https://github.com/vuejs/vue-cli/pull/5637) —— 即将发布。
 
-At the same time, our primary focus will shift to documentation, migration, and compatibility. Our current goal is to provide clear documentation for starting new projects with v3, and help library authors upgrade their packages to support v3. The docs team will continue to polish the migration guide and v3 documentation based on feedback from the community.
+## 接下来的工作
 
-Migrating non-trivial applications from v2 to v3 will likely be a much slower process. We will provide code mods and tools to help with such migrations, but in most cases, this will depend on how fast the project's dependencies can be upgraded to support Vue 3. It is also important to evaluate whether the risk and time investment of upgrading is worth it - since Vue 2 will continue to be supported. We plan to dedicate a focus period after 3.0 release to back-port features into v2 via compatibility plugins. We are already seeing success with this approach in [`@vue/composition-api`](https://github.com/vuejs/composition-api).
+目前尚未完成 RC 版本对 IE11 完整支持，因此会继续努力完成。
 
-## Experimental Features
+同时，我们会将工作的重心转向文档，迁移以及兼容性方面。我们目前的目标是为使用 v3 开发新项目提供完善的文档，并帮助相关库的作者升级其 package 以更好地支持 v3。文档团队将根据社区的反馈继续完善迁移指南和 v3 的文档。
 
-There are a few features that are shipped in the RC release, but have been marked experimental:
+将零散的应用程序从 v2 升级到 v3 进展可能会非常缓慢。我们将提供 codemods 和工具来帮助大家进行此类项目的迁移，但是大多数情况下，这取决于项目本身的依赖能以多快的速度升级至 v3。因此，升级前需评估风险和时间成本，再决定是否升级 —— Vue 2 会继续维护。我们计划在 3.0 发布后，设置一个过渡期，以通过兼容性插件将新特性反向移植到 v2 中。我们已经在 [@vue/composition-api](https://github.com/vuejs/composition-api) 中验证了此方法的可行性。
+
+## 实验阶段特性
+
+RC 版本中提供了一些特性，但已标记为实验性特性：
 
 * `<Suspense>`
-* [`<script setup>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md)
-* [`<style vars>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md)
+* [`<script setup>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md?rgh-link-date=2020-07-17T20%3A58%3A23Z)
+* [`<style vars>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md?rgh-link-date=2020-07-17T20%3A58%3A23Z)
 
-These features are shipped now in order to collect feedback from actual usage, but they may still receive breaking changes / major adjustments. They will likely remain experimental in 3.0, and become finalized as part of 3.1.
+这些特性已发布，目的是收集大家在实际项目中使用情况的反馈，但是它们可能仍会进行重大更改/调整。并且它们会在 3.0 中保持实验状态，并最终成为 3.1 的一部分。
