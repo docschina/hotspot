@@ -20,6 +20,8 @@ Vue 文档团队已经将文档更新至 v3，可直接访问 [v3.vuejs.org](htt
 
 ~Vue DevTools 的 beta 版本仍在 Chrome 的网上应用商店进行审核，你可以通过访问上方链接中的说明在本地下载并进行安装。~
 
+更新：DevTools 的审核已经通过，已发布至 [Chrome 的网上应用商店](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)。
+
 ## 试用
 
 如果你想试用 Vue 3，可以通过以下几种方式进行：
