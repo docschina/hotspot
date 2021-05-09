@@ -11,7 +11,7 @@
 * `@vue/compiler-core` 支持了空白字符处理策略
 * 支持通过 `app.config.compilerOptions` 配置运行时的编译器
 * devtools 改进了对 KeepAlive 的支持
-* 支持通过 `is="vue:xxx"` 将普通的 html 元素铸造为组件
+* 支持通过 `is="vue:xxx"` 将普通元素转换为组件
 
 ### `onServerPrefetch`
 
