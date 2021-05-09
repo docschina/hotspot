@@ -1,5 +1,11 @@
 # Vue 3 is now in RC!
 
+> 原文链接：https://github.com/vuejs/rfcs/issues/189
+>
+> 作者：[Evan You](https://github.com/yyx990803)
+>
+> 译者：[QC-L](https://github.com/QC-L)
+
 非常高兴的宣布 Vue 3.0 已经进入候选（Release Candidate）阶段！
 
 进入 RC 阶段，意味着 Vue 3 的核心 API 及实现均已稳定。原则上，我们不希望在正式版发布之前再引入新的特性或重大更新（breaking changes）。许多官方维护的 framework 已基本支持 v3。请参阅[此链接](https://github.com/vuejs/vue-next#status-of-the-rest-of-the-framework)了解最新更改。
@@ -21,8 +27,6 @@ Vue 文档团队已经将文档更新至 v3，可直接访问 [v3.vuejs.org](htt
 ~Vue DevTools 的 beta 版本仍在 Chrome 的网上应用商店进行审核，你可以通过访问上方链接中的说明在本地下载并进行安装。~
 
 更新：DevTools 的审核已经通过，已发布至 [Chrome 的网上应用商店](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)。
-
-> 注意：此插件依赖的 Vue 版本是 vue@^3.0.0-rc.1
 
 ## 试用
 
@@ -52,8 +56,8 @@ Vite 在单文件组件（SFC）中默认支持了 [`<script setup>`](https://gi
 
 RC 版本中提供了一些特性，但已标记为实验性特性：
 
--   `<Suspense>`
--   [`<script setup>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md?rgh-link-date=2020-07-17T20%3A58%3A23Z)
--   [`<style vars>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md?rgh-link-date=2020-07-17T20%3A58%3A23Z)
+* `<Suspense>`
+* [`<script setup>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-script-setup.md?rgh-link-date=2020-07-17T20%3A58%3A23Z)
+* [`<style vars>`](https://github.com/vuejs/rfcs/blob/sfc-improvements/active-rfcs/0000-sfc-style-variables.md?rgh-link-date=2020-07-17T20%3A58%3A23Z)
 
 这些特性已发布，目的是收集大家在实际项目中使用情况的反馈，但是它们可能仍会进行重大更改/调整。并且它们会在 3.0 中保持实验状态，并最终成为 3.1 的一部分。
