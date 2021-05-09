@@ -162,3 +162,8 @@ findProp(node, 'is')
 ```
 
 其主要原因是，两者的 AST 结构不同。
+
+相关链接：
+
+* [Support casting plain element](https://github.com/vuejs/vue-next/commit/af9e6999e1779f56b5cf827b97310d8e4e1fe5ec)
+* [Custom Elements Interop](https://v3.vuejs.org/guide/migration/custom-elements-interop.html)
