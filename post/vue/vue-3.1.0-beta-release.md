@@ -102,31 +102,32 @@ whitespace?: 'preserve' | 'condense'
 #### 源码
 
 ```js
-  let { tag } = node
 
-  // 1. 动态组件
-  const isExplicitDynamic = isComponentTag(tag)
-  const isProp =
-    findProp(node, 'is') || (!isExplicitDynamic && findDir(node, 'is'))
-  if (isProp) {
-    if (!isExplicitDynamic && isProp.type === NodeTypes.ATTRIBUTE) {
-      // <button is="vue:xxx">
-      // 如果不是 <component>，仅仅是 "vue:" 开头
-      // 在解析阶段会被视为组件，并在此处进行
-      // tag 被重新赋值为 "vue:" 以后的内容
-      tag = isProp.value!.content.slice(4)
-    } else {
-      const exp =
-        isProp.type === NodeTypes.ATTRIBUTE
-          ? isProp.value && createSimpleExpression(isProp.value.content, true)
-          : isProp.exp
-      if (exp) {
-        return createCallExpression(context.helper(RESOLVE_DYNAMIC_COMPONENT), [
-          exp
-        ])
-      }
+let { tag } = node
+
+// 1. 动态组件
+const isExplicitDynamic = isComponentTag(tag)
+const isProp =
+  findProp(node, 'is') || (!isExplicitDynamic && findDir(node, 'is'))
+if (isProp) {
+  if (!isExplicitDynamic && isProp.type === NodeTypes.ATTRIBUTE) {
+    // <button is="vue:xxx">
+    // 如果不是 <component>，仅仅是 "vue:" 开头
+    // 在解析阶段会被视为组件，并在此处进行
+    // tag 被重新赋值为 "vue:" 以后的内容
+    tag = isProp.value!.content.slice(4)
+  } else {
+    const exp =
+      isProp.type === NodeTypes.ATTRIBUTE
+        ? isProp.value && createSimpleExpression(isProp.value.content, true)
+        : isProp.exp
+    if (exp) {
+      return createCallExpression(context.helper(RESOLVE_DYNAMIC_COMPONENT), [
+        exp
+      ])
     }
   }
+}
 ```
 
 ```js
