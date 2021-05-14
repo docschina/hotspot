@@ -1,37 +1,37 @@
-# Video uploads now available across GitHub
+# GitHub 现已支持视频上传功能
 
-As developers, the ability to collaborate through video (for example, pair programming, demos, etc.) is an extremely important part of a software workflow, especially for communities and teams that are distributed. At GitHub, we’ve utilized video to more concisely detail complex workflows, show our teammates where we’re blocked, and inspire our colleagues with the next big idea.
+对于开发者来说，特别是对于分开协作的社区以及团队来说，能通过视频进行协作 (例如结对编程、demo 等) 对于软件 workflow 是极其重要的。在 GitHub，我们时常利用视频来更简洁地详述复杂的工作流程，向我们团队的成员展示障碍所在，并用下一个大胆的想法来激励我们的同事。
 
-Today, we’re announcing that the ability to upload video is generally available for everyone across GitHub. Now you can upload `.mp4` and `.mov` files in issues, pull requests, discussions, and more.
+今天，我们宣布 Github 正式发布视频协作功能。现在在 issue、pull request 和 discussions 里已支持上传 `.mp4` 和 `.mov` 文件！
 
-With this [move out of Beta](https://github.blog/changelog/2020-12-16-video-upload-public-beta/), we wanted to share some ways in which we’re seeing developers utilize video in their workflows.
+随着 [beta 版的推出](https://github.blog/changelog/2020-12-16-video-upload-public-beta/)，我们分享了一些开发者利用视频在他们的 workflow 中利用视频的案例。
 
-## Help a maintainer reproduce a bug
+## 帮助维护者复现 bug
 
-Bugs are something that every developer deals with, but sometimes words aren’t enough to help someone else reproduce the problem quickly. This is especially critical for maintainers, who are often burdened with bug reports that require significant back and forth with the user to get to the root of the issue. By enabling users to upload videos, we’ve seen the ability to visually reproduce the way in which a collaborator came across a bug significantly decrease the time spent for a maintainer to try and reproduce from text.
+bug 是每位开发人员都需要处理的事情，但有时文字难以帮助别人快速复现它们。这对维护者们来说尤其重要，他们经常要面对那些需要与用户来回讨论半天才能找到 issue 根源，并解决此 bug。但是通过让用户上传视频，我们就可以直观地重现合作者遇到 bug 的方式，极大地减少了维护者们从文字中复现 issue 的时间。
 
 ![](https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/img/jCnjCu.png)
 
-## Provide context on pull requests for reviewers
+## 给 reviewers 提供 pull request 内容
 
-There’s a lot of context about requirements, architecture decisions, and more captured on GitHub in issues and pull requests. As your team grows and plans to evolve, it can be tough for reviewers to understand what they are reviewing and why. We have seen developers utilize video to share more details about complex code changes with colleagues by providing video code walkthroughs, demos of functionality, and other important context to maximize their review feedback.
+在 GitHub 上的 issue 和 pull request 中，有很多关于需求、架构决定等方面的内容。随着团队的成长和计划的发展，reviewer 要想理解他们正在 review 的内容和原因可能会变得很困难。有了视频，我们可以看到开发者利用视频与同事分享复杂的代码修改的更多细节，提供视频代码演练、功能演示和其他重要的背景，以最大化他们的 review 反馈。
 
 ![](https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/img/Nours4.png)
 
-## Share how a feature might take shape
+## 分享一个功能如何形成
 
-When it comes to developing a new feature or product, a thoughtfully worded proposal or static designs are great, but often lack the ability to really convey the end-to-end user workflows and interactions. Sharing videos of prototype walkthroughs or providing talk tracks for a static design have also helped development teams get to the heart of what they are setting out to build and why so they can get others excited about their work and ultimately build a better product for their own users.
+当涉及到开发一个新的功能或产品时，一个经过深思熟虑的提案或静态设计是伟大的，但往往缺乏真正传达端到端的用户工作流程和互动的能力。分享原型演练的视频或为静态设计提供谈话轨道，也有助于开发团队深入了解他们要建立的东西和原因，这样他们就能让其他人对他们的工作感到兴奋，并最终为他们自己的用户建立一个更好的产品。
 
 ![](https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/img/bPUf6N.png)
 
 ## …and upload your video from anywhere!
 
-No feature is truly complete until there is mobile support as well. So we’re also excited to announce that uploading videos from both the iOS and Android GitHub mobile apps is now available to all users. This is especially great for mobile developers who can now record a video of a mobile bug and upload it straight to an issue all from the same device.
+如果不支持移动端，那么此功能就不完美。因此，我们很高兴地宣布，现在所有用户都可以通过 iOS 和安卓的 GitHub 移动端上传视频。这对移动开发者来说尤其重要，他们现在可以从同一设备上录制一个移动 Bug 的视频并直接上传到 issue 中。
 
 ![](https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/img/Je9jmF.gif)
 
-## Do more with video
+## 用视频做更多事情
 
-We’re excited to see the unique ways you use video in your workflows across GitHub. We hope you will start to bring video into your day-to-day through services you already use, like [Loom](https://www.loom.com/) and [Vimeo Record](https://vimeo.com/record?vcid=39693&utm_campaign=screen_recorder&utm_content=github_blog_cta?utm_campaign=screen_recorder&utm_content=github_blog_cta&vcid=) to share project context, provide code review feedback, and share launch updates through free screen and webcam recording. This is just a first step in bringing video into software development across GitHub, and we’re looking to explore more use cases, like video unfurling from links and video annotations in code with Loom, Vimeo, and others to create a richer video experience.
+我们很高兴看到你在 GitHub 的工作流程中使用视频的独特方式。我们希望你能通过你已经使用的服务，如 [Loom](https://www.loom.com/) 和 [Vimeo Record](https://vimeo.com/record?vcid=39693&utm_campaign=screen_recorder&utm_content=github_blog_cta?utm_campaign=screen_recorder&utm_content=github_blog_cta&vcid=) 在你的日常工作中使用视频，通过免费的屏幕和摄像头录制来分享项目背景，提供 code review 以及反馈，并分享启动更新。这只是将视频引入整个 GitHub 软件开发流程的第一步，我们希望探索更多的用例，比如与 Loom、Vimeo 和其他公司合作，从链接和代码中的视频注释中展开视频，创造更丰富的视频体验。
 
-[Let us know](https://support.github.com/contact/feedback?contact%5Bcategory%5D=issues-projects&contact%5Bsubject%5D=Video+Upload+Feedback) how video has helped you and your teams be more successful on GitHub and ways we could make the experience even better.
+为了帮助我们更好的完善此功能，你可以通过 [此链接](https://support.github.com/contact/feedback?contact%5Bcategory%5D=issues-projects&contact%5Bsubject%5D=Video+Upload+Feedback) 来告诉我们视频功能是如何帮助你的团队在 GitHub 上更加容易的协作，以及你的使用体验。
