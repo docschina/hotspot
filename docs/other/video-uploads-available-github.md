@@ -1,14 +1,14 @@
-# GitHub 上允许上传视频了
+# GitHub 现已支持视频上传功能
 
-作为开发者，可以使用视频合作 (例如结对编程、demo 等) 对于软件 workflow 是极其重要的，尤其是对于分散的社区以及团队。在 GitHub，我们时常利用视频来更简洁地详述复杂的工作流程，向我们团队的成员展示障碍所在，并以下一个大想法来激励我们的同事。
+对于开发者来说，特别是对于分开协作的社区以及团队来说，能通过视频进行协作 (例如结对编程、demo 等) 对于软件 workflow 是极其重要的。在 GitHub，我们时常利用视频来更简洁地详述复杂的工作流程，向我们团队的成员展示障碍所在，并用下一个大胆的想法来激励我们的同事。
 
-今天，我们宣布利用视频合作不再是我们团队的专利了。现在你已经可以在 issue、pull request、discussions 里头上传 `.mp4` 和 `.mov` 了。
+今天，我们宣布 Github 正式发布视频协作功能。现在在 issue、pull request 和 discussions 里已支持上传 `.mp4` 和 `.mov` 文件！
 
 随着 [beta 版的推出](https://github.blog/changelog/2020-12-16-video-upload-public-beta/)，我们分享了一些开发者利用视频在他们的 workflow 中利用视频的案例。
 
-## 帮助维护者重现 bug
+## 帮助维护者复现 bug
 
-bug 是每个开发人员都要处理的事情，但有时文字并不足以帮助别人快速重现它们。这对维护者来说尤其重要，他们经常要面对那些需要与用户来回讨论半天才能找到问题根源的 bug 报告。但是通过让用户上传视频，我们就可以直观地重现合作者遇到 bug 的方式，大大减少了维护者试图从文字中重现的时间。
+bug 是每位开发人员都需要处理的事情，但有时文字难以帮助别人快速复现它们。这对维护者们来说尤其重要，他们经常要面对那些需要与用户来回讨论半天才能找到 issue 根源，并解决此 bug。但是通过让用户上传视频，我们就可以直观地重现合作者遇到 bug 的方式，极大地减少了维护者们从文字中复现 issue 的时间。
 
 ![](https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/img/jCnjCu.png)
 
@@ -26,7 +26,7 @@ bug 是每个开发人员都要处理的事情，但有时文字并不足以帮�
 
 ## …and upload your video from anywhere!
 
-移动端不支持，这功能就怎么弄都不完整。因此，我们很高兴地宣布，现在所有用户都可以通过 iOS 和安卓的 GitHub 移动端上传视频了。这对移动开发者来说尤其重要，他们现在可以从同一设备上录制一个移动 Bug 的视频并直接上传到问题中。
+如果不支持移动端，那么此功能就不完美。因此，我们很高兴地宣布，现在所有用户都可以通过 iOS 和安卓的 GitHub 移动端上传视频。这对移动开发者来说尤其重要，他们现在可以从同一设备上录制一个移动 Bug 的视频并直接上传到 issue 中。
 
 ![](https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/img/Je9jmF.gif)
 
@@ -34,4 +34,4 @@ bug 是每个开发人员都要处理的事情，但有时文字并不足以帮�
 
 我们很高兴看到你在 GitHub 的工作流程中使用视频的独特方式。我们希望你能通过你已经使用的服务，如 [Loom](https://www.loom.com/) 和 [Vimeo Record](https://vimeo.com/record?vcid=39693&utm_campaign=screen_recorder&utm_content=github_blog_cta?utm_campaign=screen_recorder&utm_content=github_blog_cta&vcid=) 在你的日常工作中使用视频，通过免费的屏幕和摄像头录制来分享项目背景，提供 code review 以及反馈，并分享启动更新。这只是将视频引入整个 GitHub 软件开发流程的第一步，我们希望探索更多的用例，比如与 Loom、Vimeo 和其他公司合作，从链接和代码中的视频注释中展开视频，创造更丰富的视频体验。
 
-[让我们知道](https://support.github.com/contact/feedback?contact%5Bcategory%5D=issues-projects&contact%5Bsubject%5D=Video+Upload+Feedback) 视频是如何帮助你的团队在 GitHub 上更成功；以及如何使我们的功能有更好的体验。
+为了帮助我们更好的完善此功能，你可以通过 [此链接](https://support.github.com/contact/feedback?contact%5Bcategory%5D=issues-projects&contact%5Bsubject%5D=Video+Upload+Feedback) 来告诉我们视频功能是如何帮助你的团队在 GitHub 上更加容易的协作，以及你的使用体验。
