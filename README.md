@@ -1,9 +1,3 @@
-<!--
- * @Date: 04/05/2021 21.05.51 +0800
- * @Author: KnowsCount
- * @LastEditTime: 05/05/2021 02.12.56 +0800
- * @FilePath: /workermen/README-CN.md
--->
 
 <!-- <img src="https://knowscount-1304485449.cos.ap-shanghai.myqcloud.com/img/workermen.png" align="right" width="128" height="228" /> -->
 
