@@ -1,0 +1,2594 @@
+0
+00:00:00,370 --> 00:00:01,050
+好吧 嗯
+Okay. So um.
+
+1
+00:00:02,860 --> 00:00:11,700
+我认为我们是大延迟 我应该找到 我叫爱德华多 我是一个视图路由器的维护者 我写了
+Well, I think we're the big delay, I should find, my name is Eduardo, I'm the maintainer of a view router, and I wrote the.
+
+2
+00:00:12,560 --> 00:00:18,160
+32 最后版本的你是二的你是二的 四的 而我一直在为你俩维持这个版本
+Last version of you are two that you are two, four, and I have been maintaining the version for you two.
+
+3
+00:00:18,790 --> 00:00:21,950
+有一段时间了 大概三年或者三年吧
+For a, for some time now, like three years or three years.
+
+4
+00:00:23,160 --> 00:00:28,400
+嗯 你可以在洛杉矶找到我 我想我住在巴黎 我来自西班牙
+And um, so you can find me on LAS, I suppose I live in Paris, I'm from Spain.
+
+5
+00:00:29,730 --> 00:00:32,490
+我很高兴能做个简短的演讲
+And um, very excited to do a small talk.
+
+6
+00:00:33,720 --> 00:00:38,920
+不是 不是 我希望我今天能在中国做一个
+Not not be one. I-I wish I hope I can do one in China some today.
+
+7
+00:00:40,510 --> 00:00:43,030
+但今天 九比一就够了
+But today, one on nine is good enough.
+
+8
+00:00:43,750 --> 00:00:49,350
+所以目前 我一直在研究路由器 我已经能够
+And so for the time being, I've been working on the router. I've been able to, um.
+
+9
+00:00:50,520 --> 00:00:55,320
+看看如何用不同的方法组织事情 能够
+To see different ways of doing how things are organized. Are being able to.
+
+10
+00:00:56,490 --> 00:00:57,170
+我们组织的事情
+We organize things.
+
+11
+00:00:58,340 --> 00:01:03,660
+我已经找到了 呃 这些版本的路由器
+And I've come down to, um, these version of the router where we have.
+
+12
+00:01:04,360 --> 00:01:13,080
+与历史交流的年轨 不是历史的H调 而是我们自己建造的版本
+The year rail that communicates with the history, which is not the H, tonal of history, but a version that we are building ourselves.
+
+13
+00:01:13,850 --> 00:01:17,650
+它与凭单实例进行沟通 然后给我们访问权限
+That communicates with the voucher instance that then gives us access.
+
+14
+00:01:18,520 --> 00:01:27,280
+V 有所有的功能 但我们也有一个叫Matcher的东西 当然我们也有你们可能知道的组件
+V, have you, um to all the functionalities, but we also have something called Matcher, and of course we also have the components that you might know.
+
+15
+00:01:27,860 --> 00:01:29,660
+所以视图路由和路由器链接
+So the route of view and the router link.
+
+16
+00:01:30,820 --> 00:01:37,820
+这两个围绕着组件的东西是我们能接触到的唯一的两个部分只有两个
+And these two things that rush around the components and are the only two pieces we really get access to that only two.
+
+17
+00:01:38,360 --> 00:01:43,320
+我们真的在车站的观点 但在现实中 我们有一些东西
+We really intract with in a view of station. But in reality, we have a few of the things.
+
+18
+00:01:43,860 --> 00:01:52,180
+我们称之为自然和历史 所以我今天的目标是谈谈你们的作品中包含了什么 对
+That are concentrated in, we call natural and history. And so my goal today is to talk a little bit about what's inside your work. For.
+
+19
+00:01:52,800 --> 00:01:57,560
+所以会有很多新特性你们中有些人可能用过 有些人没有
+So there's going to be a lot of the new features that some of you might have used and others not.
+
+20
+00:01:58,610 --> 00:02:07,050
+还有它们背后的一些技术选择 或者它们是如何 如何以及为什么要这样做的
+And also some of the technical choices behind them, or how uh and how and why they are made that way?
+
+21
+00:02:07,840 --> 00:02:07,960
+所以
+So.
+
+22
+00:02:09,270 --> 00:02:15,310
+欧洲的主要理念之一就是保持一个非常非常小的国家
+One of the main concepts of one of the main ideas of Europe for is to still keep a very, very small.
+
+23
+00:02:16,510 --> 00:02:22,390
+很好 你好 就一个 我可以看到两张幻灯片
+Fine and hi, just one. I can see two slides of the.
+
+24
+00:02:26,090 --> 00:02:31,770
+再换一个正确的
+Change the right one again?
+
+25
+00:02:35,390 --> 00:02:41,110
+是的 我被错误的筛选训练过 对不起 谢谢你 我不习惯这个夏天
+Yeah, I was, I was trained the wrong screen. I'm sorry, thank you for that, I'm not used to this summer.
+
+26
+00:02:43,360 --> 00:02:46,760
+我是说 你只是在看下一个
+So I was saying that you are just looking at the next one.
+
+27
+00:02:48,690 --> 00:02:49,930
+我是说
+I was saying that the.
+
+28
+00:02:51,860 --> 00:02:59,980
+在为你们三个重写的多年中 其中之一就是保持api尽可能与以前的api相似
+One of the many years of the rewrite for you three was to still keep an api as similar as possible as a previous one.
+
+29
+00:03:00,910 --> 00:03:06,710
+改进一些不太好用的东西 比如设置所有的模式
+Well, improving some of the things that were not working well, like having all the modes, uh,
+
+30
+00:03:07,420 --> 00:03:10,020
+到你的路由器 所以你总是得到
+Into your router. So you always get the.
+
+31
+00:03:11,290 --> 00:03:15,490
+他抽象记忆 历史 心 历史和历史
+He abstract memory, history, the heart, history and history.
+
+32
+00:03:16,120 --> 00:03:20,920
+正常的历史和无论您使用什么 等等 欧洲四个
+The normal history and no matter what you use, and so on. Europe for four.
+
+33
+00:03:21,660 --> 00:03:29,460
+对于某些用户来说 他们需要做的唯一改变就是改变他们如何构建路由器以及如何给你路由器
+The for some, for some users, the only change they need to do is changing how they build the router and how they give it to you.
+
+34
+00:03:29,960 --> 00:03:34,040
+所以在4之后 我们从Bluer那里得到的不是一个线索 而是
+So in view, after four, instead of having just one inkle from Bluer, we have.
+
+35
+00:03:35,250 --> 00:03:43,730
+摇树 所以我们有名称输出 我们根据需要使用它们 这让我们提供了一种非常 一种方式
+Tree shaking, so we have name exports, and we use them on need, on demand, and that allows us to give a very, a way.
+
+36
+00:03:44,580 --> 00:03:48,940
+啤酒 弓箭手 还有 当谈到路由器的创造 我们仍然保持相同的交易
+Small the deal for beer, archer, and also, when it comes to the router creation, we still keep the same.
+
+37
+00:03:49,760 --> 00:03:58,760
+我们之前有的选项 这是渴望路由器我们有历史记录 它取代了模式 路由器是很重要的东西
+Options that we had before, so that's the crave router that we have there with the history, which is replacing mode. And then the routsarer is pretty much a thing.
+
+38
+00:03:59,420 --> 00:04:06,660
+多亏了这些 我们有了三个可动摇的版本 我们可以有自定义历史实现 我们不能只有三个孩子 我们需要领养
+And so thanks to these, we have a three shakeable version, and we can have custom history implementations. Instead of just having three, we need adoptions.
+
+39
+00:04:07,470 --> 00:04:10,070
+我们通过一根弦给出的
+That we are giving through a string.
+
+40
+00:04:11,070 --> 00:04:15,230
+现在说到路线 并没有太多的变化 主要的
+Now when it comes to the routes already, there are not many changes. The the main.
+
+41
+00:04:16,240 --> 00:04:22,120
+32 变化是星星路如何消失 现在它的习惯遗物与一首重复的诗
+Change is how the star road has disappeared, and now it's accustomed relics with a repeated poem.
+
+42
+00:04:23,000 --> 00:04:29,440
+比如0或更多 这是你能看到的 父母  狗星 然后是末尾的额外的星
+Like zero or more, that's the the paren'ts that you can see, the dog star, and then the extra star at the end.
+
+43
+00:04:31,150 --> 00:04:35,230
+这样做的原因是我们不再使用拉格斯之路了
+Now the, the reason for this is because we don't use Path to Ragus anymore.
+
+44
+00:04:35,610 --> 00:04:43,730
+因此 我们使用自定义的解析版本 并生成路由 或者更确切地说 我们自己生成regasps 所以这样
+So we use a custom version of parsing, and we generate the routes, or rather the regasps ourselves. So so.
+
+45
+00:04:45,330 --> 00:04:51,370
+不 这不仅使路由器更轻 而且我们有了更精确的控制
+No, not only this makes the router much more lighter, but we have a much more precise control.
+
+46
+00:04:52,290 --> 00:04:57,210
+我们如何建立这条路径 我们可以给他们提供什么信息
+Of how we build this path and what information we can attach Them.
+
+47
+00:04:57,690 --> 00:05:03,010
+例如 对于路由的顺序 已经不重要了 它仍然是一个数组
+So for instance, and you are for the order of the routes, doesn't matter anymore, so it's still an array.
+
+48
+00:05:03,700 --> 00:05:09,140
+但是你可以通过 你可以在任何你想通过的地方通过 它们总是有效的 而以前不是这样的
+But you can pass, you can pass them anywhere you want, they will always work, which wasn't the case before.
+
+49
+00:05:10,260 --> 00:05:18,580
+我们还有以前用过的方法 在破街破巷和敏感地带 我想让你给你
+And we still have the options that we were using before, on, uh path through raggs like street and sensitive, and I want you to give you.
+
+50
+00:05:19,760 --> 00:05:24,400
+这是Whamped的一个俯瞰点 这在代金券架构上到底是什么
+An overlook of Whamped, and where is this exactly on the voucher architecture.
+
+51
+00:05:24,980 --> 00:05:29,740
+这是Rocher的匹配器 它不是在销售 路由器是其中的一部分
+So this is the matcher of the Rocher. It's not in sale, router is really a part.
+
+52
+00:05:31,180 --> 00:05:35,460
+这是完全独立的 可以不用路由器本身 和
+That is completely separate that can be used without the router itself. And.
+
+53
+00:05:37,100 --> 00:05:41,940
+他所做的就是转换每一根弦 所以你经过的所有东西都是路径
+So what he does is transforming every single string. So everything you pass through path.
+
+54
+00:05:42,830 --> 00:05:47,350
+在RoutSarre中 它能够将我转换为一个正则表达式 就像你在右边看到的那样
+In the Rout Sarre, it able to transform me to an a regular expression, as you can see on the right.
+
+55
+00:05:48,410 --> 00:05:51,530
+现在没有必要深入研究这里的正则表达式
+Now there is no need to dive into the regular expressions that here we have.
+
+56
+00:05:52,230 --> 00:05:59,230
+一个斜杠主页 我们有一个斜杠电影 然后调用Nike 这是一个动态参数 你可以匹配任何东西
+A slash home page, we have a Slash Movies, and then call Nike, which is a dynamic param, so you can match anything.
+
+57
+00:06:00,230 --> 00:06:06,350
+然后我们有一个movies 它的id只能是数字 使用自定义的正则表达式
+And then we have a movies with an id that can only be numbers using a custom, regular expression.
+
+58
+00:06:08,020 --> 00:06:09,380
+方法的问题是
+Now the problem with approach is that.
+
+59
+00:06:12,510 --> 00:06:19,390
+当我们添加一个新的路由 因为它们有一个顺序 匹配会按这个顺序测试它们
+When we add a new route because they have an order, um, the match is gonna test them in that order.
+
+60
+00:06:19,900 --> 00:06:26,780
+如果我们有一个row 也就是movies /new 它只匹配movies之后的新单词
+So if we had a row, that is movies, slash new, which only matches the new word after movies.
+
+61
+00:06:28,040 --> 00:06:28,680
+当我们试一试
+When we try.
+
+62
+00:06:29,380 --> 00:06:32,420
+一年前的事太多了 例如 电影是灰新闻
+Too much a new a year ago. For example, movies is ash News.
+
+63
+00:06:33,030 --> 00:06:40,310
+我们会按顺序尝试它们 所以当它到达第二个的时候就会停在那里 好的 这些可以 我可以给
+Is gonna try them in order, so as soon as it gets to the second one is gonna stop there and say, okay, these one works, I can just give.
+
+64
+00:06:40,980 --> 00:06:49,740
+到id 字符串news 到这里就结束了 但实际上 我们想做的太多了 最后一个 这是一个大的 令人困惑的 我们哦
+To the id, the string news and stop there, but in reality, what we want to do is too much, last one, so this is a big, confusing one. We are uh.
+
+65
+00:06:50,960 --> 00:06:53,840
+第一次使用销魂 我们不知道她的老母是谁
+Using the rapture for the first time. And we don't know about the older mother.
+
+66
+00:06:54,850 --> 00:06:59,050
+现在在欧洲 我们所做的是我们能够把一个分数联系起来
+Now in Europe for what we do is that we are able to associate a score.
+
+67
+00:06:59,870 --> 00:07:04,350
+所有的路线 因为我们在其中建造 16 我们过去了 才能够过去
+To all the routes because we are building in them. We pass the past and we are able to.
+
+68
+00:07:05,500 --> 00:07:07,140
+每条路都需要一个学校
+I need a school to each path.
+
+69
+00:07:07,870 --> 00:07:15,190
+然后说哪一个比其他的更重要 用这些分数 我们可以自己排序
+And and say which one is more important than the others So using these scores, we can order them ourselves in a way that.
+
+70
+00:07:16,340 --> 00:07:24,100
+更精确 更严格的路径总是在区域的开始 这样 当我们测试他们的时候 我们就是在测试他们
+The more precise, more strict paths are always in the beginning of the area. So that way, when we test them, we are testing them.
+
+71
+00:07:24,950 --> 00:07:28,350
+以一种一直为用户服务的方式 现在来看看它们的工作方式
+In a way that works for the user all the time. Now, the way these works.
+
+72
+00:07:29,290 --> 00:07:31,610
+就是选取路径的每一段
+Is by taking every single section of the path.
+
+73
+00:07:32,210 --> 00:07:37,530
+所以所有在睫毛之间的东西都会被分配一个分数 比如 家
+So everything that is in between those lashes and will be assigning a score. So for example, home.
+
+74
+00:07:38,480 --> 00:07:42,920
+因为它只是一个字符串home 它只能匹配home 它有70个
+Because it's only a string home, it can only match home. It has a score of seventy.
+
+75
+00:07:43,640 --> 00:07:48,440
+然后 另一方面 新电影因为它有两个片段 因为它有两个斜线
+Then, on the other hand, movies new because it has two segments, because it has two slashes.
+
+76
+00:07:49,650 --> 00:07:53,410
+它是70+70 然后如果我们进入电影的id
+It's seventy plus seventy, and then if we go into a movie's id.
+
+77
+00:07:54,240 --> 00:08:00,720
+因为这是一首动态的诗 所以分数较低 所以我们要加起来是1760
+The idea, because it's a dynamic poem, has a lower score, so we have to sum up seventeen sixty.
+
+78
+00:08:02,140 --> 00:08:09,060
+有客户的正则表达式有5个加分点 因为它是定制的正则表达式
+And then the one with the customer, regular expression has a bonus of five points, because it's a custom, regular expression.
+
+79
+00:08:09,680 --> 00:08:18,600
+所以我可以匹配有限的东西 实际上 这是简化版 这是 呃 reachroad 的版本 例如
+So I can match a limited amount of things. Now in reality, this is the simplified version. This is the version that Uh reach road to, for example.
+
+80
+00:08:19,250 --> 00:08:24,570
+或多或少都是与较小的数字一起使用 因为它们不支持正则表达式 他们只支持
+Was using with smaller numbers more or less, because they don't support regular expressions. And they only support.
+
+81
+00:08:25,460 --> 00:08:32,180
+非常 非常基本的路径匹配局树 更高级 我这里有这些工具
+Very, very basic path matching the bureau trees, way more advanced. So what I have here is these tools.
+
+82
+00:08:33,270 --> 00:08:34,990
+我用
+That I build using the the.
+
+83
+00:08:36,470 --> 00:08:42,710
+这里的路由器 它在使用它们 基本上它们会有视图路由器本身
+The router here, so it's using them, the matter of the router, basically they'll have the view router itself.
+
+84
+00:08:43,670 --> 00:08:51,270
+你可以在这里测试路线 它们会出现在右边 你可以用任何你想要的东西来测试它们
+And uh, you can test routes here, they will appear on the right, and you can test them, uh, with anything you want.
+
+85
+00:08:52,640 --> 00:08:54,920
+所有匹配项都会出现 这里
+And they will appear all the matches, and here.
+
+86
+00:08:55,700 --> 00:09:03,340
+有一件很重要的事要知道你什么时候可以SueViewRouter我们可以处理超越 所以我们可以细分
+One of the things that is important to know when you can Sue View Router is that we can handle surpasses, so we can sub segments, more to say.
+
+87
+00:09:03,900 --> 00:09:05,460
+我们可以这样做
+We can do something like that.
+
+88
+00:09:07,220 --> 00:09:08,940
+嗯 这里有一些研究
+Um, then some study here.
+
+89
+00:09:09,920 --> 00:09:14,000
+第三页 你们可以看到
+And then page three, and as you can see here.
+
+90
+00:09:14,640 --> 00:09:18,880
+我们的得分不止一个 我们有五个分数 因为我们每人有一个
+We don't have just one score. We have five scores, because we have one for each.
+
+91
+00:09:19,390 --> 00:09:24,230
+子片段 在一条斜线内 我们有更多的东西 然后我们可以有其他东西
+Sub segments, so inside of one slash, we have more more things, and then we can have on other things.
+
+92
+00:09:25,150 --> 00:09:31,270
+像学习之类的 然后这条路会匹配非常复杂的东西 比如 嗯
+Something like study or something like that. And then this road is gonna match very complex things like, um,
+
+93
+00:09:32,520 --> 00:09:37,760
+嗯 第二件事 然后我们有研究 然后我们有想法 然后我们有研究
+Uh, second thing, then we have the study, then we have the thought, and then we have study.
+
+94
+00:09:39,540 --> 00:09:40,820
+然后他匹配上了 然后我们可以
+And then he matches. And then we can have.
+
+95
+00:09:42,360 --> 00:09:46,240
+所有这些 我们都能处理自定义的正则表达式 所以
+All these things, and we can handle to the custom, regular expression. So.
+
+96
+00:09:46,800 --> 00:09:52,800
+如果我说我想要一个数字 就没有多少了 除非我用数字来改变这些
+If I say here I want a number, there is not very much, anymore, unless I change these with numbers.
+
+97
+00:09:53,710 --> 00:10:02,070
+然后他又匹配了 所以他能够处理所有的子段和多个段等等
+And then he matches again, so being able to handle all these of sub segments and multiple segments and everything.
+
+98
+00:10:02,840 --> 00:10:11,800
+是什么让这个路由器非常强大 并允许我们保留一个api 用于我们传递Reggaes而不移动
+Is what makes the matter of the router very powerful and allows us to keep an api that used to where we passed the Reggaes without moving.
+
+99
+00:10:12,520 --> 00:10:19,800
+功能 比如简化的动态模式 如果我们能做的话会很痛苦
+Uh, features, like having simplified dynamic patterns like it would be, it would be a pain if we could only do.
+
+100
+00:10:21,900 --> 00:10:22,020
+这一点
+This.
+
+101
+00:10:23,230 --> 00:10:31,710
+或者 只有动态或静态路径 我的意思是 路径中的部分将成为一个活动 但它不会
+Or, like, only have dynamic or static path, I mean, segments in the path that will be a campaign, and it would not be.
+
+102
+00:10:33,440 --> 00:10:40,560
+与以前的版本兼容 但我们有一些更复杂的东西 可以在很多很多情况下工作
+Compatible with a previous version, but what we have is something a bit more complex that works in many, many cases.
+
+103
+00:10:41,760 --> 00:10:41,880
+什么
+What.
+
+104
+00:10:44,990 --> 00:10:45,110
+好吧
+Okay?
+
+105
+00:10:47,240 --> 00:10:50,320
+我轻微的出现
+My slight appear.
+
+106
+00:10:54,800 --> 00:10:59,480
+所以在幕后 物质比它看起来要复杂得多 它是完全与它们分离的
+So behind the scenes, the matter is way more complex than it looks like, and it's completely separated from them.
+
+107
+00:11:00,380 --> 00:11:01,540
+从路由器 而在
+From the router. And in.
+
+108
+00:11:02,710 --> 00:11:05,510
+我看起来没什么大不了的 但其实不是
+I look like it's not a big deal, but it's not.
+
+109
+00:11:06,180 --> 00:11:12,620
+这很重要 但它能让路由器知道敌人的路由 这本身并不重要
+Something important, but it's what enables to the router to have the enemy routing, which itself is not that important.
+
+110
+00:11:13,700 --> 00:11:18,060
+但好的方面是 我们可以免费得到这些 我们可以运行
+But the good thing is that we are able to get these for free, we are able to run.
+
+111
+00:11:18,680 --> 00:11:23,960
+有这种动态路由 因为我们有板牙 它足够聪明 能够
+Have this dynamic routing because we have Mater that is smart enough and is able to, um,
+
+112
+00:11:25,440 --> 00:11:27,360
+要正确地安排路线 你想要什么
+To properly order the routes, what you want.
+
+113
+00:11:28,460 --> 00:11:36,740
+如果你想知道更多关于明号的事 他穿过了空气海洋 就像我现在展示的所有特征一样
+Um, if you you want to know more about the Iming about, he went through an air sea, like pretty much all the features that I'm showing now.
+
+114
+00:11:37,380 --> 00:11:42,260
+你可以留下看看TPI 以及它背后的原因
+And you can leave it a look and see the TPI, and how the reasoning behind it.
+
+115
+00:11:42,790 --> 00:11:51,550
+另外 重要的是要知道有一个类似的api的艺术或三个 但它还没有步骤 并不是所有时候都管用 因为
+Also, it's important to know that there is a similar api for view of art or three, but it has step yet. It doesn't work all the time, because.
+
+116
+00:11:52,030 --> 00:11:56,550
+我们没有这样的排序 所以你不能只是添加路由 并期望它们工作
+We don't have that ordering, so you cannot just add routes and expect them to to work.
+
+117
+00:11:58,640 --> 00:12:06,680
+好了 这就是行的成熟部分 现在我想要更多地介绍roture 现在 嗯 蟑螂 有
+Okay, so that's the mature section of the row, and I want something to be more about the roture right now. Now, um, the roach, does.
+
+118
+00:12:07,920 --> 00:12:09,880
+很多事情 我不会死在
+A lot of things, and I'm not gonna die into, uh,
+
+119
+00:12:11,370 --> 00:12:14,690
+如何正确的分割迅猛龙 他能分裂
+The proper splitting of how the raptor. Could he split.
+
+120
+00:12:15,500 --> 00:12:23,380
+因为我还没有在代码库中做 所以即使你想去那里检查它 你也想把路由器放在视图路由器代码库中
+Because I haven't really done it inside of the code bay anyway, so even if you want to go there and check it, you want to sit the router in the view router codebase.
+
+121
+00:12:24,110 --> 00:12:29,990
+是存储库中最大的文件 嗯 它包含
+Is the biggest file of the repository. UM. And it contains.
+
+122
+00:12:31,080 --> 00:12:33,840
+比你应该做的多 但仍然没有问题
+More than you should, but still without being problematic.
+
+123
+00:12:35,230 --> 00:12:39,110
+因为我们没有导出其他功能
+Because we are not exporting the other, the other functionalities by themselves.
+
+124
+00:12:39,850 --> 00:12:44,330
+所以岩石之旅的其中一件事就是改变了欧元 分裂了它们
+So one of the things that the rock trip does is transforming the Euro, splitting them up.
+
+125
+00:12:44,760 --> 00:12:53,120
+到多个东西中并提取出这个对象版本的位置即可使用 这里有一些有趣的事情需要注意
+Into multiple things and extracting this object version of the location that were able to use. And there is a few things interesting to note.
+
+126
+00:12:54,220 --> 00:12:59,260
+在我们的对象中 例如 query hush 参数通常是
+In the object that we have, for example, the query, the hush. The params are usually.
+
+127
+00:13:00,340 --> 00:13:08,060
+未编码 所以我们得到长袍的值 你可以看到在欧元中我们有20% 然后我们有查询线索
+Unincoded, so we get the robe values, you can see how in the Euro we have the 20%, which, and then we have query cue.
+
+128
+00:13:08,560 --> 00:13:14,480
+然后是有空间的女巫 也就是20%的人
+Then you have the witch with a space, which is the roveration of the 20%.
+
+129
+00:13:15,690 --> 00:13:21,490
+你们大多数人可能都知道rails这一年有三件事 我们有搜索 水族馆和安静
+Now most of you probably know that the year Rail is playing three things. We have the search, aquary and the hush.
+
+130
+00:13:22,010 --> 00:13:28,170
+所有这三样东西都可以访问一个location对象 它可以作为它们的全局属性访问
+And all these three things have been access to a location object, which is accessible as a global property on them.
+
+131
+00:13:29,730 --> 00:13:33,970
+在窗户上的文件上 问题是
+On the document on the window. And um, the thing is.
+
+132
+00:13:35,290 --> 00:13:40,530
+我们可以 有时我们不用考虑编码就能写乌拉尔语
+We can, and sometimes we write Urals without thinking about the encoding.
+
+133
+00:13:41,190 --> 00:13:49,990
+这很有意义 因为对于任何用户来说 你不能指望他们知道他们需要写一个百分比 20对吧
+Of the of the era, and this makes sense because for any user, uh, you cannot expect them to know that they need to write a percentage, twenty right.
+
+134
+00:13:50,950 --> 00:13:54,190
+实际上他们不知道 他们应该这样写
+So they don't know that in reality, they should write these.
+
+135
+00:13:55,460 --> 00:13:59,460
+因为他们对你自己的编码一无所知 这更适用于
+Because they don't know anything about your own coding. And this is even more true for, uh.
+
+136
+00:14:01,720 --> 00:14:08,320
+语言是完全独特的 基于中文 例如日语 韩语 但无论如何 甚至是英语
+Languages that are fully unique, based, like Chinese, for example, japanese, korean, but in any case, even in English.
+
+137
+00:14:09,280 --> 00:14:11,800
+他们也使用不流行的文化
+They also use cultures that are not popular.
+
+138
+00:14:13,120 --> 00:14:17,920
+这样你就能让这些喜欢的用户知道这些东西
+Part of asking anyway, so you have these favorite user to know these things, and.
+
+139
+00:14:19,290 --> 00:14:22,250
+用户将只写正则空格或他们想要的字符
+The user is going to write just regular space or the character they want.
+
+140
+00:14:23,140 --> 00:14:30,900
+有些浏览器会把这些区别对待 所以这就是为什么你的编码就像一颗心的喙 有时又变成了坚果
+And some browsers are going to treat these different, so this is why your encoding is a beak of heart that sometimes goes on nuttis.
+
+141
+00:14:32,280 --> 00:14:39,320
+但它背后有一个很重要的词 所以在它最基本的形式中 我们只需要我们拥有的字符 the
+But there is a big word behind it, so in its more most basic form, we just take the character we have, the the.
+
+142
+00:14:40,530 --> 00:14:47,650
+数字显示 数字显示 然后我们使用编码版本 这是基于被显示角色的人
+Numeric presentation, numeral presentation, and then we use an encoded version, which is based on the person of the presented character.
+
+143
+00:14:48,470 --> 00:14:52,910
+例如 如果我们想在欧元的任何地方划桨 在哪里都无所谓
+So for instance, if we want to row right on the Euro anywhere, doesn't matter where.
+
+144
+00:14:53,540 --> 00:14:58,780
+这些标签 我们 类8的P 我们必须写一些这样的东西 不是真的在它们下面
+These tag, we, the P with a class eight, we have to write something of these, which is not really below them.
+
+145
+00:14:59,950 --> 00:15:03,670
+现实情况是 当涉及到编码时 我们并没有那么多规则
+The reality is that we don't have that many rules when it comes to your encoding.
+
+146
+00:15:06,830 --> 00:15:07,630
+所以我会检查
+So I will check the.
+
+147
+00:15:09,400 --> 00:15:16,200
+如果我们检查这些微尘 我们会看到我们有这些规则规定任何不可打印的东西都必须被编码
+If we check them the speck, we're going to see that we have these rules that says anything of these non printable has to be encoded.
+
+148
+00:15:17,500 --> 00:15:19,100
+没有人要求的任何东西
+Anything that is none asking so beyond.
+
+149
+00:15:21,410 --> 00:15:28,930
+T 旧的字符 之后的小波浪必须被编码 然后我们有人来编码本身 这当然需要被编码 因为
+The T, old character, the small wave after being has to be encoded, then we have the person to character itself, which of course needs to be encoded, because.
+
+150
+00:15:29,730 --> 00:15:32,450
+它是用于编码的
+It's used for incoding sorry.
+
+151
+00:15:33,540 --> 00:15:39,380
+有趣的是 我们对路径 查询和静默有不同的规则 嘘
+And then what is funny is that we have a different set of rules for the path, the query and the hush. So the hush.
+
+152
+00:15:40,180 --> 00:15:44,940
+Has要求您对空格 全局引号 小于大于进行编码
+Has requires you to encode the space, the global quote, the lower than bigger than.
+
+153
+00:15:45,760 --> 00:15:49,680
+我是背叛者 抱歉我不得不这么做 我刚做了第二个
+I'm the backtic, sorry I have to. I just made myself my second.
+
+154
+00:15:53,140 --> 00:15:53,700
+我不认识我自己
+I don't know me.
+
+155
+00:15:57,680 --> 00:15:57,800
+中国
+China.
+
+156
+00:15:59,810 --> 00:16:07,410
+路径会取所有这些字符并在上面添加嘘嘘字符 因为嘘嘘很有用
+So the the, the path is going to take all these characters and is going to add on top of that the Hush character, because it's useful to hush.
+
+157
+00:16:07,970 --> 00:16:11,450
+审问酒吧 因为是采石场用的 然后是花括号
+The interrogation bar because it's used for the quarry. And then the curly braces.
+
+158
+00:16:12,170 --> 00:16:20,610
+本来应该用在信用卡上的 但最后我们没有了 至少在http协议中没有用到
+Which were supposed to may be used by the credit, but at the end we don't have. We are not used in the HTP protocol, at least.
+
+159
+00:16:22,010 --> 00:16:22,530
+现在查询
+Now the query.
+
+160
+00:16:23,440 --> 00:16:26,360
+你可以把杂碎里的东西都拿走 但你可以把洗礼去掉
+You take everything from the hash, but you remove the baptic.
+
+161
+00:16:27,080 --> 00:16:35,360
+然后加入hush 因为它被Url周围的hush所使用 amperson和equalculture 因为它们被用于解决夸脱
+And you add the hush, because it's used by the hush laid around the Url, the amperson and then the equal culture, because they are used in settle the quart.
+
+162
+00:16:36,640 --> 00:16:44,440
+这就是理论 这就是为什么浏览器应该这么做 在实践中 如果你设置了
+So this is the theory, right is why should be done by the browser Now what happens in practice, in practice, if you are set.
+
+163
+00:16:45,410 --> 00:16:52,770
+通过古吉拉斯科委员会 这些小绳子的位置 你会看到非常不同的行为 如果你在Safari上做
+Via the Gujarasco Council, the location that has to these small string, you're going to see very different behaviors. So if you do it on Safari.
+
+164
+00:16:53,670 --> 00:17:01,750
+然后你再从Hush的位置读一遍 你会看到完全相同的值 好吧 你没有看到变化 这是一点
+And then you read again from the location of Hush, you're gonna see the exact same value. Okay? You don't see the changes, which it's a bit.
+
+165
+00:17:02,680 --> 00:17:08,400
+问题在于 作为开发人员 您期望得到编码版本 这是
+Problematic because you expect, as a developer to get the encoded version, which is the version that.
+
+166
+00:17:09,740 --> 00:17:11,460
+符合SPEC 但不是这样的
+Matches the SPEC, but that's not the case.
+
+167
+00:17:12,240 --> 00:17:18,720
+有趣的是 如果你看U型轨道 你会看到一个人 在第20页 而不是空间 所以
+Then the thing is, the funny thing is, if you look at the U rail, you're gonna see a person, page twenty instead of the space. So.
+
+168
+00:17:19,760 --> 00:17:22,120
+这是因为用户
+This is where because the user.
+
+169
+00:17:23,270 --> 00:17:26,030
+会得到涂布版 而开发者不会
+Is gonna get the coater version, while the developer doesn't.
+
+170
+00:17:27,210 --> 00:17:35,570
+这在Firefox上很有意义 你会看到哈希变成了编码版本 这很完美 因为这是你应该得到的版本
+Which is making a sense on Firefox, you're going to see that the hash becomes the encoded version, which is perfect, because that's the version that you should get.
+
+171
+00:17:36,340 --> 00:17:42,740
+更有趣的是他们将展示一个未被发现的欧元版本 最终用户
+And what what is more interesting is that they're going to display an uncovered version on the Euro. So the end user.
+
+172
+00:17:43,440 --> 00:17:50,640
+它对编码一无所知 将会看到一个正常的版本 一些他们可以阅读的东西 和Chrome
+Which doesn't know anything about encoding, is going to see a normal version, something that they can read, and Chrome.
+
+173
+00:17:51,900 --> 00:17:58,620
+我们也得到了编码版本 这很好 但在那一年 我们得到了部分未编码的东西
+We also get the encoded version, which is great, but on the year where we get something that is partially uneccoded.
+
+174
+00:17:59,360 --> 00:18:01,240
+所以 没关系
+So it's, it's okay.
+
+175
+00:18:01,890 --> 00:18:10,930
+它没有5英尺高 但仍然很好 而ie不关心 它只需要一整个东西 它把它放在那里 它把它放在口头上 在欧元上 它不关心
+It's not as good as five foot, but it's still great, and an Internet Explorer doesn't, doesn't care, it just takes a whole thing, it puts there, it puts in the verbal, in the Euro, it doesn't care.
+
+176
+00:18:11,630 --> 00:18:15,550
+现在我知道我们不再关心当前的浏览器 因为我们放弃了对I11的支持
+Now I know we don't care any more about in current Explorer, because we drop support for I, eleven.
+
+177
+00:18:16,410 --> 00:18:22,450
+你们三个 但当我在建造新俄罗斯的时候 我们还不确定 我喜欢 所以我写了酒店的日子
+On you three, but when I was building the new Russia, we were not sure yet, I love that. So I wrote the hotel days.
+
+178
+00:18:23,900 --> 00:18:25,380
+而在肉的希望 最关于
+And in the hope of meat, most about.
+
+179
+00:18:27,410 --> 00:18:35,970
+我看到编码和一些浏览器板条箱有特殊的癖好 不仅仅是因为我将来可能不得不支持Internet
+I see the encoding and some of the browser crates quirks specific things, not only that maybe I had to support Internet for in the future.
+
+180
+00:18:36,910 --> 00:18:45,350
+这是另一个实验 他将位置设置为相同字符串的编码版本 有效的版本
+Now this is another experiment, and he is setting the location harsh to the encoded version of that same string. So the valid version.
+
+181
+00:18:46,210 --> 00:18:51,890
+现在如果我们看一下Safari 我们也得到了编码版本 这很好 这是我们设置的完全相同的流
+And now if we take a look at Safari, we get the encoded version as well, which is great, that's the exact same stream we set.
+
+182
+00:18:53,060 --> 00:18:57,820
+U-L是编码的 这有点奇怪 因为这意味着我们有空间
+The U-L, it's encoded, which is a bit surprising, because it means that we have the space.
+
+183
+00:18:59,380 --> 00:19:03,500
+编码了 但我们得到了不同的散列 这很奇怪
+Encoded, but we get different hashes, which is weird.
+
+184
+00:19:04,840 --> 00:19:09,560
+火狐会让你得到和以前一样的行为 这很好
+Firefox as going to get you the same behavior as before, which is great.
+
+185
+00:19:10,460 --> 00:19:13,220
+因为立即保护开发者 和也
+Because immediately protects the developer. And also that.
+
+186
+00:19:13,760 --> 00:19:20,240
+不管改变来自哪里 因为用户也可以修改年份 并通过在上面写自己
+No matter where the change come from, since the user can also modified the year old and say themselves by writing on the.
+
+187
+00:19:20,770 --> 00:19:28,210
+在地址部分 它为用户提供了unincolar版本 但为开发人员提供了编码器版本 这是完美的
+On the address part, it gives you the unincolar version as a user, but the encoder version as a developer, which is perfect.
+
+188
+00:19:29,260 --> 00:19:37,260
+From也会给你相同的结果 所以same不如Firefox好 但至少是一致的
+From also gives you the same result as before, so the same is not as good as Firefox, but at least it's consistent.
+
+189
+00:19:38,060 --> 00:19:43,060
+这很好 在中国 它不关心 所以它做了所有的事情 这并不重要
+So that's great, and in China, for it doesn't, doesn't care, so it just did the whole thing. It doesn't really matter.
+
+190
+00:19:44,210 --> 00:19:50,090
+所以Safari有这种可疑的行为 嗯 火狐是最好的行为-行为可以
+So Safari has that questionable behavior. Uh, firefox is the best beha- behavior could have.
+
+191
+00:19:50,850 --> 00:19:55,890
+因为这意味着用户真正得到的东西是可以骑的 我喜欢的东西是有效的
+Because it means that the user really gets something that is ridable and that I love for something that is valid.
+
+192
+00:19:57,400 --> 00:20:02,240
+犯罪是好事 因为至少我们得到了相同的结果 它是 它是一致的
+Crime is great because at least we have the same results. It's, it's consistent.
+
+193
+00:20:03,120 --> 00:20:07,560
+在中国 探险家放弃了 但我们已经知道了 这就是为什么它不再是我们的兄弟了 对吧
+And in China, explorer just gave up, but we know that already, that's why it's not our brother anymore, right?
+
+194
+00:20:08,230 --> 00:20:15,270
+如果以后 我们只需要处理这些情况 那就太好了 但事实并非如此
+So it would be great if, in the future, we only have to handle these cases, but that's not the case.
+
+195
+00:20:16,040 --> 00:20:24,200
+对 因为这两种情况都是一致的 但其他情况不是 所以在路由器里 我们试着用一个更
+Right, because these are consistent in both scenarios, but the others are not. So in the router, we try to handle them in a more, um.
+
+196
+00:20:27,450 --> 00:20:34,810
+如何说 我们让一些错误发生 我们退回到用户给出的值是为了确保
+How to say, we let some errors happen, and we fall back to the values that are given by the user is to make sure.
+
+197
+00:20:35,940 --> 00:20:42,460
+所以我想让你们记住的是你们应该避免写 UM 没有编码的部分
+So what I want you to remember about this is that you should avoid writing, UM, parts that are not encoded.
+
+198
+00:20:43,390 --> 00:20:46,390
+相反 你可以自己写并涂上颜色
+Instead, you either write and color version yourself, which is.
+
+199
+00:20:46,810 --> 00:20:55,770
+非常烦人 或者你在路由中使用名称 你可以在部分中传递不相等的版本 但是永远不要将非编码版本作为push传递
+Very annoying, or you use names with routes, and you can pass unequal versions in the parts but never pass the non encoded version as a push.
+
+200
+00:20:56,660 --> 00:20:56,780
+因为
+Because.
+
+201
+00:20:58,530 --> 00:21:00,010
+不管你用什么路由器
+No matter what router you use.
+
+202
+00:21:00,910 --> 00:21:09,190
+可能 所以 如果你给四个水处理这些比你给三个水处理好很多 但你可能还是会有感染 这就涉及到
+It may, so, if you water four handles these much better than you water three, but you may still end up with incursence. This is when it comes to the.
+
+203
+00:21:10,170 --> 00:21:16,290
+到浏览器去处理URL的那个部分 它们可能会给你一些你从未想过会发生的事情
+To the browser dealing with that section of the URL, and they may give you something that you never expect to happen.
+
+204
+00:21:17,080 --> 00:21:26,240
+这是好的 这是最好的版本 而且 如果你使用查询 你也可以直接传递任何没有编码的东西 因为它会被处理
+So this is okay, and this is the best version, and also, if you use the query, you can also pass directly anything that is not encoded, because it will be handled.
+
+205
+00:21:26,970 --> 00:21:31,450
+如果你想了解更多 这可能不是很有趣 但对某些人来说 可能
+And if you want to know more about this, which is maybe not that interesting, but for some people, maybe.
+
+206
+00:21:32,300 --> 00:21:36,980
+我是用他在查看器替代库中找到的这个编码写的
+I wrote about it in this encoding that he has found in the viewer alternative repository.
+
+207
+00:21:38,880 --> 00:21:43,680
+大部分都是评论 大部分都是我在调查这些问题时做的笔记
+It's mostly comments, mostly all on my notes I took while I was investigating the issues.
+
+208
+00:21:45,400 --> 00:21:49,000
+它有一点代码 但到处都是注释
+And it has a little bit of code, but it's a lot of comments everywhere.
+
+209
+00:21:51,060 --> 00:21:56,740
+好吧 我们应该换个话题 我们来谈谈积极的事情 积极的联系在欧洲之间发生了变化 从三到四
+Okay, well, we should have a different topic, let's talk about active things, active links have change between Europe to three and four.
+
+210
+00:21:57,830 --> 00:22:01,230
+这种变化来自于 呃 内部的
+And the change comes from, um, an internal.
+
+211
+00:22:02,330 --> 00:22:05,770
+这是主任3所没有的总体进步
+An in general improvement that didn't exist in Director, three.
+
+212
+00:22:06,680 --> 00:22:12,440
+所以活跃链接就是当你写到某个地方的链接时
+So active links is just the fact that when you write to about a link, uh, somewhere.
+
+213
+00:22:13,790 --> 00:22:17,630
+然后陌生人就变成了一个名字 一个标签
+Then he gets strangers rendered as a name, a tag.
+
+214
+00:22:18,270 --> 00:22:27,430
+它得到一个依赖于当前欧元的类 说 嘿 这条路线就像我们正在访问这条路线的下一个子结点一样
+And it gets a class depending on the current EURO to say, hey, this route exactly as if we were visiting something like a next child of that route.
+
+215
+00:22:28,320 --> 00:22:31,800
+正如您在屏幕上看到的 问题在于主页
+The problem is that, as you can see on the screen, the home page.
+
+216
+00:22:32,480 --> 00:22:40,080
+身体的缺陷总是会被激活因为它不是斜线 所以任何东西都包括斜线
+Body fault is always going to be active because it's not the Slash, so anything is it includes the slash.
+
+217
+00:22:40,880 --> 00:22:48,240
+然后我们有其他的路线 比如 用户 twenty-fourPost 它有一个粗略的 活跃的 不稳定的链接 准确的
+And then we have the other routes like, uh, users, twenty four Post, which has a roughlying, active and a rocky link, exact.
+
+218
+00:22:49,440 --> 00:22:50,640
+现在把它放到一个表格中
+Now you put this into a table.
+
+219
+00:22:52,190 --> 00:22:59,870
+我们有不同的例子 我们有斜线 我们有主版本 我们家 然后我们有用户24 24个人资料 24篇帖子
+And we put different cases, so we have the slash, we have the main version, we home, and then we have user twenty four, twenty four profile, twenty four post.
+
+220
+00:23:01,280 --> 00:23:05,280
+唯一一个同时得到这两个职位的人就是你 但是
+The only one that gets the both classes is you the twenty four post. But.
+
+221
+00:23:06,110 --> 00:23:10,710
+家庭的问题是它是活跃的 使用24也应该是活跃的
+The problem with the home is that it's active and use twenty four should be active as well.
+
+222
+00:23:11,330 --> 00:23:15,810
+但这工作 我们在欧锦赛上做的就是引入这个问题
+But that works. So the thing we did in Euroch three is introduce this exact problem.
+
+223
+00:23:16,440 --> 00:23:18,680
+现在问题是具体的下降
+Now the problem with the exact drop is that.
+
+224
+00:23:19,350 --> 00:23:27,270
+它删除了几乎所有东西 所以用户24不再工作了 所以我们必须设置 在不同的地方应用这个问题
+It removes pretty much everything, so the user twenty four doesn't work anymore, so we have to set, actually apply that problem in different places.
+
+225
+00:23:27,860 --> 00:23:33,180
+而这更像是一种逃避 特别是在家里 一年到头
+And it was more like an escape for specifically the home, year round, only.
+
+226
+00:23:34,340 --> 00:23:36,380
+我们该怎么做 问题是
+So what do we do And also, the problem is that.
+
+227
+00:23:36,930 --> 00:23:39,930
+如果你在欧元上加上其他东西 比如安静的水族箱
+If you add anything else in the Euro like a hush, aquary.
+
+228
+00:23:40,730 --> 00:23:47,450
+那么即使是相同的路由 比如用户 24个帖子 在结束之前是活跃的 也将不再活跃
+Then even the same route, like the user, twenty four posts at the end that was active before is not going to be active anymore.
+
+229
+00:23:48,020 --> 00:23:54,940
+所以这是未来的问题 因为我们要做的是把卡车完全移走
+So that's a problem right in future, for what we do is we remove that truck completely.
+
+230
+00:23:56,190 --> 00:24:04,790
+所以我们处理这个问题的方法是考虑到路线记录 销售的东西 以及开发者添加它们的方式
+So the way we uh, handle this is we take into account the route records, things sell, so the way they were added by the developer.
+
+231
+00:24:05,520 --> 00:24:10,880
+即使有观众 我们也可以追溯 这并不重要 我们可以追溯
+We are able to trace back, even with audiences, and it doesn't matter. We are able to trace back.
+
+232
+00:24:12,170 --> 00:24:15,490
+代表位置的记录是什么
+How, what is the record that represents a location?
+
+233
+00:24:16,050 --> 00:24:23,570
+然后我们就能看到是否有类型 孩子 以及它们是否有相同的路线记录 这样就没有必要
+And then we're able to see if there are type, children or not, and if they are the same route record. So that way, there is no need for.
+
+234
+00:24:25,160 --> 00:24:25,760
+精确了
+Exact anymore.
+
+235
+00:24:26,340 --> 00:24:27,500
+它在方框上是正确的
+It just works out on the box.
+
+236
+00:24:28,190 --> 00:24:36,990
+同时 我们只关心路径 因为在一开始 这是因为在大多数情况下 这是我们想要关心的 我们不关心苛刻或质疑
+And also, we only take care about the path, because at the beginning, that's because in most scenarios, that's what we want to take care of about. We don't care about the harsh or the query.
+
+237
+00:24:37,570 --> 00:24:44,970
+成为欧元的一员 让他们活跃起来 如果你愿意 我们仍然有可能采取这样的行动
+To be a part of the Euro to make them active, and it's still possible to have that behavior on our own, if you want to.
+
+238
+00:24:46,310 --> 00:24:49,630
+现在整个事情都可以在活动链接中找到 我RFC
+Now the whole thing can be found in active links. I RFC,
+
+239
+00:24:51,200 --> 00:24:53,520
+这个很有趣 因为它有很多
+This one is interesting because it has a lot of, um.
+
+240
+00:24:55,380 --> 00:24:59,780
+所有可能的例子的表 所以看一看会很有趣
+Of tables with all the possible examples. So can be interesting to take a look.
+
+241
+00:25:01,550 --> 00:25:03,310
+现在还有另一件事要改变
+Now there is another thing that change and.
+
+242
+00:25:05,710 --> 00:25:12,830
+我试着支持2欧元2 3 你们可能知道 可能看过这个 这个问题是当你使用
+I tried to back for two Euro two, three, so some of you might known, might have seen this. This problem is when you use a.
+
+243
+00:25:14,820 --> 00:25:22,780
+给她带来了推 而不是水链 你在推什么地方 如果你碰巧在同一个地方推了两次 你会很忙的
+Brought her push instead of a water link, and you're pushing somewhere. If you uh happen to push twice to the same location, you would get busy.
+
+244
+00:25:30,500 --> 00:25:34,380
+就好像你在做一件不该发生的事
+In a council as if you were doing something that was not supposed to happen.
+
+245
+00:25:35,270 --> 00:25:42,870
+但那不是一个案例 现在这个问题的根源是有推力的岩石 有煤背 不完整 在一块板上
+But that was, that's not a case. Now the origin of this problem is the rocks with a push, with the coal backs, uncomplete and on a board.
+
+246
+00:25:43,690 --> 00:25:47,290
+在欧洲历史上的某个时刻
+And at some point in the, in the history of Europe, or three.
+
+247
+00:25:47,980 --> 00:25:53,780
+我们添加了一个API 如果没有人完成或在一个板煤盒传递给推
+We added an API that if no one complete or on a board coal box were passed to the push.
+
+248
+00:25:54,610 --> 00:26:03,170
+我们会返回一个承诺 但这个承诺基本上就像在董事会上解决不完整和拒绝
+We would return a promise, but the promise was basically the same as resolving for uncomplete and rejecting for on a board.
+
+249
+00:26:04,490 --> 00:26:09,130
+这就结束了这个解编码的承诺 这样他就不会在摇臂上跳了
+Which ends up on this uncoding promise. So he don't do a catch on the rocker bush.
+
+250
+00:26:10,700 --> 00:26:18,260
+然后在董事会 我们 我们拒绝了一个承诺 这是一个问题 所以
+Then any on a board, we, we went up on rejecting a promise, which is a problem. So.
+
+251
+00:26:20,180 --> 00:26:27,300
+我意识到没有人使用 或者说人们没有真正使用这些因为大多数人没有意识到 有
+I realized that nobody was using, or people were not really using these as much because most of the people didn't realize, and there was.
+
+252
+00:26:27,840 --> 00:26:30,120
+在这些问题上的大噪音更少了
+A big noise in the issues are fewer.
+
+253
+00:26:31,630 --> 00:26:39,590
+所以 另一个问题是 不完整的 是全球性的杀戮 是每个人之后的路由器
+So the thing is, also, the other problem is that uncomplete, is there is a global killing for it. It's the router after each.
+
+254
+00:26:40,650 --> 00:26:48,730
+但在一个公告板上 当你呼叫下一个瀑布或某个花园的航空警卫时 我们决定放弃导航 没有人像你一样有目标
+But on a board, which is when you call next falls or somewhere in a garden, aviation guard, we decide to drop the navigation. There is no goal like you, and there.
+
+255
+00:26:49,490 --> 00:26:56,370
+我们没有办法把它与全球联系起来 所以就有了一个问题 有一个不一致的地方我们无法解决关于欧洲或三个国家的版本
+There is no way to attach globally to that, so there was a problem, there was an inconsistency there that we couldn't solve on the version of Europe or three.
+
+256
+00:26:57,450 --> 00:27:00,290
+所以我是虚拟的 因为我们做的是合并
+So I'm virtual for what we do is that we merge.
+
+257
+00:27:00,990 --> 00:27:02,310
+两者都完成在一个板上
+Both and complete On a board.
+
+258
+00:27:03,270 --> 00:27:09,550
+这些失败 我们称之为导航失败 这不再是承诺 拒绝
+On a failure, so these failures, we call the navigation failure, and it's not a promise, rejection anymore.
+
+259
+00:27:09,990 --> 00:27:12,910
+所以你可以接触到失败 最后
+So you get access to that failure. In the end,
+
+260
+00:27:14,170 --> 00:27:21,010
+失败的承诺可以是不确定的 也可以是不确定的 在这种情况下 它意味着导航
+Of the promise now that fail can be undefined or no. And in that case, it means that an navigation.
+
+261
+00:27:21,600 --> 00:27:27,520
+没有发生 但如果原因一意味着导航没有在最后发生 现在
+Didn't up happening, but if the reason one means, the navigation didn't happen at the end. Now.
+
+262
+00:27:28,560 --> 00:27:32,560
+好在你接触到的应该是污迹在路面上晃荡伸手可及的
+The good thing is that you get access should be stained wobbly in the road draft reach.
+
+263
+00:27:33,300 --> 00:27:42,180
+好的方面是 你仍然可以捕获错误 例如 如果你在导航守卫中有一个justif 或者你在某处抛出一个错误
+And the good thing is that you still can catch error. So for example, if you have a just if ever in an navigation guard, or you throw an error somewhere.
+
+264
+00:27:43,030 --> 00:27:44,750
+你还是会得到一个错误
+You're gonna still get an error on the.
+
+265
+00:27:45,310 --> 00:27:50,910
+因为这是一个你应该修正的意外错误 所以如果你要推岩石上的钩子
+On the promise, because that's an unexpected error that you should fix. So if you had a catch on the rock to push.
+
+266
+00:27:51,600 --> 00:27:57,080
+然后你可以在on错误上得到它 在routure上也存在于新写入器上 三
+Then you can get that on the on error, on the routure that also exists on the new writer. Three.
+
+267
+00:27:58,160 --> 00:28:04,120
+但它不能公平地处理导航 这是相同的方式 如果你需要一个非常精确的
+But it doesn't handle the navigation fairly, is the same way. And also, if you need to have a very precise.
+
+268
+00:28:05,710 --> 00:28:14,350
+检查故障 您可以使用简单导航故障和导航故障类型来检查不同类型的导航 因此这很有用
+Check out the failures, you can use the easy navigation failure and the navigation failure type to check for different kind of navigations, so that's useful.
+
+269
+00:28:15,470 --> 00:28:18,630
+顺便说一下 指控有三罐 你有委员会 所以你最好现在打电话
+There are three cans on allegations, by the way, you have a council, so this is when you call.
+
+270
+00:28:19,430 --> 00:28:26,150
+下一个是指控 警卫中止 当指控正在进行时 但又出现了新的指控
+Next falls in an allegation, guard aborted, is when an alligation is ongoing, but there is a new one that happens.
+
+271
+00:28:26,940 --> 00:28:33,740
+作为一个 登上 前一个 和副本是当你知道每个相同的地点两次 俄罗斯不会的
+As an, aboard, the previous one, and duplicate is is when you know each the same location twice. The Russia is not gonna.
+
+272
+00:28:34,540 --> 00:28:41,380
+嗯 在那里航行 因为那将推动一个新的欧元 在历史上一年有两个两次
+Um, navigate there, because that will be pushing a new Euro and having two two times the same year round in the history.
+
+273
+00:28:42,500 --> 00:28:44,660
+这意味着如果你回去 它会在同一页上
+So, meaning that if you go back, it was going to say on the same page.
+
+274
+00:28:45,780 --> 00:28:52,300
+现在 整个事情经过了一种海洋的空气 如果你想读的话 这篇更详细一些 但是检查一下很有趣
+Now the whole thing went through an air of sea. This one is a bit more elaborated, if you want to go read it, but it's interesting to check.
+
+275
+00:28:55,240 --> 00:29:01,320
+接下来是一个完全不同的话题 新版本也需要改进的是滚动行为
+And moving into a completely different topic that also need improvement on the new version is the scroll behavior.
+
+276
+00:29:01,990 --> 00:29:04,510
+这种残忍的行为本身并没有多大改变
+Now this cruel behavior itself hasn't changed much.
+
+277
+00:29:05,150 --> 00:29:12,030
+API非常相似 唯一的区别是 我们改变了返回的对象 而不是有一个lecture和一个offset
+The API is very much the same. The only difference is that we are changing the object we return, so instead of having a lecture and an offset.
+
+278
+00:29:12,940 --> 00:29:19,940
+我们使用L和top 这是为了与滚动条对齐 这两个选项表示我们支持
+We are using an L and top, so this is to align more with the scroll, two options to show that we support.
+
+279
+00:29:22,520 --> 00:29:28,880
+传递相同的选项给那个对象 这意味着我们可以添加行为 平滑 哦
+Passing the same kind of options to that object, meaning that we can add things like behavior, smooth to give. Uh,
+
+280
+00:29:30,010 --> 00:29:37,050
+这是平滑滚动吗 现在你可以在HTML中做这个 ID 如果你在Css中做平滑滚动行为
+Is this smooth scrolling And also, now that you can do this in HTML, the ID, if you do a scroll behavior smooth in Css.
+
+281
+00:29:38,120 --> 00:29:41,640
+然后应用到SML 你可以变得自动化
+And you apply to SML. You can get automatic.
+
+282
+00:29:42,390 --> 00:29:48,670
+它在现代浏览器中滚动很流畅 但有一些更重要的是要注意这将是行为和持久性
+It's smooth scrolling in modern browser, but there is something more important to note about This will be behavior andurator.
+
+283
+00:29:50,990 --> 00:29:59,030
+因为我们处理的方式更好 位置的恢复和保存 这意味着
+For is that we handle way way better, the restoration and the saving of the positions. This means that.
+
+284
+00:30:01,010 --> 00:30:03,810
+还有很多案子要处理 比如
+There are so many more cases that are handled, like, for example,
+
+285
+00:30:05,070 --> 00:30:10,470
+导航一个页面 返回 滚动和前进 所有这些场景都得到了处理
+Navigating for a page, going back, scrolling between and going forward. All these scenarios are handled.
+
+286
+00:30:11,010 --> 00:30:18,050
+也就是说 默认情况下 我们会对欧洲采取任何措施 有时你会得到更好的
+Which means that, um, by default, we are doing anything on Europe to four. You get sometimes a better.
+
+287
+00:30:19,480 --> 00:30:24,440
+滚动恢复行为 不是有时是 你让我们变得更好
+A scrolling restoration behavior. It's not sometimes it's, you get us growing a better.
+
+288
+00:30:25,310 --> 00:30:31,510
+滚动恢复行为比本机UPS 就是那种用
+Scroll restoration behavior than in native UPS. So something that it's made like, uh, with, uh.
+
+289
+00:30:32,490 --> 00:30:38,090
+用正常的浏览器导航 重载功能 对吗 就像旧的应用程序被称为PAS
+With normal navigation using the browser, reloading features, right? Like the old way of the applications known as PAS.
+
+290
+00:30:39,180 --> 00:30:42,140
+你会得到比浏览器更好的学校修复
+You get better school restoration than the one done by the browser.
+
+291
+00:30:42,960 --> 00:30:45,800
+我来演示一下 我要点击 不同
+So let me show you a demonstration where I'm going to click on different.
+
+292
+00:30:47,490 --> 00:30:54,210
+地方 有一个过渡的展示 也有一个过渡的离婚 我回去 我可以看到我如何回到相同的位置上一点
+Places, there is a transition to show, also the divorce with a transition, I go back, I can see how I go back to the same position as for a little bit.
+
+293
+00:30:54,750 --> 00:30:59,710
+我继续看 我可以看到同样的卷轴是如何保存的 我再做几次
+I go forward and I can see how the same scroll is preserved, and I do it a few more times.
+
+294
+00:31:00,640 --> 00:31:06,000
+我可以看到我是如何在每一个转变中保持这个位置的
+And I can see how I still preserve that position in every single transition.
+
+295
+00:31:06,740 --> 00:31:07,540
+现在我知道了
+And here I do.
+
+296
+00:31:09,170 --> 00:31:17,330
+我多次点击 如果  我可以看到如何多次点击相同的 精益  它会跳转到相同的位置
+I go to number, uh, if, multiple times, and I can see how I can click on the same lean multiple times, and it goes to the same place.
+
+297
+00:31:18,880 --> 00:31:21,920
+然后我可能会使用小的滚动区域
+And then I'm probably going to use the small scroll area.
+
+298
+00:31:22,770 --> 00:31:28,410
+你可以看到你是如何从框中得到平滑滚动的 这只是将平滑选项添加到
+And you can see how you get just smooths scroll out of the box. This is just going to add the smooth option to the.
+
+299
+00:31:29,330 --> 00:31:31,330
+到滚动行为功能 在浏览器
+To the scroll behavior function. In browser.
+
+300
+00:31:32,130 --> 00:31:41,130
+这也可以用HTMA属性来完成 它可以处理所有开箱即用的事情 因为我们有这些用于行为的函数 如果你在取数据
+Which can also be done with the HTMA property, and it handles all the things out of the box. And because we have these functions for behavior, if you are fetching data.
+
+301
+00:31:41,660 --> 00:31:46,340
+在某个地方 你也可以控制它 你也可以滚动 必须有多样化的取回
+Uh, somewhere, you can also control that, and you can also scroll, have to have the the diverse fetch.
+
+302
+00:31:47,630 --> 00:31:55,590
+举个例子 如果你有一个很长的页面它需要加载所有出现的东西 你会在那之后滚动
+So that, if you have, for example, a page that is long and it needs to load all the things that appear, you're going to scroll after that are very speech and.
+
+303
+00:31:56,390 --> 00:32:03,550
+为用户提供比非行为页面更好的滚动体验
+Getting a much better scrolling experience to your users than in non s behaviors pages.
+
+304
+00:32:04,910 --> 00:32:12,030
+整个东西都在神经里 看看你是否想检查一下 这个很有趣 但可能值得一试
+The whole thing is inside a nerve, see if you want to check it, this one is very interesting, but may be worth chicken.
+
+305
+00:32:13,700 --> 00:32:17,980
+改变的一件事是为了未来的改善
+One of the things that has changed has been improvement for for the future of.
+
+306
+00:32:18,990 --> 00:32:27,510
+你的工作是删除不是删除 因为你可以看到所有使用它 但你不需要再使用下一个参数
+You work for is the removal of is not the removal, because you can see all use it, but you don't need anymore to use the next parameter.
+
+307
+00:32:28,330 --> 00:32:31,530
+不写这些 你可以直接返回
+So instead of writing these, you can just return.
+
+308
+00:32:32,640 --> 00:32:40,200
+你想要去的方向 如果你想准备好 你会返回一个版本 如果你不想做任何事 你不会返回任何东西
+The direction you want to go, so if you want to ready, right, you're gonna just return a version, and you don't return anything if you don't want to do anything.
+
+309
+00:32:40,910 --> 00:32:42,110
+所以神是大的 更多的
+So the gods are big, more.
+
+310
+00:32:44,000 --> 00:32:49,160
+写起来很简单 也更容易避免出错 这些作品都有一个水槽
+Straightforward to write, and also it's easier to not mess up. And these works with a sink.
+
+311
+00:32:49,780 --> 00:32:55,580
+所以如果你做了承诺 如果你在等待 那也可以 你不需要做任何事情 要么就是别的盒子
+So if you do promises, if you are waiting between, that also works, you don't need to do anything. It just or some other box.
+
+312
+00:32:56,530 --> 00:33:03,370
+现在这个要解决的问题通常是 尤其是当你开始使用磨床的时候
+Now the problem this is fixing is very often, especially when you start using the roucher.
+
+313
+00:33:04,010 --> 00:33:10,770
+人们没有意识到他们不能多次呼叫 他们没有读狗总是这样
+People do not realize that they cannot call next multiple times, and they do not read the dogs always so.
+
+314
+00:33:12,540 --> 00:33:17,580
+接下来的几次困难 在某些情况下你会遇到一些麻烦 它可能会失败
+Difficult next multiple times, you're gonna have some trouble in some situations, it might fail.
+
+315
+00:33:19,130 --> 00:33:22,730
+或者根本不调用next 也就是说导航不调用next
+Or they don't call next at all, meaning that the the navigation doesn't.
+
+316
+00:33:24,350 --> 00:33:26,110
+完成它 转到任何一页
+Finish it on, transition to any page.
+
+317
+00:33:27,270 --> 00:33:29,430
+这就是我们要解决的主要问题
+So this is the part, the main problem that we are trying to solve.
+
+318
+00:33:30,130 --> 00:33:38,130
+使用返回语句 对于只需要在函数内部调用一次的内容 它更有意义一些 返回更有意义
+With the returning statement, which makes a little more sense for something that you only need to call once inside of the function. Returning makes more sense.
+
+319
+00:33:39,740 --> 00:33:48,500
+所以在欧洲到4 你仍然可以使用下一个版本 但你可以省略参数上的功能导航 守卫 它将工作
+So in Europe to four, you can still use the next version, but you can omit the parameter on the function for navigation, guards, and it will work.
+
+320
+00:33:49,660 --> 00:33:54,140
+也许 我想 也许在未来的版本中 我们只支持
+And probably, I think, maybe in future versions, we only support.
+
+321
+00:33:56,200 --> 00:34:00,720
+返回而不是下一个回调 但如果是4 你可以两者都用
+Returning instead of the next callback. But if you're at four, you can use both.
+
+322
+00:34:02,410 --> 00:34:09,050
+这里还有一个C 你们可以查一下 你们可以查一下更多的信息 在另一个场景 有另一个大特写
+And there is another C again, so you can check, you can check more about it. In the other scene, there is another big feature on.
+
+323
+00:34:10,400 --> 00:34:13,760
+一个观众到四个还没被抢篮板的人 观众到三
+One viewer to four that hasn't been backboarded yet. To viewer to three.
+
+324
+00:34:14,720 --> 00:34:20,000
+这是路的问题 你们两个 现在 默认情况下 路由器是你
+And it's the road problem, both of you, now, by default, the router you.
+
+325
+00:34:20,520 --> 00:34:28,120
+是要连接到它在地址栏上显示的东西 这意味着它总是同步的
+Is the is going to be connected to what its display on the address bar So it means that it's always synchronized.
+
+326
+00:34:30,000 --> 00:34:32,480
+到那一年 好了 来展示一下路线吧
+To the year, well, to display the route that.
+
+327
+00:34:35,130 --> 00:34:35,650
+它应该
+It's supposed to.
+
+328
+00:34:36,570 --> 00:34:40,410
+在你的应用程序中显示 但有时你不想那样做 更具体地说
+Be displayed by your application, but sometimes you don't want to do that, more specifically,
+
+329
+00:34:41,660 --> 00:34:49,780
+这就是我为什么要讲模型的原因 当你想展示模型的时候 它本身是一个有问题的模式 但是很多人都这样做
+And this is why I'm going to talk about models, is when you want to display models, which is a questionable pattern on itself, but a lot of people do it.
+
+330
+00:34:50,270 --> 00:34:52,110
+有时它是有意义的
+And sometimes it makes sense.
+
+331
+00:34:53,430 --> 00:34:54,630
+但我想说的是
+But what I want to say is that.
+
+332
+00:34:55,420 --> 00:35:03,500
+显示模型背后的机制要强大得多 这是一个问题 它是一场让你断开连接的视野拓宽的战斗
+The underlying mechanism behind display models is way more powerful. It's a prob that is a fight to broaderview that allows you to disconnect.
+
+333
+00:35:04,630 --> 00:35:08,790
+在页面上显示其他内容 嗯
+Display something else on the page. Uh, that.
+
+334
+00:35:10,040 --> 00:35:14,400
+不应该和现任伯爵一起度过 所以你可以做模型
+Should not be spent with the current Earl. And so you can do models.
+
+335
+00:35:15,540 --> 00:35:18,540
+像这样的寒冷 所以你从
+With some cold like this. So you start by, um.
+
+336
+00:35:19,940 --> 00:35:22,460
+这双鞋跑到你不常用的地方
+Having these shoes route somewhere than you use.
+
+337
+00:35:23,510 --> 00:35:26,510
+然后我们根据历史状态创建某种类型的计算
+Then we create some kind of computed from the history state.
+
+338
+00:35:27,190 --> 00:35:36,350
+所以我们观察这条迂回的路径 看它是否改变 然后我们将处理历史状态 这是一个小hack给我们一个反应版本的历史 状态
+So we observe the roundful path to see if it change, and then we'll treat the history state, this is a small hack to give us a reactive version of the history. State.
+
+339
+00:35:37,150 --> 00:35:38,830
+然后我们有
+And then we have.
+
+340
+00:35:39,940 --> 00:35:43,220
+这个电脑版本的路线
+This computer version of of the route.
+
+341
+00:35:44,040 --> 00:35:49,960
+这将显示一个模型 所以我们读取历史状态 当我看到它时 我们可以写入历史状态
+That will display a model. So we read the history state, when I see that, we can write to the history state.
+
+342
+00:35:50,870 --> 00:35:56,190
+我们在那里读了一年的资料 我们用水的结果来得到实际的路线
+And we read a year out there, and we use water results to get the actual route.
+
+343
+00:35:57,790 --> 00:36:01,270
+如果我们有背景视图 我们就能解决这条路线
+And if we have a background view, we're gonna resolve that route and.
+
+344
+00:36:02,610 --> 00:36:08,490
+返回我们应该显示的rower 否则我们将返回路由
+Return that as the rower that we should display, otherwise we are going to return the route.
+
+345
+00:36:09,060 --> 00:36:16,060
+这意味着我们可以有一个路由 它应该显示一些东西 但我们会显示一些别的东西 举个例子
+Which means that we can have a route that is supposed to display something, but we're going to display something else. So let me give you an example.
+
+346
+00:36:16,990 --> 00:36:21,790
+是的 一个IBM 你必须把它传递给有问题的汽车视图
+Oh yeah, an IBM, you have to pass that to the motor view with a problem.
+
+347
+00:36:22,830 --> 00:36:29,790
+让我举一个演示的例子 在这个应用中有点快 我们处理 在这个应用中 我有什么
+So let me give an example with a demo, which is a bit fast in this application, we dispose, in this application, what I have.
+
+348
+00:36:31,030 --> 00:36:39,430
+是多个用户 当我点击任何一个用户 我可以看到欧元如何变化 我可以看到用户的页面
+Is multiple users, and when I click on any of the users, I can see how the Euro changes, and I can see the page of the user.
+
+349
+00:36:40,210 --> 00:36:47,170
+这里我要做一些 我要来回切换 然后我要展示如何清理细节按钮
+So here I'm going through a few, I'm going back and forward, and then I'm showing how I clean the details button.
+
+350
+00:36:47,820 --> 00:36:55,220
+我可以看到我在同一个页面上 我有这个模型和用户 但是欧元是 如果你注意到变化
+And I can see that I stay on the same page, I have this model with the user, but the euro is, if you notice changes.
+
+351
+00:36:56,420 --> 00:37:03,740
+这是模型 当我到这里时 它是小的 削减用户 和我之前在这里时一样
+Here is model, when I go here, it's small, slashed users, one which was the same as previously when I was here.
+
+352
+00:37:06,180 --> 00:37:11,860
+Slash用户喜欢某些东西 但我们不玩这些命运 他在玩相同的页面 我们都在
+Slash users like something, but we're not playing these fate where he's playing the same page. We are on.
+
+353
+00:37:13,540 --> 00:37:19,140
+有一个模型 我想我把它关上 我只是玩 也许再玩一个
+With a model, and here I go, I think I close it, yeah, I just play, maybe another one.
+
+354
+00:37:20,940 --> 00:37:22,540
+我能看出他是如何留在历史上的
+I can see how he stays in the history.
+
+355
+00:37:23,720 --> 00:37:26,320
+如果我走了 如果我回去
+And if I go, if I go back.
+
+356
+00:37:27,910 --> 00:37:31,630
+我只是恢复它没有麻烦 所以在这里
+I just restore it without trouble. So here.
+
+357
+00:37:32,840 --> 00:37:33,520
+我可以 我去
+I can, I go.
+
+358
+00:37:34,520 --> 00:37:38,720
+去别的地方吃 然后我再回去 看看它是如何恢复的
+To eat somewhere else. And then I go back again, and I can see how it restores.
+
+359
+00:37:39,780 --> 00:37:43,380
+模特和URL把他的脸弯成一个crovier 想要
+The model and the URL bent his face a crovier, want.
+
+360
+00:37:44,120 --> 00:37:51,160
+好的是 这是持久化的 即使重载页面 重载页面时 你会看到返回
+And the good thing is that this is persisted, even when we reload the page, when we reload the page, you're going to see that I go back.
+
+361
+00:37:52,120 --> 00:37:58,560
+我做得太快了 当我回去的时候 我又看到了相同的模型 所以这是随着时间恢复的
+I go too quick, when I go back, I see the same model again, so this is restored over time.
+
+362
+00:37:59,600 --> 00:38:05,960
+任何东西 如果你在页面上浏览一个 你就会去其他地方 如果你回去 这将是历史状态 它会一直在那里
+Uh, anything, if you navigate one on the page, you go somewhere else. If you go back, this is going to be the History state, so it's always going to be there.
+
+363
+00:38:06,980 --> 00:38:07,100
+我
+I
+
+364
+00:38:08,130 --> 00:38:16,650
+所以这是Rawterview道具 它还没有迁移到 嗯 在三个之后 但是可能会去别的地方
+So this is the Rawterview prop, it hasn't been migrated yet to, um to you after three, but probably go somewhere.
+
+365
+00:38:18,100 --> 00:38:22,500
+在未来 好吗 然后是你们可能有的另一个东西
+In the future, okay? And then we have the other thing that you might have.
+
+366
+00:38:23,680 --> 00:38:29,800
+我的意思是 你可能用过 她用的urator不是欧洲的磁铁
+Used, I mean, you probably have used, she used the urator for that are not magnets of Europe to three.
+
+367
+00:38:30,580 --> 00:38:33,300
+因为实际上 没有一个组合在你身上
+Because there is no composition, actually, out of the box on you.
+
+368
+00:38:33,880 --> 00:38:42,440
+你也一样 我们已经使用了水的使用路线 然后我们有一些导航栏 在我们离开之前的日期 我们还有使用链接
+You too. So we have used water use route, and then we have some navigation bars we have on before, rather a date on before we'll leave, and we have the use link as well.
+
+369
+00:38:43,320 --> 00:38:48,680
+所以使用路由器和使用路由等价于路由和破裂
+So use router and use route are the equivalent of the route and the rupture, which.
+
+370
+00:38:49,400 --> 00:38:53,680
+在欧洲仍然存在 4/1的模板 你仍然可以接触到这些玻璃球
+Still exist in Europe, 4/1 template. You still have access to these marbles.
+
+371
+00:38:54,340 --> 00:38:59,780
+你仍然可以访问组件方法和计算机 你仍然可以使用这些DOT或路由
+You still have access in component methods and computer, you can still use these DOT or route.
+
+372
+00:39:00,420 --> 00:39:03,660
+罗杰 这很简单
+And Roger, so this is pretty much straightforward, is.
+
+373
+00:39:04,950 --> 00:39:07,990
+这相当于 嗯 很有趣
+Which is the equivalent, um, something interesting.
+
+374
+00:39:08,960 --> 00:39:15,800
+有趣的城市航空警卫 我们现在只有休假 只有四个过时的在我们的设置 这就是酷
+Interesting urban aviation guards we now have only for our leave, and only four out of date inside our setup. So that's cool.
+
+375
+00:39:16,440 --> 00:39:22,160
+您也可以这样做 因为有导航守卫 您可以省略这两个 嗯 我们可以
+And you can do the same because there are navigation guards, you can omit the two. We can, uh,
+
+376
+00:39:22,960 --> 00:39:30,200
+如果你想的话可以使用下一个参数 但是你有灵活性 然后你有使用链接 我想很多人不会使用它
+Use the next parameter if you want, but you have that flexibility, and then you have the use link, which I don't think a lot of people use.
+
+377
+00:39:31,090 --> 00:39:37,010
+但它给你的API和供水系统使用的API一样 没有公司
+But it gives you pretty much the API that is used by a water link without having a company.
+
+378
+00:39:37,880 --> 00:39:46,360
+差不多就是这样 也 我不会死在蠢管里 但是蠢管有了很大的进步 因为
+That's pretty much it. Also. I'm not going to die much in the daft tubes, but um, there is a big, huge improvement in the daft tubes, because.
+
+379
+00:39:47,580 --> 00:39:50,940
+恩 吉昂 水族馆
+Um, GION, so aquium.
+
+380
+00:39:52,010 --> 00:39:59,130
+为聋人做了很多改变 工具和视图 水和U-X 和任何其他库可以添加
+Made a lot of changes on the better for the deaf, tools and the view, water and U-X, and any other library can add.
+
+381
+00:39:59,700 --> 00:40:07,100
+他们有自己的检查人员和组件数据 所以现在我们有了更详细的路线
+Their own inspectors and data to components, so now we have a much more detail, uh, route.
+
+382
+00:40:09,070 --> 00:40:13,110
+他们怎么把这叫做一本道路之书 现在你可以检查所有的道路 你可以测试它们和所有的事情
+How they call this a book of roads. Now you can check all the roads, you can test them and everything.
+
+383
+00:40:14,150 --> 00:40:21,710
+你可以在右边看到这些分数 非常先进的功能 非常酷
+Um, you can see the scores you can see on the right here, so very advanced features, very cool, uh,
+
+384
+00:40:22,770 --> 00:40:30,850
+如果您还没有使用过 那么一定要尝试一下 因为它在生产中已经被删除了 我们甚至不能添加一些功能来实现它们
+If you haven't used yet, should definitely be trying, and because it's removing in production, we can't even add features that make them.
+
+385
+00:40:32,950 --> 00:40:38,590
+使整个聋人工具的体验非常 非常好 没有影响到火束
+Make the whole Deaf tools experience very, very nice without impacting on the fire bundle.
+
+386
+00:40:40,070 --> 00:40:40,910
+简而言之
+So put in a nutshell,
+
+387
+00:40:41,600 --> 00:40:49,040
+在电子方面 我们有动态路由 自定义历史 我们有更好的折叠编码 或者说更好的折叠编码
+On the electronics, we have dynamic routing, custom history, and we have better encoding the folds, or rather good encoding the folds.
+
+388
+00:40:49,980 --> 00:40:58,140
+我们有一个EPI汇编 我们有更好的导航警卫 我们有更好的税收 我们也支持 我们即将推出一些新功能 比如
+We have a compilation EPI, we have better navigation guards, we have better tax, we support as well. We have some upcoming features, like having.
+
+389
+00:41:01,330 --> 00:41:04,570
+裤子的工厂支持 能够指定
+Factory support for pants. Being able to specify.
+
+390
+00:41:06,280 --> 00:41:10,480
+在推送中添加名称时还可以添加哪些其他部分
+What other parts you can add when you add the name on a push.
+
+391
+00:41:11,390 --> 00:41:16,030
+所以就像类型 而不是推 基本上 所以孔雀在这方面工作
+So like type, rather, push, basically, so peacocks work on this.
+
+392
+00:41:17,820 --> 00:41:24,620
+还有一个打开的pullrequest 我还得通过 还有一些我想补充的东西会很酷
+And have there is a pull request open that I have to go through yet. And there are a few things that I want to add that is going to be really Cool.
+
+393
+00:41:26,200 --> 00:41:30,480
+副本也应该更容易贡献 有很多评论在cobes和
+The copies should be easier to contribute as well. There is a lot of comments in the cobes and.
+
+394
+00:41:31,460 --> 00:41:36,020
+是路的问题 贸易本身并不总是容易的 因为它的规模很大
+Um, it's the road. Trade itself is not always easy, because it's a big.
+
+395
+00:41:36,660 --> 00:41:41,580
+关于路由的要点是 您必须注意在多个浏览器中工作的东西
+The point with the routing is that you have to take care about things working in multiple browsers.
+
+396
+00:41:42,370 --> 00:41:50,930
+它充满了空洞和浏览器的怪癖 但至少科比有更多的评论 这是流血的不同
+And it's full of cavits and browser quirks, but at least the Kobe has more comments and it's bleeding different.
+
+397
+00:41:51,930 --> 00:41:52,450
+不同的部分
+Different sections.
+
+398
+00:41:53,620 --> 00:42:00,420
+我们也有更好的交易 因为daftel 我也试图给更多的游行 建议或亲密的案例
+And then we have better the bargain as well because of the Daftels. I'm also trying to give more procade, recommendation or intimate cases.
+
+399
+00:42:01,250 --> 00:42:05,410
+给大家举个例子 我认为他们喜欢这样做 这并不是
+To give people examples, I think that they like to do. And it's not.
+
+400
+00:42:06,050 --> 00:42:15,050
+这很容易实现 但我们却不能提供 现在我们将bug解决方案放在一边 因为它太武断 太局限了
+That easy to implement and we cannot provide, and now power the bug solution on the rotter because it would be too opinionated and too constraining.
+
+401
+00:42:15,890 --> 00:42:20,010
+所以我们必须给用户说明 例如 模型
+So we have to give the user the instructions. For example, models.
+
+402
+00:42:20,690 --> 00:42:29,250
+我们在你的右边指定了这些路线道具 而不是为模型提供大量的盒子功能 因为这样做太受限制了
+Instead of having an amount of the box feature for models, we specify these route prop on the right of you, because it will be too constraining to do otherwise.
+
+403
+00:42:30,620 --> 00:42:33,620
+最后 关于旋翼的好处是
+And finally, the good thing about the rotor next is that.
+
+404
+00:42:34,720 --> 00:42:37,800
+哇 这个版本 3个Rocktra大约是9千字节
+Wow, the version, three of the Rocktra was about nine kilobytes.
+
+405
+00:42:39,090 --> 00:42:43,650
+下一个版本 第四版 低于6 5 这是
+A bit more, the next version, the version four, is under 6.5, and this is.
+
+406
+00:42:44,630 --> 00:42:49,950
+注意到我们在预分散中有更多的特征 所以我们有Vaname发牢骚等等
+Noting that we have more features in the predisperation, so we have Vaname grouchying and everything.
+
+407
+00:42:51,070 --> 00:42:59,670
+我们拥有了以前所有的东西 还有越来越多的东西和越来越多的背面 有了这些变化 我们仍然比视野更小 僵尸
+We have all the things that we had before, and more and even more things and more back faces, and with all these changes, we are still smaller than view, rotter.
+
+408
+00:43:00,500 --> 00:43:08,180
+改进的方式更好 可能是30% 尺寸小一点 如果您想签出存储库或
+Better way of being improved, maybe like 30%, a bit less in size. And if you want to check out the repository or.
+
+409
+00:43:09,080 --> 00:43:17,120
+也许你们有些人可能已经做过了 未决问题 不好的报告 我在那边很活跃 听起来我们是有联系的 因为
+Probably some of you may might have done it already, open issues, uh, for bad reports. I'm very active over there, sound that we are connects because.
+
+410
+00:43:18,210 --> 00:43:25,770
+你可以查一下 我想说 谢谢我的赞助商 我还在为开源寻找赞助商 努力做
+That you can check, and I would do well say, thank you to my sponsors. I'm still looking for sponsors for open source, trying to do.
+
+411
+00:43:26,820 --> 00:43:33,340
+所以我把大部分时间花在开源上 但我仍然不赚钱 所以我还是得做一些
+So I spend most of my time doing open source, but I'm still not profitable, so I still have to do some.
+
+412
+00:43:34,240 --> 00:43:37,400
+兼职做自由职业者就能
+Freelancing on the on the side to be able to.
+
+413
+00:43:38,860 --> 00:43:44,420
+支付离开的生活费 我在找赞助人 如果你们中有人知道 一些公司
+Pay for living to leave, and I was looking for sponsors. So if any of you know, some companies that are.
+
+414
+00:43:45,020 --> 00:43:49,340
+愿意赞助的 知道吧 这取决于
+Willing to sponsor, know that. Depending on the.
+
+415
+00:43:50,240 --> 00:43:57,280
+关于我们的功能 我把标识放在路由器页面上 我们有巨大的流量 特别是来自中国的流量 顺便说一下
+On the kind of functions we, I put the logos on the router pages, and we have a huge traffic, especially from China, by the way,
+
+416
+00:43:59,280 --> 00:44:04,760
+这很有趣 谢谢你 我希望你们能学到一些东西 我想我会在这里回答你们的问题
+So that can be interesting. Thank you. I hope you learn something, and I'll be here for the questions, I think.
+
+417
+00:44:07,110 --> 00:44:08,030
+谁有问题
+Anyone has questions.
+
+418
+00:44:11,870 --> 00:44:13,270
+谢谢你的精彩表演
+Thank you for the wonderful.
+
+419
+00:44:16,330 --> 00:44:21,770
+实际上 他们会从尸体上收集一些问题 第一个是
+Actually, they collect some questions from bodies. The first one is.
+
+420
+00:44:23,560 --> 00:44:26,840
+你怎么拿到分数的你知道 罗杰的分数
+How do you get the scores You know, the scores for Roger.
+
+421
+00:44:28,470 --> 00:44:30,070
+比如 你为什么选8个
+Like, why do you pick eight.
+
+422
+00:44:31,800 --> 00:44:39,200
+是的 所以我做了基本上是他的研究 所以我 我从
+Yeah, so I did it was his research, basically, right. So I was, I inspired myself from.
+
+423
+00:44:39,950 --> 00:44:44,950
+我从后退式开始 他们有一个基本版本的
+I started from Uh, retroacher, and they have A-A basic version of the.
+
+424
+00:44:46,040 --> 00:44:51,640
+我就投硬币 他们解释一个策略 然后我做了什么 因为他们只处理一个非常基本的版本
+I'll just coin and they explain a strategy, and then what I did, because they only handle a very basic version.
+
+425
+00:44:52,910 --> 00:45:00,390
+就是 把数字写下来 做一些数学运算看看我申请的数字 我申请的地方
+Is, um, write down the numbers and do some mathematics and see if the numbers I was applying, I was applying where.
+
+426
+00:45:01,320 --> 00:45:03,120
+我基本上证明了这一点
+I demonstrated basically that.
+
+427
+00:45:04,330 --> 00:45:07,610
+这个理论应该适用于这个案子 我终于成为了几个Celviettes
+The theory should work in the case, I've finally been a few Celviettes.
+
+428
+00:45:08,320 --> 00:45:13,480
+但我接受了学习 是的 因为人们不会用它 所以让我看看
+But I accepted to study, yes, because people were not gonna use it, so let me just see.
+
+429
+00:45:17,010 --> 00:45:19,890
+第二天制药公司来之前
+Uh, next day before Pharmaters is here.
+
+430
+00:45:22,510 --> 00:45:29,630
+这里是retroter和Retroactor的路径排名
+Ah, now here area, so here's a path ranking of retroter and Retroactor only handles.
+
+431
+00:45:30,730 --> 00:45:38,610
+就像动态部分或学习部分 它们有一个我所拥有的基本评分系统 有些数字是相似的 比如
+Like dynamic segments or study segments, and they have a basic scoring system that I have. Some of the numbers are similar, like the.
+
+432
+00:45:39,260 --> 00:45:48,060
+我有74个静态变量 这是6+7 这是13 它们解释了这里的一切 我的意思是
+I have 74 static and I have, so this is a six plus seven, that's thirteen, and they explain everything here, I mean,
+
+433
+00:45:49,190 --> 00:45:54,390
+他们对此做了一些解释 所以我所做的就是从这些技巧中启发自己
+They explain a bit of it. So what I did is I inspire myself from these techniques.
+
+434
+00:45:55,060 --> 00:46:00,220
+创造一个非线性的分数 所以题目只有一个数字
+To create a score that is non linear. So they only have one number.
+
+435
+00:46:01,160 --> 00:46:09,280
+在我的版本里 每个部分必须有多个数字 因为我可以
+And in my version, I have to have multiple numbers per section, because I can do, um, so.
+
+436
+00:46:10,440 --> 00:46:11,000
+欧元的各个部分
+Sections of the Euro.
+
+437
+00:46:12,050 --> 00:46:21,050
+然后我把数字写下来 因为有些东西更小 比如在街上 你可以看到0 7
+And then I just put down the numbers, and because some of the things are smaller, for example, if you do the street, you can see point seven.
+
+438
+00:46:22,030 --> 00:46:26,790
+我把整个分数乘以10 这样我就能得到更精确的数字
+I multiplied the whole score set by ten, so I could have more precise numbers.
+
+439
+00:46:28,860 --> 00:46:30,580
+现在让我让我研究一下
+Now let's let me just research.
+
+440
+00:46:32,380 --> 00:46:39,580
+谁的意思是滕森会议有问题所以你可以放弃这个问题
+Do anyone means that Tenson meeting has questions so you can just drop the question.
+
+441
+00:46:41,590 --> 00:46:48,310
+好 观众说有一些突破性的改变
+OK, so the audience says there are some breaking changes.
+
+442
+00:46:49,780 --> 00:46:57,460
+有没有让我担心的 你对你有什么看法 是啊 所以这破事
+Are there let me be worried about, do you have opinions on you? Yeah, so the breaking changes, um,
+
+443
+00:46:59,060 --> 00:47:01,980
+只有几处破坏的改动
+Are there are only a few breaking changes, um,
+
+444
+00:47:03,900 --> 00:47:06,100
+我会尽量给出最小值
+I will really try to give this the minimal.
+
+445
+00:47:08,050 --> 00:47:13,610
+所以这是整个迁移和所有突破性的改变 但我没有看到最小的可能看起来很长
+So there is the whole migration with all the breaking changes, but I didn't see that the least might look long.
+
+446
+00:47:14,980 --> 00:47:16,820
+但大多数东西都非常非常
+But most of the things are very, very.
+
+447
+00:47:18,410 --> 00:47:26,410
+他们受过教育 所以大多数人不会 我不会看到他们 所以 当然整个创作是不同的 就像在视野中 三
+They are educated, so most of the people are not gonna, I'm not gonna see them. So of course the whole creation is different, like in view, three.
+
+448
+00:47:28,110 --> 00:47:33,590
+所以历史也是不同的 但这没关系因为你确实改变了 你同时改变了一切
+So the history is also different, but that doesn't matter because you do, you change everything at the at the same time?
+
+449
+00:47:35,270 --> 00:47:42,630
+然后是基础选项 它移动了恒星 这是我之前解释过的 现在我们要写这个
+Then we have the base option, which has moved the star, which is the thing I was explaining, say that now we have to write this.
+
+450
+00:47:43,610 --> 00:47:51,330
+不是一颗星星 我们有一些残留 所以已经变成准备好了 因为
+Instead of a star, we have a few remains, so already becomes is ready because.
+
+451
+00:47:52,370 --> 00:47:59,330
+我们有一个承诺 而最大的一个是在这三个中它不再可能
+We have a promise, and then the biggest one is the fact that it's no longer possible in the three.
+
+452
+00:48:00,170 --> 00:48:06,730
+把过渡放在你的周围 所以我们必须使用语法 这要复杂得多
+To, uh, put transition around board of you, so we have to use the syntax, which is a lot more complicated.
+
+453
+00:48:07,820 --> 00:48:12,060
+但这是一种技术 嗯 模仿 我是说 它也给了我们所有人
+But that's a technical, um, imitation, I mean, it gives us all also.
+
+454
+00:48:14,260 --> 00:48:17,580
+虽然当谈到查看三个手柄时 很多东西都是改进的
+Although improvements when it comes to view three handles, a lot of things are.
+
+455
+00:48:18,300 --> 00:48:26,940
+10 路要比目中无人容易 才能逆水行舟难 三 所以因为观三把手所有的基眼和过渡都比你们俩好
+Way easier than in view, to invier water. Three. So because view three handles all the kital eye and transition better than you two.
+
+456
+00:48:28,000 --> 00:48:32,720
+我们不需要做一些修改 我们必须使用视图路由器 三
+We don't have to do a few hacks that we have to use using view router. Three.
+
+457
+00:48:33,240 --> 00:48:41,480
+在欧洲或者其他地方 路由器视图组件 它要简单得多 没有任何修改 因为我们把这三个处理得非常好
+In Europe or four, the router view component, it is much more straightforward and doesn't have any hacks, because we route these three handles everything very good very well.
+
+458
+00:48:44,800 --> 00:48:51,840
+这个职业 方便就要 用水就要用白色
+The this profession, convenience will, will water for with white.
+
+459
+00:48:53,730 --> 00:48:53,850
+我们
+We.
+
+460
+00:48:58,660 --> 00:49:03,140
+也许我的发音是它 我能在椅子上看看吗
+Maybe my pronunciation is it. Can I check it on the chair.
+
+461
+00:49:04,650 --> 00:49:11,850
+是的 我可以发给脸部或优势
+Yeah, I can send it to faces or advantages.
+
+462
+00:49:17,280 --> 00:49:17,760
+我要当一支笔
+I'll be a pen.
+
+463
+00:49:20,130 --> 00:49:24,250
+嗯 在 它能工作铁路
+Uh, in, can it work Railways.
+
+464
+00:49:28,340 --> 00:49:28,980
+所以做一只熊猫
+So be a panda.
+
+465
+00:49:32,370 --> 00:49:37,530
+好吧 我不觉得有什么问题 是的 你和它在一起
+Well, I don't see the question if it was with a worse with it. Yes. You were with it.
+
+466
+00:49:38,190 --> 00:49:40,830
+不应该有任何东西 它应该是开箱即用的
+There should not be anything. It should work out of the box.
+
+467
+00:49:45,500 --> 00:49:48,900
+还有谁有问题吗
+So anyone else have question questions?
+
+468
+00:49:52,470 --> 00:49:58,030
+哦 你有磁带或建议阅读的源代码的视图作家
+Oh, do you have tapes or suggestions for reading the source code of view writer.
+
+469
+00:49:59,920 --> 00:50:06,080
+让我想想 我想这取决于你想去哪里
+Um, let me see, I think that depending on where you wanna go, uh,
+
+470
+00:50:08,320 --> 00:50:12,760
+你可以按文件夹查找 有我之前讲过的匹配器和历史
+You can go by folder, so you have the matcher and the history which I was talking about before.
+
+471
+00:50:13,510 --> 00:50:19,910
+所有全局的东西都有自己的文件 所以会有编码错误 这里有导航警卫
+And then all the things that are just global have their own file, so you have the encoding errors. You have navigation guards here.
+
+472
+00:50:21,170 --> 00:50:25,930
+我认为如果你搜索api 你想
+So I think that if you do a search on the api, you want to.
+
+473
+00:50:26,850 --> 00:50:35,450
+学习 你会发现基于代码的 一些有趣的东西 然后你可以从那里开始你可以使用的类型和所有东西 因为它是所有接触到的东西 句号 你可以
+Learn about, you're going to find the code based, something that is interesting, and then you can go from there the types and everything you can use, because it's everything in touch, period, You can.
+
+474
+00:50:36,200 --> 00:50:44,840
+控制踢或或来 并点击BS代码 你将移动到你想要的地方 但通常你有更多的评论 也在代码位
+Control kick or or come and click on BS code, and you will move to the places you want, but usually you have a lot more comments, also in a code bit.
+
+475
+00:50:45,760 --> 00:50:49,080
+所以其他文件的一半是注释
+So half of the other files are comments at a lot of the time.
+
+476
+00:50:53,450 --> 00:50:56,090
+美联社 我会改变
+AP, I'd change.
+
+477
+00:51:01,050 --> 00:51:01,730
+他可以有
+He can have.
+
+478
+00:51:08,800 --> 00:51:10,640
+好了 还有问题吗
+Okay, any other questions.
+
+479
+00:51:20,520 --> 00:51:21,840
+我是个好人
+I'm a good man.
+
+480
+00:51:24,960 --> 00:51:27,080
+我觉得这个主意
+Oh, I-I think idea has a.
+
+481
+00:51:29,210 --> 00:51:35,650
+提问之前 但我不确定在这里是否合适我称之为提问之前
+Question before, but I'm not sure is it suitable here I call it some questions before the.
+
+482
+00:51:37,210 --> 00:51:43,210
+她找到了这个演讲 没错 第一个是
+She found this talk, it's right. The first one is, uh,
+
+483
+00:51:44,600 --> 00:51:50,880
+但是你有没有最好的实践来设计一个完整的 复杂的
+But do you have best practice for designed a complete, complicated.
+
+484
+00:51:53,590 --> 00:51:53,710
+系统
+System.
+
+485
+00:51:56,380 --> 00:52:03,060
+开始的时候 我理解了复杂的 我喜欢 是的 明亮的
+What was the beginning I-I understood the complicated, I like, yeah, the bright.
+
+486
+00:52:03,990 --> 00:52:10,310
+复杂系统的最佳实践
+A best practice for complicated system.
+
+487
+00:52:11,980 --> 00:52:19,220
+你是复杂的欧元还是 是的 是的 水的设计
+Are you complicated EUROS or, yeah, yeah, the the water design.
+
+488
+00:52:21,550 --> 00:52:26,230
+哦 建筑设计 例行公事 是的
+Oh, the design of the architecture, the routine. Yeah.
+
+489
+00:52:27,960 --> 00:52:35,120
+嗯 我认为这很难 所以很难给出一个适用于所有人的东西
+Um, I think it's difficult, so it's difficult to give something that can apply to everybody.
+
+490
+00:52:36,380 --> 00:52:40,100
+我努力做的一切都是为了名誉 但问题是
+I try to do everything in the reputation, but the problem is.
+
+491
+00:52:42,980 --> 00:52:44,620
+太复杂了 要的应用程序
+Too complicated. Applications are gonna.
+
+492
+00:52:45,550 --> 00:52:49,150
+是非常不同的 而岩石的目标是保持不变
+Be very different. And the goal of the rockture is to stay.
+
+493
+00:52:49,940 --> 00:52:55,260
+尽可能灵活地让不同的用户仍然正确地使用它
+As flexible as possible for different users to still use it correctly.
+
+494
+00:52:56,070 --> 00:53:01,830
+我想我会推荐GeneralThings 但是嗯 是routes
+I think that I recommend, I will recommend General General Things, but um, routes.
+
+495
+00:53:03,670 --> 00:53:03,790
+哦
+Uh,
+
+496
+00:53:06,180 --> 00:53:13,820
+只是在语法上多检查一下路线 因为有时候知道你只想匹配一些特定的东西在欧洲是很有用的 我保持它的实用性
+Just check the route much in syntax, because sometimes it's useful to know that you want to match only some specific things in the Euro, and I keep it practical.
+
+497
+00:53:14,780 --> 00:53:23,340
+我通常也会给它们命名 所以我会根据URL来命名 这很容易从URL中推断出来
+Um, I usually name them as well, so I will do our name based on the URL, something that can be easily infer from the URL.
+
+498
+00:53:24,240 --> 00:53:26,760
+例如 斜杠用户 斜杠
+So for example, slash users, slash, um,
+
+499
+00:53:27,740 --> 00:53:34,140
+我把这个叫做user detail 类似这样
+Idea, I will call that user details of user Dot idea, something like that, I think next.
+
+500
+00:53:35,350 --> 00:53:41,030
+J-S 他们很擅长从过去自动推断名字
+J-S, they do a very good job in infering the names automatically from the past.
+
+501
+00:53:41,810 --> 00:53:44,290
+我认为这通常是好事
+And I think that's usually something good.
+
+502
+00:53:46,210 --> 00:53:50,730
+知道你的父母很可怜 就用道具
+Knowing that you have very pitiable paren'ts, um, using the props.
+
+503
+00:53:51,560 --> 00:53:59,400
+真在路上 所以你可以把图案当作道具传递也很有用 然后
+True on the on the road, so you can pass the patterns as props is also useful. And then.
+
+504
+00:54:02,230 --> 00:54:07,990
+最复杂的情况是当你必须弄乱名称路由和
+The most, the more complicated cases are where when you have to mess up name routes and.
+
+505
+00:54:09,200 --> 00:54:14,040
+约 但没有最好的做法像
+MR, abouts, but there is no best practice like.
+
+506
+00:54:15,700 --> 00:54:16,100
+这是 嗯
+It's, um.
+
+507
+00:54:20,150 --> 00:54:20,270
+ul
+Ully.
+
+508
+00:54:23,620 --> 00:54:27,580
+有就没有 即使有些东西你找不到文档你也能找到
+Is there is not. Even there are things you won't be able to find documentation You're going to find.
+
+509
+00:54:28,290 --> 00:54:36,170
+一个基本的场景 解释事情是如何工作的 并给你一个例子 但之后你就得把所有的东西都用在你的案子上 因为
+A basic scenario and explain you how things work and give you an example. But then you have to apply everything and for your cases, because.
+
+510
+00:54:37,880 --> 00:54:43,240
+路由器需要处理的情况太多了 我们不能
+There are too many cases for the routers to take to handle that. We cannot.
+
+511
+00:54:46,890 --> 00:54:47,850
+我们还有其他问题
+We have other questions.
+
+512
+00:54:53,930 --> 00:54:54,050
+肯定的是
+Sure,
+
+513
+00:54:59,330 --> 00:54:59,450
+好吧
+Okay?
+
+514
+00:55:07,490 --> 00:55:11,570
+她需要一天的时间 康江
+She is going to need a day, kangjiang.
+
+515
+00:55:12,740 --> 00:55:14,420
+轮到你去酒吧了
+A be your turn to the bar.
+
+516
+00:55:24,930 --> 00:55:30,170
+我设置了一些中国违规赞助商
+I set some Chinese offending sponsors.
+
+517
+00:55:33,910 --> 00:55:37,510
+好的 那么n
+Okay, uh, so where n.
+
+518
+00:55:39,990 --> 00:55:40,110
+好吧
+Okay?
