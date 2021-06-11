@@ -2345,250 +2345,241 @@ Oh, do you have tapes or suggestions for reading the source code of view writer.
 
 469
 00:49:59,920 --> 00:50:06,080
-让我想想 我想这取决于你想去哪里
-Um, let me see, I think that depending on where you wanna go, uh,
+让我想想 我想这取决于你想了解什么
+Um, let me see, I think that depending on where you wanna go, uh.
 
 470
 00:50:08,320 --> 00:50:12,760
-你可以按文件夹查找 有我之前讲过的匹配器和历史
+你可以按文件夹查找 这样就可以和我之前说的匹配上了
 You can go by folder, so you have the matcher and the history which I was talking about before.
 
 471
 00:50:13,510 --> 00:50:19,910
-所有全局的东西都有自己的文件 所以会有编码错误 这里有导航警卫
-And then all the things that are just global have their own file, so you have the encoding errors. You have navigation guards here.
+所有全局的东西都有自己的文件 所以会有编码错误 这里有导航守卫
+And then, all the things that are just global have their own file, so you have the encoding errors. You have navigation guards here.
 
 472
 00:50:21,170 --> 00:50:25,930
-我认为如果你搜索api 你想
-So I think that if you do a search on the api, you want to.
+所以我认为如果你搜索 api 你会想要了解一些相关的知识
+So I think that if you do a search on the api, you want to learn about.
 
 473
 00:50:26,850 --> 00:50:35,450
-学习 你会发现基于代码的 一些有趣的东西 然后你可以从那里开始你可以使用的类型和所有东西 因为它是所有接触到的东西 句号 你可以
-Learn about, you're going to find the code based, something that is interesting, and then you can go from there the types and everything you can use, because it's everything in touch, period, You can.
+你会发现代码库里一些有趣的东西 然后你可以从那里得到所有你可以使用的类型和其他东西 因为它是用 TypeScript 编写的
+You're going to find the codebase, something that is interesting, and then you can go from there all the types and everything you can use, because it's everything in typescript.
 
 474
 00:50:36,200 --> 00:50:44,840
-控制踢或或来 并点击BS代码 你将移动到你想要的地方 但通常你有更多的评论 也在代码位
-Control kick or or come and click on BS code, and you will move to the places you want, but usually you have a lot more comments, also in a code bit.
+你可以控制 Keyocde 或者在 VS Code 中点击 然后你就会移动到你想要去的文件中 但通常在代码库中会有很多的的注释
+You can control keyocde or come and click on VS Code, and you will move to the places you want, but usually you have a lot more comments, also in a codebase.
 
 475
 00:50:45,760 --> 00:50:49,080
-所以其他文件的一半是注释
-So half of the other files are comments at a lot of the time.
+所以其他一半的文件经常有很多注释
+So half of the other files are comments (at) a lot of the time.
 
 476
-00:50:53,450 --> 00:50:56,090
-美联社 我会改变
-AP, I'd change.
+00:50:51,000 --> 00:50:54,000
+如果你对某个 api 比较感兴趣
+If you're interested in some API
 
 477
-00:51:01,050 --> 00:51:01,730
-他可以有
-He can have.
+00:50:54,001 --> 00:50:59,999
+然后 VS Code 因为代码使用 TS 可以直接点击跳转过去吗？
+And then in the VS Code that can just click over there because of TS?
 
 478
-00:51:08,800 --> 00:51:10,640
-好了 还有问题吗
-Okay, any other questions.
+00:51:00,000 --> 00:51:05,000
+就是可以看他内部实现是怎么样的
+Just see how its internal implementation is.
 
 479
-00:51:20,520 --> 00:51:21,840
-我是个好人
-I'm a good man.
+00:51:08,800 --> 00:51:10,640
+好的 还有问题吗？
+Okay, any other questions?
 
 480
-00:51:24,960 --> 00:51:27,080
-我觉得这个主意
-Oh, I-I think idea has a.
+00:51:24,960 --> 00:51:29,210
+我想我之前确实有个问题想问
+Oh, I, I think I did has a question before. 
 
 481
-00:51:29,210 --> 00:51:35,650
-提问之前 但我不确定在这里是否合适我称之为提问之前
-Question before, but I'm not sure is it suitable here I call it some questions before the.
+00:51:29,212 --> 00:51:38,650
+但我不确定是否适合在这里提出来 我收集了一些问题在这个演讲之前（我来确定一下）
+But I'm not sure is it suitable here, I collect some questions before the (I will sure), before this talk.
 
 482
-00:51:37,210 --> 00:51:43,210
-她找到了这个演讲 没错 第一个是
-She found this talk, it's right. The first one is, uh,
+00:51:39,210 --> 00:51:43,210
+是的 第一个问题是
+(Yes), yes, like, uh, The first one is, uh,
 
 483
-00:51:44,600 --> 00:51:50,880
-但是你有没有最好的实践来设计一个完整的 复杂的
-But do you have best practice for designed a complete, complicated.
+00:51:45,600 --> 00:51:54,880
+你有设计复杂系统的最佳实践吗？
+Do you have best practice for designed a complicated system?
 
 484
-00:51:53,590 --> 00:51:53,710
-系统
-System.
+00:51:56,380 --> 00:52:00,060
+我了解复杂系统是从
+What was the beginning I, I understood the complicated system,
 
 485
-00:51:56,380 --> 00:52:03,060
-开始的时候 我理解了复杂的 我喜欢 是的 明亮的
-What was the beginning I-I understood the complicated, I like, yeah, the bright.
+00:52:02,990 --> 00:52:10,310
+我想问的是 对于复杂的系统 你有最佳实践方法吗？
+I like, do you have the best practice for complicated system?
 
 486
-00:52:03,990 --> 00:52:10,310
-复杂系统的最佳实践
-A best practice for complicated system.
+00:52:12,980 --> 00:52:19,220
+比如复杂的 url 或者路由设计
+like comaplicated urls or, yeah, the the router design.
 
 487
-00:52:11,980 --> 00:52:19,220
-你是复杂的欧元还是 是的 是的 水的设计
-Are you complicated EUROS or, yeah, yeah, the the water design.
+00:52:21,550 --> 00:52:26,230
+所有的架构设计 路由之类的东西
+All the design of the architecture, the router thing.
 
 488
-00:52:21,550 --> 00:52:26,230
-哦 建筑设计 例行公事 是的
-Oh, the design of the architecture, the routine. Yeah.
+00:52:27,960 --> 00:52:35,120
+我认为给予每个人都适用的最佳实践是非常难的
+Um, I think it's difficult to give something that can apply to everybody.
 
 489
-00:52:27,960 --> 00:52:35,120
-嗯 我认为这很难 所以很难给出一个适用于所有人的东西
-Um, I think it's difficult, so it's difficult to give something that can apply to everybody.
+00:52:36,380 --> 00:52:40,100
+我试着使文档中尽可能详尽 但问题是
+I try to do everything in the documentation, but the problem is.
 
 490
-00:52:36,380 --> 00:52:40,100
-我努力做的一切都是为了名誉 但问题是
-I try to do everything in the reputation, but the problem is.
+00:52:42,980 --> 00:52:46,620
+太复杂的应用程序将会变得非常不同
+um, too complicated applications are gonna be very different.
 
 491
-00:52:42,980 --> 00:52:44,620
-太复杂了 要的应用程序
-Too complicated. Applications are gonna.
+00:52:46,650 --> 00:52:56,150
+路由的目标是尽可能保持灵活性 以便不同的用户仍能正确使用它
+And the goal of the router is to stay as flexible as possible for different users to still use it correctly.
 
 492
-00:52:45,550 --> 00:52:49,150
-是非常不同的 而岩石的目标是保持不变
-Be very different. And the goal of the rockture is to stay.
+00:52:56,270 --> 00:53:01,830
+我想我我会推荐一些普通的东西 但是对于路由
+I think that I recommend, I will recommend general Things, but um, routes.
 
 493
-00:52:49,940 --> 00:52:55,260
-尽可能灵活地让不同的用户仍然正确地使用它
-As flexible as possible for different users to still use it correctly.
-
-494
-00:52:56,070 --> 00:53:01,830
-我想我会推荐GeneralThings 但是嗯 是routes
-I think that I recommend, I will recommend General General Things, but um, routes.
-
-495
-00:53:03,670 --> 00:53:03,790
-哦
+00:53:03,670 --> 00:53:05,790
+呃
 Uh,
 
-496
+494
 00:53:06,180 --> 00:53:13,820
-只是在语法上多检查一下路线 因为有时候知道你只想匹配一些特定的东西在欧洲是很有用的 我保持它的实用性
-Just check the route much in syntax, because sometimes it's useful to know that you want to match only some specific things in the Euro, and I keep it practical.
+只要检查语法中的路由匹配就可以了 因为有时知道您只想匹配 url 中的一些特定路径是非常有用的 我会保持它的实用性
+Just check the route match in syntax, because sometimes it's useful to know that you want to match only some specific things in the url, and I keep it practical.
+
+495
+00:53:16,780 --> 00:53:24,140
+我通常也会给它们命名 所以我会根据 url 来命名 可以很容易地从 url 中推断出一些东西
+Um, I usually name them as well, so I will do a name based on the url, something that can be easily infer from the url.
+
+496
+00:53:24,240 --> 00:53:27,760
+例如 /:user /:id
+So for example, slash users, slash, um, id,
 
 497
-00:53:14,780 --> 00:53:23,340
-我通常也会给它们命名 所以我会根据URL来命名 这很容易从URL中推断出来
-Um, I usually name them as well, so I will do our name based on the URL, something that can be easily infer from the URL.
+00:53:28,740 --> 00:53:34,140
+我会把用户的详细信息命名为user.id 类似于
+I will call that user details of user dot id, something like that
 
 498
-00:53:24,240 --> 00:53:26,760
-例如 斜杠用户 斜杠
-So for example, slash users, slash, um,
+00:53:34,350 --> 00:53:41,030
+我认为下一代 JS 他们在从路径自动推断名称方面做得非常好
+I think next JS, they do a very good job in infering the names automatically from the path.
 
 499
-00:53:27,740 --> 00:53:34,140
-我把这个叫做user detail 类似这样
-Idea, I will call that user details of user Dot idea, something like that, I think next.
-
-500
-00:53:35,350 --> 00:53:41,030
-J-S 他们很擅长从过去自动推断名字
-J-S, they do a very good job in infering the names automatically from the past.
-
-501
-00:53:41,810 --> 00:53:44,290
+00:53:41,810 --> 00:53:45,290
 我认为这通常是好事
 And I think that's usually something good.
 
-502
-00:53:46,210 --> 00:53:50,730
+500
+00:53:46,210 --> 00:53:58,730
 知道你的父母很可怜 就用道具
-Knowing that you have very pitiable paren'ts, um, using the props.
+(呃...)知道你有非常漂亮的参数 在路由上使用 props 你可以通过传递参数作为 props 这也是很有用的
+(uh...)Knowing that you have very beautiful params, um, using the props. True on the on the route, so you can pass the params as props is also useful.
+
+501
+00:53:59,560 --> 00:53:59,400
+然后
+And then.
+
+502
+00:54:02,230 --> 00:54:07,990
+最复杂的情况是 您必须混淆命名路由还有嵌套路由
+The most, the more complicated cases are where when you have to mess up name routes and nested routes.
 
 503
-00:53:51,560 --> 00:53:59,400
-真在路上 所以你可以把图案当作道具传递也很有用 然后
-True on the on the road, so you can pass the patterns as props is also useful. And then.
+00:54:10,200 --> 00:54:14,040
+但是没有像...的最佳实践
+But there is no best practice like...
 
 504
-00:54:02,230 --> 00:54:07,990
-最复杂的情况是当你必须弄乱名称路由和
-The most, the more complicated cases are where when you have to mess up name routes and.
+00:54:15,700 --> 00:54:23,100
+这个已经很复杂了(我会告诉这个人仔细阅读文档)
+It's, um. it's comaplicated already(,i will tell the person to read the documentation carefully, hhh)
 
 505
-00:54:09,200 --> 00:54:14,040
-约 但没有最好的做法像
-MR, abouts, but there is no best practice like.
-
-506
-00:54:15,700 --> 00:54:16,100
-这是 嗯
-It's, um.
-
-507
-00:54:20,150 --> 00:54:20,270
-ul
-Ully.
-
-508
 00:54:23,620 --> 00:54:27,580
 有就没有 即使有些东西你找不到文档你也能找到
-Is there is not. Even there are things you won't be able to find documentation You're going to find.
+Is  is not. Even there are things you won't be able to find in the documentation 
+
+506
+00:54:28,290 --> 00:54:32,170
+您将找到一个基础场景 向你解释它是如何工作的 并给你一个示例
+You're gonna find a basic scenario and explain you how things work and give you an example. 
+
+507
+00:54:33,880 --> 00:54:44,240
+但是您必须将所有情况都应用到您的案例中 因为路由器要处理的案例太多了 而我们无法处理这些案例
+But then you have to apply everything and for your cases, because there are too many cases for the router to take to handle that we cannot.
+
+508
+00:54:46,890 --> 00:54:47,850
+我们这还有其他问题吗？
+Do We have other questions?
 
 509
-00:54:28,290 --> 00:54:36,170
-一个基本的场景 解释事情是如何工作的 并给你一个例子 但之后你就得把所有的东西都用在你的案子上 因为
-A basic scenario and explain you how things work and give you an example. But then you have to apply everything and for your cases, because.
+00:54:51,330 --> 00:54:51,450
+好吧
+Okay
 
 510
-00:54:37,880 --> 00:54:43,240
-路由器需要处理的情况太多了 我们不能
-There are too many cases for the routers to take to handle that. We cannot.
+00:54:53,490 --> 00:54:59,570
+感谢分享 Vue Router 内部的内容
+thank you both for sharing what's inside Vue Router for ... okay
 
 511
-00:54:46,890 --> 00:54:47,850
-我们还有其他问题
-We have other questions.
+00:55:00,740 --> 00:55:07,420
+Eduardo 现在在找 Vue Router 网站的赞助
+Eduardo is now looking for that sponsorship for the Vue Router website.
 
 512
-00:54:53,930 --> 00:54:54,050
-肯定的是
-Sure,
+00:55:08,740 --> 00:55:17,420
+所以如果你知道你们公司对开源框架有赞助的话可以联系我
+So if you know that your company has a sponsor for the open source framework, you can contact me.
 
 513
-00:54:59,330 --> 00:54:59,450
-好吧
-Okay?
+00:55:18,740 --> 00:55:22,420
+他也在群里边 然后你直接加他微信 联系他也可以
+He is also in the group, then you can directly add his WeChat to contact him.
 
 514
-00:55:07,490 --> 00:55:11,570
-她需要一天的时间 康江
-She is going to need a day, kangjiang.
+00:55:24,930 --> 00:55:30,170
+我说了一些中文 为了资金赞助商 (我会谢谢你)
+I said some Chinese, hhh, for funding sponsors.(I will thank you)
 
 515
-00:55:12,740 --> 00:55:14,420
-轮到你去酒吧了
-A be your turn to the bar.
+00:55:33,910 --> 00:55:37,510
+好了 那我们结束谈话吧
+Okay, uh, so we are end.
 
 516
-00:55:24,930 --> 00:55:30,170
-我设置了一些中国违规赞助商
-I set some Chinese offending sponsors.
-
-517
-00:55:33,910 --> 00:55:37,510
-好的 那么n
-Okay, uh, so where n.
-
-518
-00:55:39,990 --> 00:55:40,110
-好吧
-Okay?
+00:55:39,990 --> 00:55:42,110
+好吧 (再见)
+Okay , (see you)
