@@ -8,7 +8,7 @@ doubt you’ve heard about React 18.
 00:00:04,300 --> 00:00:08,760
 Now, while there is still a lot more to come,
 I thought you might want to see what are its
-尽管你有工作要忙，但我觉得你需要了解它到底包含有哪些
+尽管你有工作要忙，但我觉得你有必要了解它到底包含哪些
 
 3
 00:00:08,760 --> 00:00:10,480
@@ -458,4 +458,3 @@ to miss more videos like this one.
 00:05:32,351 --> 00:05:34,051
 Thanks for watching and see you next time :)
 感谢收看，我们下期见：）
-
