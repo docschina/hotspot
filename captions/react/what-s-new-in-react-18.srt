@@ -53,7 +53,7 @@ if you’re calling multiple state updates
 00:00:34,239 --> 00:00:40,290
 in a different context such as a promise,
 a callback, or a timeout, React won’t batch
-调用多个状态更新，例如在 Promise、回调或定时器中，React 就不会进行 batch 操作，
+调用多个状态更新，例如在 Promise、回调或定时器中，React 就不会进行批量操作，
 
 11
 00:00:40,290 --> 00:00:45,530
@@ -138,7 +138,7 @@ want its value to change as we type, although
 00:01:34,300 --> 00:01:38,539
 the search results might appear in a second
 phase when we’re done typing.
-而当我们完成输入时，搜索结果可能会在一秒内出现。
+而当我们完成输入时，搜索结果可能延迟出现。
 
 26
 00:01:39,042 --> 00:01:43,659
