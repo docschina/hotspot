@@ -263,7 +263,7 @@ the result as HTML to the browser.
 00:03:12,577 --> 00:03:18,239
 After that, the JavaScript is loaded as usual
 and the HTML magically becomes interactive
-接着，像往常一样加载 JavaScript，而 HTML 通过激活（hydration）
+接着，像往常一样加载 JavaScript，而 HTML 通过水合（hydration）
 
 48
 00:03:18,239 --> 00:03:20,000
@@ -291,7 +291,7 @@ as long as the JavaScript hasn’t been fetched,
 00:03:30,950 --> 00:03:35,809
 loaded, and your HTML hydrated, your page
 won’t be interactive.
-加载，你的 HTML 还未被激活，你的页面就无法进行交互。
+加载，同时 HTML 还未被水合之前，你的页面就无法进行交互。
 
 53
 00:03:36,480 --> 00:03:42,109
@@ -302,7 +302,7 @@ offers two new features for SSR:
 54
 00:03:42,486 --> 00:03:45,129
 Streaming HTML and Selective Hydration.
-流式 HTML 以及选择性激活。
+流式 HTML 以及选择性水合。
 
 55
 00:03:45,129 --> 00:03:50,879
@@ -360,13 +360,13 @@ React 将发送新的 HTML 来替代加载指示器。
 00:04:22,749 --> 00:04:27,482
 Now, the second new feature, selective hydration,
 is quite a game-changer.
-第二个新功能，选择性激活，这完全改变了规则。
+第二个新功能，选择性水合，这完全改变了规则。
 
 65
 00:04:27,776 --> 00:04:32,030
 Where before you’d have to wait for every
 component to be rendered to begin hydration,
-以前，你必须等待每个组件被渲染后，才能开始激活，
+以前，你必须等待每个组件被渲染后，才能开始水合，
 
 66
 00:04:32,030 --> 00:04:36,791
@@ -377,7 +377,7 @@ now wrapped with Suspense
 67
 00:04:36,791 --> 00:04:37,823
 won’t block hydration anymore.
-不会再阻碍激活了。
+不会再阻碍水合了。
 
 68
 00:04:38,284 --> 00:04:43,197
@@ -389,30 +389,30 @@ page, the comments that we wrapped with
 00:04:43,197 --> 00:04:46,668
 Suspense won’t block the article and other
 components to be hydrated.
-就不会阻止文章及其他组件被激活。
+就不会阻止文章及其他组件被水合。
 
 70
 00:04:47,129 --> 00:04:51,860
 Every ready component will start hydrating
 and the comments will too, once the browser
-每个准备好的组件都会开始被激活，一旦浏览器获取到需要的内容和 JavaScript 代码
+每个准备好的组件都会开始被水合，一旦浏览器获取到需要的内容和 JavaScript 代码
 
 71
 00:04:51,860 --> 00:04:55,470
 gets both its content and JavaScript code.
-评论也会被激活。
+评论也会被水合。
 
 72
 00:04:55,470 --> 00:05:00,500
 The last crazy thing about selective hydration
 is that if you happen to interact with one
-关于选择性激活最令人兴奋的一点是，如果你碰巧在
+关于选择性水合最令人兴奋的一点是，如果你碰巧在
 
 73
 00:05:00,500 --> 00:05:05,250
 of the components before it’s been fully
 hydrated, meaning you click somewhere, for
-组件被完全激活前与之交互，比如说，你单击了某处，
+组件被完全水合前与之交互，比如说，你单击了某处，
 
 74
 00:05:05,250 --> 00:05:09,153
@@ -424,13 +424,13 @@ React 会优先对该组件进行水合。
 00:05:09,719 --> 00:05:15,210
 This ensures that the most critical interactions
 are to be repeated as soon as we can hydrate
-这确保了交互可以在我们可以激活完成后，再次被执行
+这确保了交互可以在我们可以水合完成后，再次被执行
 
 76
 00:05:15,210 --> 00:05:19,910
 the related component, making sure it’s
 hydrated before the others.
-保证它优于其他组件执行激活操作。
+保证它优于其他组件执行水合操作。
 
 77
 00:05:20,245 --> 00:05:22,010
