@@ -8,12 +8,12 @@ doubt you’ve heard about React 18.
 00:00:04,300 --> 00:00:08,760
 Now, while there is still a lot more to come,
 I thought you might want to see what are its
-尽管你有工作要忙，但我觉得你有必要了解它到底包含哪些
+尽管 React18 还有很多工作要完成，
 
 3
 00:00:08,760 --> 00:00:10,480
 top new features.
-主要的新特性。
+但我觉得你有必要了解它到底包含哪些主要的新特性。
 
 4
 00:00:10,480 --> 00:00:13,190
