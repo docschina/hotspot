@@ -44,11 +44,11 @@ App 的启动时间对于许多 App 的成功来说至关重要，我们希望�
 - 新 React Native 架构在很大程度上是基于 [JSI (即 JavaScript Interface)](https://github.com/react-native-community/discussions-and-proposals/issues/91) 实现的，这是一个轻量级的通用 API，主要用于将 JavaScript 引擎嵌入到 C++ 程序中。介于我们的 JSI API 集成实现是由我们 JS 引擎团队自己维护得，所以我们有信心能提供最正确与性能最好的实现，而且是在 Facebook 的规模上实战检验过得。
 - 让 JavaScript 并发原语（例如，[promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)）和平台并发原语（例如 [微任务（microtasks）](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)）语义正确同时兼具高性能，对于 React 并发渲染和 React Native 应用的未来显得至关重要。过去，React Native 中的 Promise 是基于非标准化的 [`setImmediate`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate) API 实现的 [polyfill](https://github.com/facebook/react-native/blob/main/Libraries/Core/polyfillPromise.js#L37)。我们正在努力将 JS 引擎的原生 Promise 和微任务通过 JSI 实现，并在平台上引入 [`queueMicrotask`](https://developer.mozilla.org/en-US/docs/Web/API/queueMicrotask)，这是最近引入的 web 标准，以更好地支持现代异步 JavaScript 代码。
 
-## 带动社区发展
+## 带动整个生态
 
 Hermes 对 Facebook 来说足够好用。但是，我们的工作远不止于此，我们的终极目标是让整个社区能都够使用 Hermes，这样我们才能让整个生态一起向前，并真正发掘出 Hermes 的潜力。
 
-### 扩展到新平台
+### 开拓到新的平台
 
 Hermes 起初只为 Android 上的 React Native 开放了源码。从那以后，我们看到社区成员将 Hermes 的支持扩展到 [React Native 生态系统所能扩展到的诸多平台之上](https://reactnative.dev/blog/2021/08/26/many-platform-vision)。
 
@@ -70,7 +70,7 @@ Hermes 起初只为 Android 上的 React Native 开放了源码。从那以后�
   - Android 端的支持是由微软合作完成得。它几乎涵盖了从 ECMA-402 到 ES2020 的所有内容，**对体积的影响只有仅仅 3%（每个 ABI 约为 57-62K）**。我们在 [Twitter 上发起了投票](https://twitter.com/tmikov/status/1336442786694893568)，投票结果是强烈要求默认开启 `Intl`，因此，我们在 [v0.8](https://github.com/facebook/hermes/releases/tag/v0.8.0) 中对其进行了默认支持。
   - Facebook 赞助了 [Major League Hacking](https://mlh.io/) 的一个 [远程开源奖学金](https://news.mlh.io/welcoming-facebook-back-as-a-sponsor-of-the-2020-2021-mlh-fellowship-08-12-2020) 项目。去年，我们和学生一起推出了 [Hermes 采样分析器](https://reactnative.dev/docs/profile-hermes)。今年，我们的学生将会和 Hermes，React Native 以及 Callstack 的成员一起，添加 Hermes 在 iOS 上的 `Intl` 的支持，敬请期待！
 - 我们很感谢各位帮助我们发现与解决那些影响社区使用问题的人。
-  - 有的人帮助我们确定了关键性规范中的分歧，如 [ES2019](https://github.com/tc39/ecma262/pull/1340) 中添加了 [`Array.prototype.sort` 要求使用稳定排序的修订](https://github.com/facebook/hermes/issues/212)。我们已经修复了这个问题，并将在下个版本中发布。
+  - 有的人帮助我们发现了重要的与规范不符的行为，如 [ES2019](https://github.com/tc39/ecma262/pull/1340) 中添加了 [`Array.prototype.sort` 要求使用稳定排序的修订](https://github.com/facebook/hermes/issues/212)。我们已经修复了这个问题，并将在下个版本中发布。
   - 有些人发现，我们堆的默认大小限制过小，对于许多不熟悉如何自定义 Hermes GC 配置的用户来说，会造成 [不必要的 GC 压力](https://github.com/facebook/hermes/issues/295) 和 [内存溢出崩溃](https://github.com/facebook/hermes/issues/511)。因此，我们将默认堆大小从 512MiB 提升至 3GiB，这对大多数用户来说应该足够了。
   - 还有的人提出，我们特殊的 `Function.prototype.toString` 实现会 [导致一些使用不恰当功能检测的库性能下降](https://github.com/facebook/hermes/issues/471#issuecomment-820123463)，亦或是 [无法做到源码注入](https://github.com/facebook/hermes/issues/114#issuecomment-887106990)。这些需求帮助我们确定了我们对 Hermes 的立场是它应尽可能不妨碍开发者的工作，且尽可能支持事实标准和实践。
 
