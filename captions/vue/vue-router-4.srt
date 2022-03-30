@@ -725,7 +725,7 @@ These tag, we, the P with a class eight, we have to write something of these, wh
 
 145
 00:14:59,950 --> 00:15:03,670
-现实情况是 当涉及到编码时 我们并没有那么多规则
+实际上，当涉及到你的编码(encoding)时，你就会发现，我们并没有那么多规则
 The reality is that we don't have that many rules when it comes to your encoding.
 
 146
@@ -735,268 +735,268 @@ So I will check the.
 
 147
 00:15:09,400 --> 00:15:16,200
-如果我们检查这些微尘 我们会看到我们有这些规则规定任何不可打印的东西都必须被编码
+如果我们检查这些微小的地方，我们会有这样的一些规则：所有不能被打印的东西都必须被编码
 If we check them the speck, we're going to see that we have these rules that says anything of these non printable has to be encoded.
 
 148
 00:15:17,500 --> 00:15:19,100
-没有人要求的任何东西
+一概而论就是这样，进一步来说
 Anything that is none asking so beyond.
 
 149
 00:15:21,410 --> 00:15:28,930
-T 旧的字符 之后的小波浪必须被编码 然后我们有人来编码本身 这当然需要被编码 因为
-The T, old character, the small wave after being has to be encoded, then we have the person to character itself, which of course needs to be encoded, because.
+这是传统文化，放在后面的小波浪号就必须被编码，接着我们会有人来编码它们，这些东西当然需要被编码，因为
+It's the old culture, the small wave after being has to be encoded, then we have the person to character itself, which of course needs to be encoded, because.
 
 150
 00:15:29,730 --> 00:15:32,450
-它是用于编码的
+抱歉，它就是用于编码的
 It's used for incoding sorry.
 
 151
 00:15:33,540 --> 00:15:39,380
-有趣的是 我们对路径 查询和静默有不同的规则 嘘
+有趣的是，我们对 path、query 和 hash 有不同的规则
 And then what is funny is that we have a different set of rules for the path, the query and the hush. So the hush.
 
 152
 00:15:40,180 --> 00:15:44,940
-Has要求您对空格 全局引号 小于大于进行编码
-Has requires you to encode the space, the global quote, the lower than bigger than.
+hash 要求你对空格、全局引号、小于号、大于号、反引号进行编码
+Has requires you to encode the space, the global quote, the lower than bigger than, and the backquote
 
 153
 00:15:45,760 --> 00:15:49,680
-我是背叛者 抱歉我不得不这么做 我刚做了第二个
-I'm the backtic, sorry I have to. I just made myself my second.
+抱歉我不得不这么做，我刚做了第二个
+sorry I have to. I just made myself my second.
 
 154
 00:15:53,140 --> 00:15:53,700
-我不认识我自己
-I don't know me.
+我不清楚
+I don't know.
 
 155
 00:15:57,680 --> 00:15:57,800
-中国
-China.
+好的
+OK.
 
 156
 00:15:59,810 --> 00:16:07,410
-路径会取所有这些字符并在上面添加嘘嘘字符 因为嘘嘘很有用
+path 会先获取所有的字符，并添加到 hash 字符上，因为它对 hash 很有用
 So the the, the path is going to take all these characters and is going to add on top of that the Hush character, because it's useful to hush.
 
 157
 00:16:07,970 --> 00:16:11,450
-审问酒吧 因为是采石场用的 然后是花括号
-The interrogation bar because it's used for the quarry. And then the curly braces.
+用于查询的问号，因为它对 query 也有用，然后是花括号
+The interrogation mark because it's used for the query. And then the curly braces.
 
 158
 00:16:12,170 --> 00:16:20,610
-本来应该用在信用卡上的 但最后我们没有了 至少在http协议中没有用到
-Which were supposed to may be used by the credit, but at the end we don't have. We are not used in the HTP protocol, at least.
+本来应该用在 query 上的，但最后我们没有用，至少在 Http 协议中没有用到
+Which were supposed to may be used by the query, but at the end we don't have. We are not used in the HTP protocol, at least.
 
 159
 00:16:22,010 --> 00:16:22,530
-现在查询
+现在到 query 的部分
 Now the query.
 
 160
 00:16:23,440 --> 00:16:26,360
-你可以把杂碎里的东西都拿走 但你可以把洗礼去掉
-You take everything from the hash, but you remove the baptic.
+你可以把 hash 里的东西都拿走 但你可以把反引号去掉
+You take everything from the hash, but you remove the backquote.
 
 161
 00:16:27,080 --> 00:16:35,360
-然后加入hush 因为它被Url周围的hush所使用 amperson和equalculture 因为它们被用于解决夸脱
-And you add the hush, because it's used by the hush laid around the Url, the amperson and then the equal culture, because they are used in settle the quart.
+然后加入 hash，因为它被 Url 的 hash 所使用，&、=、和 | 也被使用到了
+And you add the hush, because it's used by the hash laid around the Url, the ampersand and then the equal or character, because they are used in settle the quart.
 
 162
 00:16:36,640 --> 00:16:44,440
-这就是理论 这就是为什么浏览器应该这么做 在实践中 如果你设置了
-So this is the theory, right is why should be done by the browser Now what happens in practice, in practice, if you are set.
+这就是理论，对吧？这就是为什么浏览器在实践里应该这么做，如果你设置了
+So this is the theory, right？It is why should be done by the browser Now what happens in practice, in practice, if you are set.
 
 163
 00:16:45,410 --> 00:16:52,770
-通过古吉拉斯科委员会 这些小绳子的位置 你会看到非常不同的行为 如果你在Safari上做
-Via the Gujarasco Council, the location that has to these small string, you're going to see very different behaviors. So if you do it on Safari.
+通过 JavaScript 控制台，这些字符串的位置，你会看到非常不同的行为。所以如果你在 Safari 上做
+Via the JavaScript Console, the location that has to these small string, you're going to see very different behaviors. So if you do it on Safari.
 
 164
 00:16:53,670 --> 00:17:01,750
-然后你再从Hush的位置读一遍 你会看到完全相同的值 好吧 你没有看到变化 这是一点
+然后你再从 hash 的位置读一遍，你会看到完全相同的值，好吧？你没有看到变化，这有一点点
 And then you read again from the location of Hush, you're gonna see the exact same value. Okay? You don't see the changes, which it's a bit.
 
 165
 00:17:02,680 --> 00:17:08,400
-问题在于 作为开发人员 您期望得到编码版本 这是
+问题在于，因为你作为开发人员来说，你期望得到已编码的版本，这个版本呢
 Problematic because you expect, as a developer to get the encoded version, which is the version that.
 
 166
 00:17:09,740 --> 00:17:11,460
-符合SPEC 但不是这样的
+符合规范，但其实不是这样的
 Matches the SPEC, but that's not the case.
 
 167
 00:17:12,240 --> 00:17:18,720
-有趣的是 如果你看U型轨道 你会看到一个人 在第20页 而不是空间 所以
-Then the thing is, the funny thing is, if you look at the U rail, you're gonna see a person, page twenty instead of the space. So.
+有趣的是，如果你看 Url，你会看到一个 %20 而不是空格，所以
+Then the thing is, the funny thing is, if you look at the Url, you're gonna see a percent twenty instead of the space. So.
 
 168
 00:17:19,760 --> 00:17:22,120
-这是因为用户
+这是因为，用户
 This is where because the user.
 
 169
 00:17:23,270 --> 00:17:26,030
-会得到涂布版 而开发者不会
-Is gonna get the coater version, while the developer doesn't.
+会得到已编码的版本，而开发者不会
+Is gonna get the coded version, while the developer doesn't.
 
 170
 00:17:27,210 --> 00:17:35,570
-这在Firefox上很有意义 你会看到哈希变成了编码版本 这很完美 因为这是你应该得到的版本
-Which is making a sense on Firefox, you're going to see that the hash becomes the encoded version, which is perfect, because that's the version that you should get.
+这很有意义，在 Firefox 上，你会看到哈希变成了已编码的版本，这很完美，因为这就是你应该得到的版本
+Which is making a sense, on Firefox, you're going to see that the hash becomes the encoded version, which is perfect, because that's the version that you should get.
 
 171
 00:17:36,340 --> 00:17:42,740
-更有趣的是他们将展示一个未被发现的欧元版本 最终用户
-And what what is more interesting is that they're going to display an uncovered version on the Euro. So the end user.
+更有趣的是他们将展示一个未被编码的 url 版本，所以对最终的用户来说
+And what what is more interesting is that they're going to display an uncoded version on the url around. So the end user.
 
 172
 00:17:43,440 --> 00:17:50,640
-它对编码一无所知 将会看到一个正常的版本 一些他们可以阅读的东西 和Chrome
+他们对编码一无所知，不过会看到一个正常的版本，上面有一些他们可以阅读的东西，然后是 Chrome
 Which doesn't know anything about encoding, is going to see a normal version, something that they can read, and Chrome.
 
 173
 00:17:51,900 --> 00:17:58,620
-我们也得到了编码版本 这很好 但在那一年 我们得到了部分未编码的东西
-We also get the encoded version, which is great, but on the year where we get something that is partially uneccoded.
+我们也得到了已编码的版本，这很棒，但在那个 url 上，我们得到了部分未编码的东西
+We also get the encoded version, which is great, but on the url around where we get something that is partially unencoded.
 
 174
 00:17:59,360 --> 00:18:01,240
-所以 没关系
+所以，没关系
 So it's, it's okay.
 
 175
 00:18:01,890 --> 00:18:10,930
-它没有5英尺高 但仍然很好 而ie不关心 它只需要一整个东西 它把它放在那里 它把它放在口头上 在欧元上 它不关心
-It's not as good as five foot, but it's still great, and an Internet Explorer doesn't, doesn't care, it just takes a whole thing, it puts there, it puts in the verbal, in the Euro, it doesn't care.
+它没有 Firefox 好，但仍然很棒。IE 的话是不关心的，它只需要一整个东西，然后把它放在那里，它把变量放在 url 上，它不关心
+It's not as good as Firefox, but it's still great, and an Internet Explorer doesn't, doesn't care, it just takes a whole thing, it puts there, it puts in the variable, in the url, it doesn't care.
 
 176
 00:18:11,630 --> 00:18:15,550
-现在我知道我们不再关心当前的浏览器 因为我们放弃了对I11的支持
-Now I know we don't care any more about in current Explorer, because we drop support for I, eleven.
+现在我知道，我们不再关心现在的 IE 了，因为我们放弃了对 IE11 的支持
+Now I know we don't care any more about in current Explorer, because we drop support for IE eleven.
 
 177
 00:18:16,410 --> 00:18:22,450
-你们三个 但当我在建造新俄罗斯的时候 我们还不确定 我喜欢 所以我写了酒店的日子
-On you three, but when I was building the new Russia, we were not sure yet, I love that. So I wrote the hotel days.
+对于它们三个，但当我在构建新架构的时候，我们还不确定会怎么样，所以我运行了整个代码库
+On you three, but when I was building the new architecture, we were not sure yet how about that. So I run the whole code base.
 
 178
 00:18:23,900 --> 00:18:25,380
-而在肉的希望 最关于
-And in the hope of meat, most about.
+我是说，整个事情里应付最多的是
+I mean, the whole cope with most about.
 
 179
 00:18:27,410 --> 00:18:35,970
-我看到编码和一些浏览器板条箱有特殊的癖好 不仅仅是因为我将来可能不得不支持Internet
+我看到编码和一些浏览器有特殊的癖好，不仅仅是因为我将来可能不得不支持 IE
 I see the encoding and some of the browser crates quirks specific things, not only that maybe I had to support Internet for in the future.
 
 180
 00:18:36,910 --> 00:18:45,350
-这是另一个实验 他将位置设置为相同字符串的编码版本 有效的版本
-Now this is another experiment, and he is setting the location harsh to the encoded version of that same string. So the valid version.
+这是另一个实验，他将 location 上的 hash 设置为同一字符串的编码版本，所以是有效的版本
+Now this is another experiment, and he is setting the location hash to the encoded version of that same string. So the valid version.
 
 181
 00:18:46,210 --> 00:18:51,890
-现在如果我们看一下Safari 我们也得到了编码版本 这很好 这是我们设置的完全相同的流
+现在如果我们看一下 Safari，我们也得到了已编码的版本，这很棒，这与我们设置的流完全相同。
 And now if we take a look at Safari, we get the encoded version as well, which is great, that's the exact same stream we set.
 
 182
 00:18:53,060 --> 00:18:57,820
-U-L是编码的 这有点奇怪 因为这意味着我们有空间
-The U-L, it's encoded, which is a bit surprising, because it means that we have the space.
+URL 是已编码的，这有点奇怪，因为这意味着我们有空格
+The URL, it's encoded, which is a bit surprising, because it means that we have the space.
 
 183
 00:18:59,380 --> 00:19:03,500
-编码了 但我们得到了不同的散列 这很奇怪
+被编码了，但我们得到了不同的 hash 们，这很奇怪
 Encoded, but we get different hashes, which is weird.
 
 184
 00:19:04,840 --> 00:19:09,560
-火狐会让你得到和以前一样的行为 这很好
+Firefox 会让你得到和以前一样的行为，这很棒
 Firefox as going to get you the same behavior as before, which is great.
 
 185
 00:19:10,460 --> 00:19:13,220
-因为立即保护开发者 和也
-Because immediately protects the developer. And also that.
+因为这意味着保护开发者，还有那个
+Because it means that protects the developer. And also that.
 
 186
 00:19:13,760 --> 00:19:20,240
-不管改变来自哪里 因为用户也可以修改年份 并通过在上面写自己
-No matter where the change come from, since the user can also modified the year old and say themselves by writing on the.
+不管改变来自哪里，因为用户也可以修改 url，并通过在上面写自己的
+No matter where the change come from, since the user can also modified the url and say themselves by writing on the.
 
 187
 00:19:20,770 --> 00:19:28,210
-在地址部分 它为用户提供了unincolar版本 但为开发人员提供了编码器版本 这是完美的
-On the address part, it gives you the unincolar version as a user, but the encoder version as a developer, which is perfect.
+关于地址的部分，它为用户提供了未编码的版本，但为开发人员提供了编码的版本，这是完美的
+On the address part, it gives you the unencoded version as a user, but the encoder version as a developer, which is perfect.
 
 188
 00:19:29,260 --> 00:19:37,260
-From也会给你相同的结果 所以same不如Firefox好 但至少是一致的
-From also gives you the same result as before, so the same is not as good as Firefox, but at least it's consistent.
+Chrome 也会给你相同的结果，所以同样的结果不如 Firefox 好，但至少是一致的
+Chrome also gives you the same result as before, so the same is not as good as Firefox, but at least it's consistent.
 
 189
 00:19:38,060 --> 00:19:43,060
-这很好 在中国 它不关心 所以它做了所有的事情 这并不重要
-So that's great, and in China, for it doesn't, doesn't care, so it just did the whole thing. It doesn't really matter.
+这很好，中文的话，对他来说，它并不关心，所以它拿了所有的东西，但这并不重要
+So that's great, and in Chinese, for it doesn't, doesn't care, so it just take the whole thing. It doesn't really matter.
 
 190
 00:19:44,210 --> 00:19:50,090
-所以Safari有这种可疑的行为 嗯 火狐是最好的行为-行为可以
+所以 Safari 有这种可疑的行为，嗯，Firefox 的行为是最好的，就应该这样
 So Safari has that questionable behavior. Uh, firefox is the best beha- behavior could have.
 
 191
 00:19:50,850 --> 00:19:55,890
-因为这意味着用户真正得到的东西是可以骑的 我喜欢的东西是有效的
-Because it means that the user really gets something that is ridable and that I love for something that is valid.
+因为这意味着用户真正得到的东西是可以读的，然后再去寻找其他关于它的东西
+Because it means that the user really gets something that is readable and then look for something that is valid.
 
 192
 00:19:57,400 --> 00:20:02,240
-犯罪是好事 因为至少我们得到了相同的结果 它是 它是一致的
-Crime is great because at least we have the same results. It's, it's consistent.
+Chrome 是好的，因为至少我们得到了相同的结果，它是，它是一致的
+Chrome is great because at least we have the same results. It's, it's consistent.
 
 193
 00:20:03,120 --> 00:20:07,560
-在中国 探险家放弃了 但我们已经知道了 这就是为什么它不再是我们的兄弟了 对吧
+中文的话，IE 放弃了，但我们已经知道了，这就是为什么它不再是我们的兄弟了，对吧？
 And in China, explorer just gave up, but we know that already, that's why it's not our brother anymore, right?
 
 194
 00:20:08,230 --> 00:20:15,270
-如果以后 我们只需要处理这些情况 那就太好了 但事实并非如此
+如果以后，我们只需要处理这些情况，那就太好了！但事实并非如此
 So it would be great if, in the future, we only have to handle these cases, but that's not the case.
 
 195
 00:20:16,040 --> 00:20:24,200
-对 因为这两种情况都是一致的 但其他情况不是 所以在路由器里 我们试着用一个更
-Right, because these are consistent in both scenarios, but the others are not. So in the router, we try to handle them in a more, um.
+对吧？因为这两种情况都是一致的，但其他情况不是，所以在路由里，我们试着用一个更
+Right？because these are consistent in both scenarios, but the others are not. So in the router, we try to handle them in a more, um.
 
 196
 00:20:27,450 --> 00:20:34,810
-如何说 我们让一些错误发生 我们退回到用户给出的值是为了确保
+怎么说呢，我们让一些错误发生，我们回退到用户给出的值，去确保
 How to say, we let some errors happen, and we fall back to the values that are given by the user is to make sure.
 
 197
 00:20:35,940 --> 00:20:42,460
-所以我想让你们记住的是你们应该避免写 UM 没有编码的部分
-So what I want you to remember about this is that you should avoid writing, UM, parts that are not encoded.
+所以我想让你们记住的是你们应该避免写，呃，没有编码的路径
+So what I want you to remember about this is that you should avoid writing, UM, paths that are not encoded.
 
 198
 00:20:43,390 --> 00:20:46,390
-相反 你可以自己写并涂上颜色
-Instead, you either write and color version yourself, which is.
+取而代之的是，你可以写你自己编码的版本，这样弄
+Instead, you either write and coded version yourself, which is.
 
 199
 00:20:46,810 --> 00:20:55,770
-非常烦人 或者你在路由中使用名称 你可以在部分中传递不相等的版本 但是永远不要将非编码版本作为push传递
-Very annoying, or you use names with routes, and you can pass unequal versions in the parts but never pass the non encoded version as a push.
+非常烦人，或者你在路由中使用 name 这个参数，这样你就可以在参数中传递不同的版本，但是永远不要将非编码版本作为 push 的参数传递
+Very annoying, or you use names with routes, and you can pass unequal versions in the params but never pass the non encoded version as a push.
 
 200
 00:20:56,660 --> 00:20:56,780
@@ -1005,88 +1005,88 @@ Because.
 
 201
 00:20:58,530 --> 00:21:00,010
-不管你用什么路由器
+不管你用什么路由
 No matter what router you use.
 
 202
 00:21:00,910 --> 00:21:09,190
-可能 所以 如果你给四个水处理这些比你给三个水处理好很多 但你可能还是会有感染 这就涉及到
-It may, so, if you water four handles these much better than you water three, but you may still end up with incursence. This is when it comes to the.
+它可能...所以，即使你想版本 4 处理的比 版本 3 好一些，但你最终可能仍然会碰壁，因为这就涉及到
+It may, so, if you want four handles these much better than you water three, but you may still end up with because This is when it comes to the.
 
 203
 00:21:10,170 --> 00:21:16,290
-到浏览器去处理URL的那个部分 它们可能会给你一些你从未想过会发生的事情
+到浏览器去处理 URL 的那个部分，它们可能会给你一些你从未想过会发生的事情
 To the browser dealing with that section of the URL, and they may give you something that you never expect to happen.
 
 204
 00:21:17,080 --> 00:21:26,240
-这是好的 这是最好的版本 而且 如果你使用查询 你也可以直接传递任何没有编码的东西 因为它会被处理
+这挺不错，这是最好的版本，而且，如果你使用 query，你也可以直接传递任何没有编码的东西，因为它会被处理
 So this is okay, and this is the best version, and also, if you use the query, you can also pass directly anything that is not encoded, because it will be handled.
 
 205
 00:21:26,970 --> 00:21:31,450
-如果你想了解更多 这可能不是很有趣 但对某些人来说 可能
+如果你想了解更多，这可能不是很有趣，但对某些人来说，可能
 And if you want to know more about this, which is maybe not that interesting, but for some people, maybe.
 
 206
 00:21:32,300 --> 00:21:36,980
-我是用他在查看器替代库中找到的这个编码写的
-I wrote about it in this encoding that he has found in the viewer alternative repository.
+我写了这些代码用于编码，在 vue-router-next 仓库的这些 ts 文件
+I wrote about it in this encoding the ts file in the vue-router-next repository.
 
 207
 00:21:38,880 --> 00:21:43,680
-大部分都是评论 大部分都是我在调查这些问题时做的笔记
+大部分都是评论，大部分都是我在调查这些问题时做的笔记
 It's mostly comments, mostly all on my notes I took while I was investigating the issues.
 
 208
 00:21:45,400 --> 00:21:49,000
-它有一点代码 但到处都是注释
+它有一点代码，但到处都是注释
 And it has a little bit of code, but it's a lot of comments everywhere.
 
 209
 00:21:51,060 --> 00:21:56,740
-好吧 我们应该换个话题 我们来谈谈积极的事情 积极的联系在欧洲之间发生了变化 从三到四
-Okay, well, we should have a different topic, let's talk about active things, active links have change between Europe to three and four.
+好吧，我们应该换个话题，我们来谈谈积极的事情，从版本 3 到版本 4，激活的链接在 url 之间发生了变化
+Okay, well, we should have a different topic, let's talk about active things, active links have change between Url to three and four.
 
 210
 00:21:57,830 --> 00:22:01,230
-这种变化来自于 呃 内部的
+这种变化来自于，呃，内部的
 And the change comes from, um, an internal.
 
 211
 00:22:02,330 --> 00:22:05,770
-这是主任3所没有的总体进步
-An in general improvement that didn't exist in Director, three.
+这是版本 3 所没有的内部进步
+An internal improvement that didn't exist in Director, three.
 
 212
 00:22:06,680 --> 00:22:12,440
-所以活跃链接就是当你写到某个地方的链接时
+所以激活的链接就是当你写到某个地方的链接时
 So active links is just the fact that when you write to about a link, uh, somewhere.
 
 213
 00:22:13,790 --> 00:22:17,630
-然后陌生人就变成了一个名字 一个标签
+然后陌生的东西就变成了一个名字，一个标签
 Then he gets strangers rendered as a name, a tag.
 
 214
 00:22:18,270 --> 00:22:27,430
-它得到一个依赖于当前欧元的类 说 嘿 这条路线就像我们正在访问这条路线的下一个子结点一样
-And it gets a class depending on the current EURO to say, hey, this route exactly as if we were visiting something like a next child of that route.
+它得到一个依赖于当前 Url 的 class，说，嘿，这个路由就像我们正在访问这个路由的下一个子节点一样
+And it gets a class depending on the current Url to say, hey, this route exactly as if we were visiting something like a next child of that route.
 
 215
 00:22:28,320 --> 00:22:31,800
-正如您在屏幕上看到的 问题在于主页
+正如你在屏幕上看到的，问题在于主页
 The problem is that, as you can see on the screen, the home page.
 
 216
 00:22:32,480 --> 00:22:40,080
-身体的缺陷总是会被激活因为它不是斜线 所以任何东西都包括斜线
-Body fault is always going to be active because it's not the Slash, so anything is it includes the slash.
+默认来说总是会被激活因为它不是斜线，所以任何东西都包括斜线
+by fault is always going to be active because it's not the Slash, so anything is it includes the slash.
 
 217
 00:22:40,880 --> 00:22:48,240
-然后我们有其他的路线 比如 用户 twenty-fourPost 它有一个粗略的 活跃的 不稳定的链接 准确的
-And then we have the other routes like, uh, users, twenty four Post, which has a roughlying, active and a rocky link, exact.
+然后我们有其他的路由，比如 users/24/posts，它有一个粗糙的，我的意思是，激活的链接周围，这就是 exact
+And then we have the other routes like, uh, users, twenty four Post, which has a rough, I mean, active and a around link exact that.
 
 218
 00:22:49,440 --> 00:22:50,640
@@ -1095,112 +1095,112 @@ Now you put this into a table.
 
 219
 00:22:52,190 --> 00:22:59,870
-我们有不同的例子 我们有斜线 我们有主版本 我们家 然后我们有用户24 24个人资料 24篇帖子
+我们有不同的例子，我们有斜线，我们有主版本：我们的主页，然后我们有 users/24、users/24/profile、users/24/posts
 And we put different cases, so we have the slash, we have the main version, we home, and then we have user twenty four, twenty four profile, twenty four post.
 
 220
 00:23:01,280 --> 00:23:05,280
-唯一一个同时得到这两个职位的人就是你 但是
+唯一一个同时得到这两个 class 的人就是 users/24/posts，但是
 The only one that gets the both classes is you the twenty four post. But.
 
 221
 00:23:06,110 --> 00:23:10,710
-家庭的问题是它是活跃的 使用24也应该是活跃的
+主页的问题是它是激活的，users/24 也应该是激活的
 The problem with the home is that it's active and use twenty four should be active as well.
 
 222
 00:23:11,330 --> 00:23:15,810
-但这工作 我们在欧锦赛上做的就是引入这个问题
-But that works. So the thing we did in Euroch three is introduce this exact problem.
+但这奏效了，我们在 Url 版本 3 上做的就是引入了这个 exact 问题
+But that works. So the thing we did in Url three is introduce this exact problem.
 
 223
 00:23:16,440 --> 00:23:18,680
-现在问题是具体的下降
-Now the problem with the exact drop is that.
+现在 exact 的问题是
+Now the problem with the exact problem is that.
 
 224
 00:23:19,350 --> 00:23:27,270
-它删除了几乎所有东西 所以用户24不再工作了 所以我们必须设置 在不同的地方应用这个问题
+它删除了几乎所有东西，所以 users/24 不再工作了，所以我们必须设置，在不同的地方应用这个问题
 It removes pretty much everything, so the user twenty four doesn't work anymore, so we have to set, actually apply that problem in different places.
 
 225
 00:23:27,860 --> 00:23:33,180
-而这更像是一种逃避 特别是在家里 一年到头
-And it was more like an escape for specifically the home, year round, only.
+而这更像是一种逃避，特别是在主页，url 而已
+And it was more like an escape for specifically the home, url only.
 
 226
 00:23:34,340 --> 00:23:36,380
-我们该怎么做 问题是
+所以我们该怎么做，问题是
 So what do we do And also, the problem is that.
 
 227
 00:23:36,930 --> 00:23:39,930
-如果你在欧元上加上其他东西 比如安静的水族箱
-If you add anything else in the Euro like a hush, aquary.
+如果你在 Url 上加上其他东西，比如 hash、query
+If you add anything else in the Url like a hash, query.
 
 228
 00:23:40,730 --> 00:23:47,450
-那么即使是相同的路由 比如用户 24个帖子 在结束之前是活跃的 也将不再活跃
+那么即使是相同的路由，比如 users/24/posts 在结束之前是激活的，也将不再激活
 Then even the same route, like the user, twenty four posts at the end that was active before is not going to be active anymore.
 
 229
 00:23:48,020 --> 00:23:54,940
-所以这是未来的问题 因为我们要做的是把卡车完全移走
-So that's a problem right in future, for what we do is we remove that truck completely.
+所以这是个问题，在将来，因为我们要做的是把它完全去掉
+So that's a problem right, in future, for what we do is we remove that from completely.
 
 230
 00:23:56,190 --> 00:24:04,790
-所以我们处理这个问题的方法是考虑到路线记录 销售的东西 以及开发者添加它们的方式
-So the way we uh, handle this is we take into account the route records, things sell, so the way they were added by the developer.
+所以我们处理这个问题的方法，是考虑到路由记录，它本身，以及开发者添加它们的方式
+So the way we uh, handle this is we take into account the route records, things itself, so the way they were added by the developer.
 
 231
 00:24:05,520 --> 00:24:10,880
-即使有观众 我们也可以追溯 这并不重要 我们可以追溯
+即使有观众，我们也可以追溯，这并不重要，我们可以追溯
 We are able to trace back, even with audiences, and it doesn't matter. We are able to trace back.
 
 232
 00:24:12,170 --> 00:24:15,490
-代表位置的记录是什么
+怎么做呢？代表位置的记录是什么？
 How, what is the record that represents a location?
 
 233
 00:24:16,050 --> 00:24:23,570
-然后我们就能看到是否有类型 孩子 以及它们是否有相同的路线记录 这样就没有必要
+然后我们就能看到是否有类型，子路由，以及它们是否有相同的路由记录，所以这样就没有必要用
 And then we're able to see if there are type, children or not, and if they are the same route record. So that way, there is no need for.
 
 234
 00:24:25,160 --> 00:24:25,760
-精确了
+exact，不再用它
 Exact anymore.
 
 235
 00:24:26,340 --> 00:24:27,500
-它在方框上是正确的
-It just works out on the box.
+它开箱即用了
+It just works out of the box.
 
 236
 00:24:28,190 --> 00:24:36,990
-同时 我们只关心路径 因为在一开始 这是因为在大多数情况下 这是我们想要关心的 我们不关心苛刻或质疑
-And also, we only take care about the path, because at the beginning, that's because in most scenarios, that's what we want to take care of about. We don't care about the harsh or the query.
+同时，我们只关心路径，因为在一开始，这是因为在大多数情况下，这是我们想要关心的，我们不关心 hash 或 query
+And also, we only take care about the path, because at the beginning, that's because in most scenarios, that's what we want to take care of about. We don't care about the hash or the query.
 
 237
 00:24:37,570 --> 00:24:44,970
-成为欧元的一员 让他们活跃起来 如果你愿意 我们仍然有可能采取这样的行动
-To be a part of the Euro to make them active, and it's still possible to have that behavior on our own, if you want to.
+成为 Url 的一员，激活他们，如果你愿意，我们仍然有可能采取这样的行动
+To be a part of the Url to make them active, and it's still possible to have that behavior on our own, if you want to.
 
 238
 00:24:46,310 --> 00:24:49,630
-现在整个事情都可以在活动链接中找到 我RFC
-Now the whole thing can be found in active links. I RFC,
+现在整个事情都可以在激活链接中找到，就像你看到的那样
+Now the whole thing can be found in active links. as you see,
 
 239
 00:24:51,200 --> 00:24:53,520
-这个很有趣 因为它有很多
+这个很有趣，因为它有很多，呃
 This one is interesting because it has a lot of, um.
 
 240
 00:24:55,380 --> 00:24:59,780
-所有可能的例子的表 所以看一看会很有趣
+所有可能的例子的表格，所以看一看会很有趣
 Of tables with all the possible examples. So can be interesting to take a look.
 
 241
