@@ -2,75 +2,75 @@
 00:00:00,170 --> 00:00:04,300
 If you’re a React developer, there’s no
 doubt you’ve heard about React 18.
-如果你是 React 开发人员，那么毫无疑问你已听说过 React 18 了。
+如果你是 React 开发人员，那么毫无疑问你已听说过 React 18。
 
 2
 00:00:04,300 --> 00:00:08,760
 Now, while there is still a lot more to come,
 I thought you might want to see what are its
-现在，尽管你有工作要忙，但我想你可能想了解下它到底有哪些
+尽管 React18 还有很多工作要完成，
 
 3
 00:00:08,760 --> 00:00:10,480
 top new features.
-主要的新特性。
+但我觉得你有必要了解它到底包含哪些主要的新特性。
 
 4
 00:00:10,480 --> 00:00:13,190
 The first one is automatic batching.
-第一个是自动批处理。
+第一个是「自动 batching」。
 
 5
 00:00:13,190 --> 00:00:18,081
 Long story short, batching in React is whenever
 multiple state updates are combined into a
-长话短说，React 中的批处理是将多个状态更新组合成一个
+长话短说，React 中的 batching 是将多个状态更新合并成
 
 6
 00:00:18,081 --> 00:00:19,890
 single re-render.
-单次重新渲染。
+一次重新渲染。
 
 7
 00:00:19,890 --> 00:00:25,330
 In this example, the component would only
 be rendered once after handleClick is called,
-在这个例子中，组件只会在 handleClick 被调用后渲染一次，
+在此示例中，我们会下意识地认为 setCount 和 setClicked 会触发两次重新渲染，
 
 8
 00:00:25,330 --> 00:00:29,260
 although we might think setCount and setClicked
 would trigger two re-renders.
-尽管我们可能认为 setCount 和 setClicked 会触发两次重新渲染。
+但实际上组件只会在 handleClick 被调用后，执行一次渲染。
 
 9
 00:00:29,952 --> 00:00:34,239
 Now, while this works well at the moment,
 if you’re calling multiple state updates
-现在，虽然目前这很有效，但如果你正在调用多个状态更新
+这对当前的场景来说很有效，但如果你在不同的上下文中，
 
 10
 00:00:34,239 --> 00:00:40,290
 in a different context such as a promise,
 a callback, or a timeout, React won’t batch
-在不同的上下文中，例如承诺、回调或超时，React 不会批处理
+调用多个状态更新，例如在 Promise、回调或定时器中，React 就不会进行批量操作，
 
 11
 00:00:40,290 --> 00:00:45,530
 these two updates into one and you’ll get
 two re-renders when only one would have been
-将这两个更新合二为一，当只有一个时，你将获得两次重新渲染
+并不会将两次更新合二为一，这将执行两次重渲染，但实质上
 
 12
 00:00:45,530 --> 00:00:46,030
 needed.
-需要。
+只需一次。
 
 13
 00:00:46,205 --> 00:00:51,370
 With React 18, all these use-cases will now
 be covered and state updates will be batched
-使用 React 18，现在将涵盖所有这些用例，并且将批量更新状态
+而在 React 18 中，所有这些用例都将被覆盖，同时会批量更新状态，
 
 14
 00:00:51,370 --> 00:00:53,775
@@ -81,381 +81,380 @@ automatically no matter what’s the context.
 00:00:54,163 --> 00:00:59,949
 This might remind you of unstable_batchedUpdates
 that was doing exactly this, well now, React
-这可能会让你想起正在做这个的unstable_batchedUpdates，好吧，React
+这可能让你联想到这与 unstable_batchedUpdates 的行为一致，而此后，
 
 16
 00:00:59,949 --> 00:01:01,338
 will do it for you by default.
-默认情况下会为你做。
+React 会默认帮你完成此操作。
 
 17
 00:01:01,925 --> 00:01:07,180
 Also, if you happen not to want these updates
 to be batched, you’ll need to use flushSync
-此外，如果你不希望批量更新这些更新，则需要使用 flushSync
+另外，如果你不希望执行 batch 更新操作，则需要使用 flushSync
 
 18
 00:01:07,180 --> 00:01:10,720
 that will re-render your component every time
 it’s done running the function you’re
-每次完成运行你正在运行的功能时，它将重新渲染你的组件
+它将在每次运行完你传递给它的函数后，
 
 19
 00:01:10,720 --> 00:01:11,514
 passing it to.
-传递给。
+重新渲染你的组件。
 
 20
 00:01:12,090 --> 00:01:16,394
 So with the following, your component would
 render twice instead of just one time.
-因此，使用以下内容，你的组件将渲染两次而不是一次。
+因此，当你按后面这种方式编写时，你的组件将被渲染两次。
 
 21
 00:01:17,033 --> 00:01:21,500
 Moving on to transitions, a really big new
 feature, which allows you “to tell React
-继续过渡，这是一个非常重要的新功能，它允许你“告诉 React
+接下来，介绍「过渡」，这是一个非常重要的新特性，它允许你
 
 22
 00:01:21,500 --> 00:01:24,110
 which updates are urgent, and which are not”.
-哪些更新是紧急的，哪些不是”。
+“告诉 React 更新的优先级”。
 
 23
 00:01:24,110 --> 00:01:28,524
 A good example of that is a search input that
 should filter out a list of elements.
-一个很好的例子是应该过滤掉元素列表的搜索输入。
+一个很好的示例是，在搜索输入时，过滤掉列表中的元素。
 
 24
 00:01:29,077 --> 00:01:34,300
 So if you’re updating a search input, you’d
 want its value to change as we type, although
-因此，如果你要更新搜索输入，你会希望它的值随着我们的输入而改变，尽管
+如果你要在搜索输入时更新，你会期望它的值随着我们的输入变化而变化，
 
 25
 00:01:34,300 --> 00:01:38,539
 the search results might appear in a second
 phase when we’re done typing.
-当我们完成输入时，搜索结果可能会出现在第二阶段。
+而当我们完成输入时，搜索结果可能延迟出现。
 
 26
 00:01:39,042 --> 00:01:43,659
 This is where we could mark the input value
 change as an urgent update, and the elements
-这是我们可以将输入值更改标记为紧急更新的地方，并且元素
+这时，我们可以将输入搜索内容的部分标记为紧急更新，
 
 27
 00:01:43,659 --> 00:01:47,267
 filtering as secondary also called now a transition.
-作为次要过滤现在也称为过渡。
+而元素过滤的部分被标记为次要，也称为过渡。
 
 28
 00:01:47,749 --> 00:01:52,890
 Transitions can be interrupted by urgent updates
 and previous transitions that are no longer
-过渡可能会被紧急更新和不再存在的先前过渡中断
+过渡本身可能会被紧急更新中断，而之前不再相关的过渡
 
 29
 00:01:52,890 --> 00:01:55,180
 relevant will be dismissed.
-相关的将被解雇。
+将被忽略。
 
 30
 00:01:55,180 --> 00:02:00,649
 This allows the user interface to only show
 its most up-to-date state and skip secondary
-这允许用户界面仅显示其最新状态并跳过次要状态
+这将告知 UI 仅显示其最新状态，并跳过次要状态
 
 31
 00:02:00,649 --> 00:02:06,399
 updates, transitions, that might be slower
 to compute and sometimes return intermediate
-更新、转换，计算速度可能较慢，有时返回中间值
+的更新，过渡，这过程中计算可能较慢，有时会返回中间值
 
 32
 00:02:06,399 --> 00:02:08,120
 states that are irrelevant.
-不相关的状态。
+或不相关的状态。
 
 33
 00:02:09,042 --> 00:02:14,799
 As you can see here, we’re marking the input
 value change as urgent, and run our secondary
-正如你在此处看到的，我们将输入值更改标记为紧急，并运行我们的辅助
+正如你刚刚所见，我们将 input 框值的改变标记为紧急状态，
 
 34
 00:02:14,799 --> 00:02:20,220
 update inside a transition as it might trigger
 slow computations and could freeze or slow
-在转换内更新，因为它可能会触发缓慢的计算并且可能会冻结或减慢
+它在过渡期会进行二次更新，因为它可能会触发缓慢计算，
 
 35
 00:02:20,220 --> 00:02:22,848
 down the whole user experience as we type.
-在我们键入时降低整个用户体验。
+同时在我们输入内容时，会导致 UI 卡顿或延迟，影响用户体验。
 
 36
 00:02:23,488 --> 00:02:28,360
 startTransition is great for any update “you
 want to move to the background” such as
- startTransition 非常适合“你想移到后台”的任何更新，例如
+startTransition 非常适合用于任何需要 “后台运行” 的更新，
 
 37
 00:02:28,360 --> 00:02:34,170
 slow and complex rendering tasks or when
 updates rely on fetching data that might take
-缓慢而复杂的渲染任务，或者当更新依赖于获取可能需要的数据时
+例如当遇到缓慢且复杂的渲染任务，或者当更新依赖于数据获取时
 
 38
 00:02:34,170 --> 00:02:35,527
 time due to a slow network.
-由于网速慢。
+但网速缺很慢。
 
 39
 00:02:36,690 --> 00:02:40,879
 If you have a React application, you might
 know that if you’re not using Server-Side
-如果你有一个 React 应用程序，你可能知道如果你不使用服务器端
+如果你开发过 React 应用程序，那你可能知道如果不使用服务端渲染（SSR）的情况下，
 
 40
 00:02:40,879 --> 00:02:46,683
 Rendering aka SSR, your website always appears
 blank when you run it for the first time.
-渲染又名 SSR，你的网站在你第一次运行时总是显示为空白。
+你的网站在你第一次运行时会白屏。
 
 41
 00:02:47,323 --> 00:02:51,080
 That is because the browser needs to fetch
 and read your JavaScript which takes some
-那是因为浏览器需要获取和读取你的 JavaScript，这需要一些时间
+这是因为浏览器需要请求并读取你的 JavaScript，这需要一些时间，
 
 42
 00:02:51,080 --> 00:02:54,955
 time before your components load and the page
 becomes interactive.
-在你的组件加载和页面变得可交互之前的时间。
+接着才会加载你的组件，页面才能进行交互。
 
 43
 00:02:55,385 --> 00:03:02,280
 With SSR however, the user sees how your app
 looks directly but without all the interactions
-然而，使用 SSR，用户可以直接看到你的应用程序的外观，但没有所有交互
+然而，使用 SSR 时，用户可以直观的看到应用程序外观，
 
 44
 00:03:02,280 --> 00:03:03,934
 while the JavaScript is being loaded.
-在加载 JavaScript 时。
+但在加载 JavaScript 时，依旧无法交互。
 
 45
 00:03:04,552 --> 00:03:09,583
 The way it works is by rendering all the 
 components on the server first, then sending
-它的工作方式是先渲染服务器上的所有组件，然后发送
+其工作原理是先在服务器上的渲染所有组件，
 
 46
 00:03:09,583 --> 00:03:11,843
 the result as HTML to the browser.
-结果作为 HTML 发送到浏览器。
+然后将结果作为 HTML 发送给浏览器。
 
 47
 00:03:12,577 --> 00:03:18,239
 After that, the JavaScript is loaded as usual
 and the HTML magically becomes interactive
-之后，JavaScript 像往常一样加载，HTML 神奇地变成了交互式
+接着，像往常一样加载 JavaScript，而 HTML 通过水合（hydration）
 
 48
 00:03:18,239 --> 00:03:20,000
 by what is called hydration.
-通过所谓的水合作用。
+作用后，恢复可交互的状态。
 
 49
 00:03:20,629 --> 00:03:25,540
 This turns your static HTML elements into
 your dynamic React components as you know
-如你所知，这会将你的静态 HTML 元素转换为动态 React 组件
+如你所知，这会将静态 HTML 元素转换为
 
 50
 00:03:25,540 --> 00:03:26,540
 them.
-他们。
+动态 React 组件。
 
 51
 00:03:26,540 --> 00:03:30,950
 The main problem with this approach is that
 as long as the JavaScript hasn’t been fetched,
-这种方法的主要问题是，只要没有获取 JavaScript，
+这种方式存在的主要问题是，只要 JavaScript 还未被获取，
 
 52
 00:03:30,950 --> 00:03:35,809
 loaded, and your HTML hydrated, your page
 won’t be interactive.
-加载，并且你的 HTML 已水合，你的页面将无法交互。
+加载，同时 HTML 还未被水合之前，你的页面就无法进行交互。
 
 53
 00:03:36,480 --> 00:03:42,109
 To solve this waterfall issue, React 18 now
 offers two new features for SSR:
-为了解决这个瀑布问题，React 18 现在为 SSR 提供​​了两个新功能：
+为了解决这个瀑布问题，React 18 为 SSR 提供​​了两个新功能：
 
 54
 00:03:42,486 --> 00:03:45,129
 Streaming HTML and Selective Hydration.
-流式 HTML 和选择性水合作用。
+流式 HTML 以及选择性水合。
 
 55
 00:03:45,129 --> 00:03:50,879
 Put simply, streaming HTML means that the
 server can send pieces of your components
-简而言之，流式 HTML 意味着服务器可以发送你的组件片段
+简而言之，流式 HTML 意味着服务器可以在你的组件渲染时，
 
 56
 00:03:50,879 --> 00:03:52,800
 as they get rendered.
-当它们被渲染时。
+发送组件的片段。
 
 57
 00:03:52,800 --> 00:03:57,080
 This works by using Suspense, where you’d
 say which parts of your application will take
-这通过使用 Suspense 起作用，你可以在其中说明应用程序的哪些部分
+这方式通过 Suspense 实现，你可以在应用程序中声明哪些部分
 
 58
 00:03:57,080 --> 00:04:01,049
 longer to load and which ones
 should be rendered directly.
-加载时间更长，哪些应该直接渲染。
+需要更长的加载时间，哪些部分应该直接渲染。
 
 59
 00:04:01,049 --> 00:04:06,310
 If you think of an article with comments where
 the article is the critical part of the page,
-如果你想到一篇带有评论的文章，​​其中该文章是页面的关键部分，
+如果你需要渲染一篇带有评论的文章，​​其中文章是页面的关键部分，
 
 60
 00:04:06,310 --> 00:04:10,969
 you could say load the article but don’t
 wait for the comments to be ready to send
-你可以说加载文章，但不要等待评论准备好发送
+你可以直接发送要加载文章内容的 HTML 到浏览器，
 
 61
 00:04:10,969 --> 00:04:12,403
 HTML to the browser.
-HTML 到浏览器。
+而无需等待评论。
 
 62
 00:04:12,874 --> 00:04:17,230
 You could show a spinner instead using 
 Suspense and once the comments are ready,
-你可以使用 Suspense 显示一个微调器，一旦评论准备好，
+你可以使用 Suspense 展示一个加载指示器，一旦评论准备好，
 
 63
 00:04:17,618 --> 00:04:22,330
 React will send new bits of HTML that will
 replace the spinner in place.
- React 将发送新的 HTML 位来替换原位的微调器。
+React 将发送新的 HTML 来替代加载指示器。
 
 64
 00:04:22,749 --> 00:04:27,482
 Now, the second new feature, selective hydration,
 is quite a game-changer.
-现在，第二个新功能，选择性补水，完全改变了游戏规则。
+第二个新功能，选择性水合，这完全改变了规则。
 
 65
 00:04:27,776 --> 00:04:32,030
 Where before you’d have to wait for every
 component to be rendered to begin hydration,
-在你必须等待每个组件被渲染开始水化之前，
+以前，你必须等待每个组件被渲染后，才能开始水合，
 
 66
 00:04:32,030 --> 00:04:36,791
 leading to code splitting problems, components
 now wrapped with Suspense
-导致代码拆分问题，组件现在用 Suspense 包裹
+从而导致代码分割问题，而组件现在使用 Suspense 进行包裹
 
 67
 00:04:36,791 --> 00:04:37,823
 won’t block hydration anymore.
-不会再阻碍水合作用了。
+不会再阻碍水合了。
 
 68
 00:04:38,284 --> 00:04:43,197
 In other words, if we go back to our article
 page, the comments that we wrapped with
-换句话说，如果我们回到我们的文章页面，我们包裹的评论
+换句话说，还拿刚刚的文章页面举例，如果我们使用 Suspense 包裹评论，
 
 69
 00:04:43,197 --> 00:04:46,668
 Suspense won’t block the article and other
 components to be hydrated.
-悬念不会阻止文章和其他组件被水化。
+就不会阻止文章及其他组件被水合。
 
 70
 00:04:47,129 --> 00:04:51,860
 Every ready component will start hydrating
 and the comments will too, once the browser
-一旦浏览器打开，每个准备好的组件都会开始补水，评论也会
+每个准备好的组件都会开始被水合，一旦浏览器获取到需要的内容和 JavaScript 代码
 
 71
 00:04:51,860 --> 00:04:55,470
 gets both its content and JavaScript code.
-获取其内容和 JavaScript 代码。
+评论也会被水合。
 
 72
 00:04:55,470 --> 00:05:00,500
 The last crazy thing about selective hydration
 is that if you happen to interact with one
-关于选择性补水的最后一件疯狂的事情是，如果你碰巧与一个人互动
+关于选择性水合最令人兴奋的一点是，如果你碰巧在
 
 73
 00:05:00,500 --> 00:05:05,250
 of the components before it’s been fully
 hydrated, meaning you click somewhere, for
-完全水合之前的组件，这意味着你单击某处，对于
+组件被完全水合前与之交互，比如说，你单击了某处，
 
 74
 00:05:05,250 --> 00:05:09,153
 example, React will prioritise this
 component’s hydration.
-例如，React 会优先考虑这个组件的水合作用。
+React 会优先对该组件进行水合。
 
 75
 00:05:09,719 --> 00:05:15,210
 This ensures that the most critical interactions
 are to be repeated as soon as we can hydrate
-这确保了最关键的相互作用在我们可以水合后立即重复
+这确保了交互可以在我们可以水合完成后，再次被执行
 
 76
 00:05:15,210 --> 00:05:19,910
 the related component, making sure it’s
 hydrated before the others.
-相关成分，确保它在其他成分之前被水合。
+保证它优于其他组件执行水合操作。
 
 77
 00:05:20,245 --> 00:05:22,010
 All right, that’s all for today.
-好了，今天就到这里。
+好了，今天分享就到这里。
 
 78
 00:05:22,010 --> 00:05:26,690
 You can find great explanations of all these
 new features on the official repository which
-你可以在官方存储库中找到所有这些新功能的详细解释
+你可以在详情中的链接里找到上述所有
 
 79
 00:05:26,690 --> 00:05:28,417
 is linked in the description.
-已在说明中链接。
+新功能的详细解释。
 
 80
 00:05:28,836 --> 00:05:32,110
 Remember to subscribe if you don’t want
 to miss more videos like this one.
-如果你不想错过更多这样的视频，请记得订阅。
+如果你不想错过更多优秀的视频，请记得订阅我们。
 
 81
 00:05:32,351 --> 00:05:34,051
 Thanks for watching and see you next time :)
-感谢收看，我们下期再见：）
-
+感谢收看，我们下期见：）
