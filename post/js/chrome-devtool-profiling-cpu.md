@@ -1,100 +1,120 @@
-# Goodbye JS Profiler, profiling CPU with the Performance panel
+# 再见 JavaScript 性能分析器，使用 “Performance” 面板对 CPU 进行性能分析
 
-The **JavaScript Profiler** panel is going away in Chrome 124. Moving forward, use the **Performance** panel to profile Node.js CPU performance.
+**[原文链接](https://developer.chrome.com/blog/profiling-cpu?hl=zh-cn)**
 
-## Why are we deprecating the JavaScript Profiler? (JS Profiler)
+> 译注：**JavaScript 性能分析器** 即 **JavaScript Profiler** 面板；**性能**面板即 **Performance** 面板
 
-As early as Chrome 58, the DevTools team planned to eventually deprecate the **JS Profiler**. There are several reasons why:
+Chrome 124 即将停用  **JavaScript 性能分析器**面板。今后，您可以使用**性能**面板分析 Node.js CPU 性能。
 
-- **It is no longer being actively developed**. The **JS Profiler** hasn't received any major updates in several years, and the team doesn't have the resources to continue developing it.
-- **A more streamlined profiling experience**. The **Performance** panel is already used for all kinds of performance analysis, and with its ability to profile JavaScript CPU performance in Node.js, it makes sense to consolidate everything in one place for consistency and efficiency.
-- **The Performance panel is better**. We continue to improve it by adding new features and enhancements, making it a more powerful and user-friendly tool for performance analysis.
+## 我们为什么要弃用 JavaScript 性能分析器？
 
-## What should you do after deprecation?
+早在 Chrome 58 时，开发者工具团队就计划最终弃用 **JavaScript 性能分析器**。有以下几个原因：
 
-To learn more about how to profile JavaScript CPU performance, see [Profile Node.js performance](https://developer.chrome.com/docs/devtools/performance/nodejs).
+- **它目前已不再处于积极开发阶段**。**JavaScript 性能分析器**已经几年没有收到任何重大更新，团队也没有继续开发它的资源。
+- **更顺畅的分析体验**。**性能**面板已用于各种性能分析，由于它能够在 Node.js 中分析 JavaScript CPU 性能，因此有必要将所有内容整合到一处，以确保一致性和效率。
+- **“性能”面板更好**。我们会继续添加新功能和增强功能，使其成为功能更强大、更易用的性能分析工具。
 
-Here are some tips for using the **Performance** panel:
+## 弃用后该怎么进行性能分析？
 
-- Use the **flame chart** to identify performance bottlenecks.
+如需详细了解如何分析 JavaScript CPU 性能，请参阅[分析 Node.js 性能](https://developer.chrome.com/docs/devtools/performance/nodejs?hl=zh-cn)。
 
-![The flame chart.](https://developer.chrome.com/static/blog/profiling-cpu/image/flame-chart.png)
+以下是关于使用**性能**面板的一些技巧：
 
-- Use the **Bottom-up** and **Call tree** tabs to understand the relationships between functions.
+- 使用**火焰图**确定性能瓶颈。
 
-![The Bottom-up tab.](https://developer.chrome.com/static/blog/profiling-cpu/image/bottom-up.png)
+![火焰图。](https://developer.chrome.com/static/blog/profiling-cpu/image/flame-chart.png?hl=zh-cn)
 
-![The Call tree tab.](https://developer.chrome.com/static/blog/profiling-cpu/image/call-tree.png)
+- 使用  **自下而上**  和 **调用树** 标签页了解函数之间的关系。
 
-## How do we handle the deprecation?
+![“自下而上”标签页。](https://developer.chrome.com/static/blog/profiling-cpu/image/bottom-up.png?hl=zh-cn)
 
-We developed a prototype and published the [Request for Comments (RFC)](https://github.com/ChromeDevTools/rfcs/discussions/2) publicly on GitHub to seek feedback from developers.
+![“调用树”标签页。](https://developer.chrome.com/static/blog/profiling-cpu/image/call-tree.png?hl=zh-cn)
 
-On top of that, we actively reach out to developer experts to test the prototype, addressing any concerns or issues to ensure that the **Performance** panel meets the core profiling needs.
+## 我们将如何逐步弃用 JavaScript 性能分析器？
 
-We are gradually phasing out the JS Profiler in [4 stages](https://github.com/ChromeDevTools/rfcs/discussions/2#discussioncomment-5189668) to give developers enough time to adjust and adopt.
+我们开发了一个原型并在 GitHub 上公开发布了[征求意见稿 (RFC)](https://github.com/ChromeDevTools/rfcs/discussions/2)，以征求开发者的反馈。
 
-## Key issues and how we fixed them
+此外，我们还会积极联系开发者专家来测试原型，解决各种顾虑或问题，以确保**性能**面板满足核心的性能分析需求。
 
-Among the feedback we received, the most pressing concerns centered around three main issues:
+我们将分  [4 个阶段](https://github.com/ChromeDevTools/rfcs/discussions/2#discussioncomment-5189668)逐步停用 JavaScript 性能分析器，以便开发者有足够的时间进行调整和采用。
 
-- **Supporting `.cpuprofile` file format**. The **JS Profiler** uses a different file format. The **Performance** panel should support it.
-- **Slow loading speed.** The panel's loading speed seemed slow, interfering with the profiling process.
-- **Missing JavaScript VM selector.** The absence of a JavaScript VM instance selector limited profiling capabilities in certain scenarios.
+> 译注：在 Chrome 115 及以后，这四个阶段已经全部完成。
 
-Let's take a look at each of these issues and see how we fixed them.
+## 主要问题及解决方法
 
-### Slow loading speed
+在我们收到的反馈中，最迫切的担忧主要围绕以下三个问题：
 
-Developers told us the **Performance** panel took too long to load large data files and sometimes it even crashed.
+- **支持  `.cpuprofile`  文件格式**。**JS 性能分析器**使用另一种文件格式。**性能**面板应支持此功能。
+- **加载速度缓慢**。面板的加载速度似乎很慢，干扰了分析过程。
+- **缺少 JavaScript 虚拟机选择器。**在某些情况下，缺少 JavaScript 虚拟机实例选择器会限制分析功能。
 
-We used DevTools to analyze DevTools (we call it "DevTools-on-DevTools"). We found problems and made several optimizations:
+我们来看看每个问题，看看我们是如何解决这些问题的。
 
-- Replaced `Set` with `Array` data structures.
-- Removed unnecessary `Map` data structures.
-- Refactored recursive functions to iterative (for loops) to reduce the memory stack usage.
+### 加载速度缓慢
 
-By fixing these bottlenecks, we made loading 80% faster for large files! 🎉
+开发者告诉我们，**性能**面板加载大型数据文件的用时过长，有时甚至会崩溃。
 
-Read more about what we learned in this blog post: [A 400% faster Performance panel through perf-ception](https://developer.chrome.com/blog/perf-panel-4x-faster).
+我们使用开发者工具分析开发者工具（我们称之为“DevTools-on-DevTools”）。我们发现了一些问题，并做出了多项优化：
 
-### The missing JavaScript VM selector
+- 已将  `Set`  替换为  `Array`  数据结构。
+- 移除了不必要的  `Map`  数据结构。
+- 将递归函数重构为迭代函数（for 循环），以减少内存堆栈使用量。
 
-The initial prototype was missing the JavaScript VM selector. Developers use it to drill down and focus on analyzing a specific VM instance.
+通过修复这些瓶颈，我们将大文件的加载速度提升了 80%！🎉
 
-We've now added a JavaScript VM selector to the **Performance** panel. It shows a drop-down list of all available JavaScript VM instances. When you select an instance, the **Performance** panel loads the CPU profile for that specific instance.
+详细了解我们在这篇博文中了解到的信息：[通过性能感知功能将性能面板提高 400%](https://developer.chrome.com/blog/perf-panel-4x-faster?hl=zh-cn)。
 
-![The Call tree tab.](https://developer.chrome.com/static/blog/profiling-cpu/image/vm-selector.png)
+### 缺少 JavaScript 虚拟机选择器
 
-### Supporting the `cpuprofile` file format
+初始原型缺少 JavaScript 虚拟机选择器。开发者使用此报告来深入了解并专注于分析特定的虚拟机实例。
 
-Previously, the **Performance** panel only supported trace files, which are JSON files with an array of trace events.
+现在，我们向**性能**面板添加了一个 JavaScript 虚拟机选择器。其中显示了所有可用的 JavaScript 虚拟机实例的下拉列表。选择某个实例后，**性能**面板会加载该特定实例的 CPU 配置文件。
 
-On the other hand, the **JS Profiler** supported CPU profiles, which are files with the `.cpuprofile` extension that contain a JSON object. They look like this:
+![“调用树”标签页。](https://developer.chrome.com/static/blog/profiling-cpu/image/vm-selector.png?hl=zh-cn)
 
+### 支持  `cpuprofile`  文件格式
+
+以前，**性能**面板仅支持跟踪文件，即包含跟踪事件数组的 JSON 文件。
+
+另一方面，**JavaScript 性能分析器**  支持 CPU 配置文件，即扩展名为  `.cpuprofile`  且包含 JSON 对象的文件。如下所示：
+
+```javascript
+{
+    // 性能节点列表，第一个是根节点
+    nodes: ProfileNode[];
+    // 性能分析开始时间戳（微秒）
+    startTime: number;
+    // 性能分析结束时间戳（微秒）
+    endTime: number;
+    // 顶部节点的样本 ID
+    samples?: integer[];
+    // 相邻样本之间的时间间隔（微秒）
+    // 第一个 delta 是相对于 profile.startTime 的
+    timeDeltas?: integer[];
+}
 ```
-<span>{</span><span><br>&nbsp; &nbsp; </span><span>// The list of profile nodes. First item is the root node.</span><span><br>&nbsp; &nbsp; nodes</span><span>:</span><span> </span><span>ProfileNode</span><span>[];</span><span><br>&nbsp; &nbsp; </span><span>// Profiling start timestamp in microseconds.</span><span><br>&nbsp; &nbsp; startTime</span><span>:</span><span> number</span><span>;</span><span><br>&nbsp; &nbsp; </span><span>// Profiling end timestamp in microseconds.</span><span><br>&nbsp; &nbsp; endTime</span><span>:</span><span> number</span><span>;</span><span><br>&nbsp; &nbsp; </span><span>// Ids of samples at top nodes.</span><span><br>&nbsp; &nbsp; samples</span><span>?:</span><span> integer</span><span>[];</span><span><br>&nbsp; &nbsp; </span><span>// Time intervals between adjacent samples in microseconds.</span><span><br>&nbsp; &nbsp; </span><span>// The first delta is relative to the profile startTime.</span><span><br>&nbsp; &nbsp; timeDeltas</span><span>?:</span><span> integer</span><span>[];</span><span><br></span><span>}</span><span><br></span>
-```
 
-The new workflow shouldn't prevent developers from analyzing the existing `cpuprofile`. Therefore, the **Performance** panel now supports both trace files and CPU profiles. You can import the `cpuprofile` file into the **Performance** and it will load correctly.
+新工作流不应阻止开发者分析现有  `cpuprofile`。因此，**性能**面板现在支持跟踪文件和 CPU 配置文件。您可以将  `cpuprofile`  文件导入到  **性能**面板   中，该文件将正确加载。
 
-Behind the scenes, we detect the object structure differences by using a regular expression. If the file content starts with `{"nodes":[`, then it is a CPU profile. Otherwise, it is a trace file.
+在后台，我们使用正则表达式检测对象结构差异。如果文件内容以  `{"nodes":[`  开头，则表示它是 CPU 配置文件。否则为跟踪文件。
 
-Once the type of the content is identified, we process it accordingly. For a trace file, we parse the events and build a timeline. For a CPU profile, we parse the JSON object and build a flame chart.
+一旦确定了内容类型，我们就会进行相应处理。对于跟踪文件，我们会解析事件并构建一个时间轴。对于 CPU 配置文件，我们会解析 JSON 对象并构建火焰图。
 
-## Conclusion
+## 总结
 
-Use the **Performance** panel for a more streamlined profiling experience, both for websites and profiling CPU performance in Node.js and Deno applications.
+无论是网站分析还是 Node.js 和 Deno 应用的 CPU 性能分析，使用**性能**面板都可以获得更顺畅的分析体验。
 
-If you have feedback or suggestions, add a comment to this [bug](https://issues.chromium.org/issues/40235609) or reach out using one of the following options.
+如果您有反馈或建议，请为此  [bug](https://issues.chromium.org/issues/40235609)  添加评论，或通过以下某种方式与我们联系。
 
-## Download the preview channels
+## 下载预览渠道
 
-Consider using the Chrome [Canary](https://www.google.com/chrome/canary/), [Dev](https://www.google.com/chrome/dev/) or [Beta](https://www.google.com/chrome/beta/) as your default development browser. These preview channels give you access to the latest DevTools features, test cutting-edge web platform APIs, and find issues on your site before your users do!
+您可以考虑将 Chrome [Canary 版](https://www.google.com/chrome/canary/?hl=zh-cn)、[Dev 版](https://www.google.com/chrome/dev/?hl=zh-cn)或  [Beta 版](https://www.google.com/chrome/beta/?hl=zh-cn)用作默认开发浏览器。通过这些预览渠道，您可以使用最新的开发者工具功能，测试先进的网络平台 API，并在用户采取行动之前发现网站上的问题！
 
-Use the following options to discuss the new features and changes in the post, or anything else related to DevTools.
+## 与 Chrome 开发者工具团队联系
 
-- Submit a suggestion or feedback to us via [crbug.com](https://crbug.com/).
-- Report a DevTools issue using the **More options**   ![More](https://developer.chrome.com/static/images/devtools-more.png)   > **Help** > **Report a DevTools issues** in DevTools.
-- Tweet at [@ChromeDevTools](https://twitter.com/intent/tweet?text=@ChromeDevTools).
-- Leave comments on our What's new in DevTools [YouTube videos](https://goo.gle/devtools-youtube) or DevTools Tips [YouTube videos](https://goo.gle/devtools-tips).
+使用以下选项讨论博文中的新功能和变化，或讨论与开发者工具有关的任何其他内容。
+
+- 通过  [crbug.com](https://crbug.com/)  提交建议或反馈。
+- 使用开发者工具中的**更多选项**   ![了解详情](https://developer.chrome.com/static/images/devtools-more.png?hl=zh-cn)   > **帮助** > **报告 DevTools 问题**来报告开发者工具问题。
+- 发推文并[@ChromeDevTools](https://twitter.com/intent/tweet?text=@ChromeDevTools)。
+- 请在 [YouTube 视频](https://goo.gle/devtools-youtube)或“开发者工具提示” [YouTube 视频](https://goo.gle/devtools-tips)中留言说明“开发者工具的新变化”。
